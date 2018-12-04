@@ -13,13 +13,21 @@ const DevProfile = props => {
               <p>Skills: {props.skills}</p>
             </div>
           </div>
-          <div id="logos" className="d-flex justify-content-center">
-            <a href={props.linkedin}>
-              <img src="/images/linkedin-icon.png" width="35%" alt="linkedin" />
-            </a>
-            <a href={props.github}>
-              <img src="/images/github-icon.png" width="20%" alt="github" />
-            </a>
+          <div id="logos" className="d-flex justify-content-around">
+            <div>
+              <a href={props.linkedin}>
+                <img
+                  src="/images/linkedin-icon.png"
+                  width="35%"
+                  alt="linkedin"
+                />
+              </a>
+            </div>
+            <div>
+              <a href={props.github}>
+                <img src="/images/github-icon.png" width="20%" alt="github" />
+              </a>
+            </div>
           </div>
         </div>
         <div className="d-flex flex-fill">
