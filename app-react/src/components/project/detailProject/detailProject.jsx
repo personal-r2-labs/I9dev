@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import EmpProfile from '../empProfile/empProfile';
 
 class DetailProject extends Component {
   constructor(props) {
@@ -7,41 +6,15 @@ class DetailProject extends Component {
     this.state = {
       name: 'Ray Charles',
       category: 'ray.charles@ironhack.com',
-      description: 'http://www.linkedin.com/ray.charles',
-      filePath: '',
-      photoPath:
-        'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
-      projects: [
-        {
-          name: 'Lorem Ipsum sdosdsmdosdm',
-          description: 'Lorem Impsunsds',
-          owner: 'Ray Charles'
-        },
-        {
-          name: 'Lorem Ipsum sdosdsmdosdm',
-          description: 'Lorem Impsunsds',
-          owner: 'Ray Charles'
-        },
-        {
-          name: 'Lorem Ipsum sdosdsmdosdm',
-          description: 'Lorem Impsunsds',
-          owner: 'Ray Charles'
-        }
-      ]
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.',
+      dateLimit: '23/12/2018',
+      filePath: '#'
     };
   }
 
   render() {
-    const { name, email, linkedin, facebook, projects, photoPath } = this.state;
+    const { name, category, description, dateLimit, filePath } = this.state;
     return (
-      <EmpProfile
-        name={name}
-        email={email}
-        linkedin={linkedin}
-        facebook={facebook}
-        projects={projects}
-        photoPath={photoPath}
-      />
     );
   }
 }
