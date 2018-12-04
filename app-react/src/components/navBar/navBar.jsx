@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <a className="navbar-brand text-white" href="#">
         Freelar
       </a>
@@ -21,7 +21,7 @@ const NavBar = () => {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
             <a className="nav-link text-white" href="#">
-              How it works <span className="sr-only">(current)</span>
+              How it works
             </a>
           </li>
           <li className="nav-item">
