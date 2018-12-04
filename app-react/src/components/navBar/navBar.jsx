@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <a className="navbar-brand text-white" href="#">
-        Freelar
+        i9Dev
       </a>
       <button
         className="navbar-toggler"
