@@ -12,17 +12,12 @@ const DevCarrousel = () => {
             alt="perfil"
           />
           <ul>
-            <h6>Name:</h6>
-            <p>Lorem Ipsum</p>
-            <h6>E-mail:</h6>
-            <p>Lorem@Ipsum</p>
-            <h6>Skills:</h6>
-            <p>JS, Node, React, Mongo and Express</p>
-            <h6>Description:</h6>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
+            <h6>Name:</h6><p>Lorem Ipsum</p>
+            <h6>E-mail:</h6><p>Lorem@Ipsum</p>
+            <h6>Skills:</h6><p>JS, Node, React, Mongo and Express</p>
+            <h6>Description:</h6><p>Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley{" "}
+              ever since the 1500s, when an unknown printer took a galley
             </p>
           </ul>
         </div>

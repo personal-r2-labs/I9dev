@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import EmpDashboard from './components/emp/empDashboard/empDashboard';
+import NavBar from './components/navBar/navBar'
+import CardDev from './components/dev/cardDev/cardDev';
+import DevCarrousel from './components/dev/devCarrousel/devCarrousel';
+import DevDashBoard from './components/dev/devDashboard/devDashboard';
+import Footer from "./components/footer/footer"
+import Home from './components/home/home'
+import FindProject from './components/project/findProject/findProject';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <EmpDashboard />
+        <NavBar />
+        <FindProject />
+        <Home />
+        <Footer />
       </div>
     );
   }
