@@ -16,11 +16,11 @@ class DevDashBoard extends Component {
     }
 
     render() {
-			const {photoPath, name, email, github, linkedin, skills, description} = this.state
+			// const {photoPath, name, email, github, linkedin, skills, description} = this.state
         return(
             <section id="section-devDashBoard">
 							<div className="devDashBoard">
-								<DevProfile photoPath={photoPath} name={name} email={email} github={github} linkedin={linkedin} skills={skills} description={description} />
+								<DevProfile profile={this.state.profile[0]} />
 							</div>
 							<div>
 								
