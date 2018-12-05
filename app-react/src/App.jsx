@@ -16,8 +16,6 @@ class App extends Component {
         <Home />
         <CardDev />
         <DevCarrousel />
-        <DevDashBoard />
-        <ProjectDashBoard />
         <Footer />
       </div>
     );

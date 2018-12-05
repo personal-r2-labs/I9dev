@@ -24,6 +24,7 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item active">
+
               <a className="nav-link text-white" href="#footer">
                 About
               </a>
@@ -36,7 +37,6 @@ const NavBar = () => {
           </span>
         </div>
       </nav>
-      <div id="fix-nav"></div>
     </div>
   );
 };
