@@ -1,9 +1,12 @@
-import React from "react"
+import React from 'react';
 
 const FindProject = () => {
-  return(
-    <input type="text"/>
-  )
-}
+  return (
+    <div>
+      <label htmlFor="search">Search</label>
+      <input type="text" placeholder="Search" />
+    </div>
+  );
+};
 
 export default FindProject;
