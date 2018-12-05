@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose';
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
@@ -8,9 +8,7 @@ const devSchema = new Schema({
   password: String,
   linkedinID: String,
   linkedinURL: String,
-  linkedinToken: String,
   githubID: String,
-  githubToken: String,
   description: String,
   skills: Array,
   photoPath: String
@@ -19,6 +17,6 @@ const devSchema = new Schema({
   timestamps: true
 });
 
-const Developer = model('Developer', devSchema);
+const Developer = mongoose.model('Developer', devSchema);
 
-export default Developer;
+module.exports = Developer;
