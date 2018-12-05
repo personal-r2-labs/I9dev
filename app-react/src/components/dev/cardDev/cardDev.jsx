@@ -1,0 +1,38 @@
+import React from "react"
+
+const CardDev = () => {
+    return (
+        <section id="cardDev">
+            <div className="div-one">
+                <img src="/images/icons8-monitor-64.png" width="10%" alt="screen"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div className="div-two">
+                <img src="/images/icons8-monitor-64.png" width="10%" alt="screen"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+            <div className="div-three">
+                <img src="/images/icons8-monitor-64.png" width="10%" alt="screen"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+            <div className="div-one">
+                <img src="/images/icons8-monitor-64.png" width="10%" alt="screen"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+            </div>
+            <div className="div-two">
+                <img src="/images/icons8-monitor-64.png" width="10%" alt="screen"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+            <div className="div-three">
+                <img src="/images/icons8-monitor-64.png" width="10%" alt="screen"/>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                </p>
+            </div>
+        </section>
+    )
+}
+
+export default CardDev;
