@@ -8,9 +8,7 @@ const devSchema = new Schema({
   password: String,
   linkedinID: String,
   linkedinURL: String,
-  linkedinToken: String,
   githubID: String,
-  githubToken: String,
   description: String,
   skills: Array,
   photoPath: String
