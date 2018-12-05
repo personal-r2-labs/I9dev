@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
-import projectData from '../../../data/projectData.json';
-class DetailProject extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      projectData: projectData
-    };
-  }
+import React from 'react';
 
-  render() {
-    return (
-      
-    );
-  }
-}
+const DetailProject = props => {
+  return (
+    <div>
+      <a href="#">{props.project.name}</a>
+      <p>{props.project.datelimit}</p>
+      <img src={props.project.filePath} alt="Project Logo" />
+      <p>{props.project.category}</p>
+      <p>{props.project.description}</p>
+      <p>{props.project.status}</p>
+    </div>
+  );
+};
 
 export default DetailProject;

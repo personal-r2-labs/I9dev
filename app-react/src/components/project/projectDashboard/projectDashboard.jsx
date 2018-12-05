@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import ProjectsData from '../../../data/projectData.json';
 import DetailProject from '../detailProject/detailProject';
 import FindProject from '../findProject/findProject';
-import ResultProject from '../resultProject/resultProject;';
+import ResultProject from '../resultProject/resultProject';
 
-class DetailProject extends Component {
+class ProjectDashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,13 +14,13 @@ class DetailProject extends Component {
 
   render() {
     return (
-      <div>
+      <div id="projectDashBoard">
         <FindProject />
         <ResultProject projects={this.state.projects} />
-        <DetailProject />
+        <DetailProject project={this.state.projects[0]} />
       </div>
     );
   }
 }
 
-export default DetailProject;
+export default ProjectDashBoard;

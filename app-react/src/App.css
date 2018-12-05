@@ -114,3 +114,9 @@ p {
     border: 1px solid rgb(206, 206, 206);
     background-color: rgb(240, 240, 240);
 }
+
+/* ////////////////////////////////////////////// */
+
+#projectDashBoard {
+    border: 1px solid black;
+}
