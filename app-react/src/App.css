@@ -118,5 +118,32 @@ p {
 /* ////////////////////////////////////////////// */
 
 #projectDashBoard {
-    border: 1px solid black;
+    zborder: 1px solid black;
+    display: flex;
+    overflow: auto;
+}
+
+#resultCardProject{
+    border: 1px solid rgb(206, 206, 206);
+    background-color: rgb(240, 240, 240);
+    border-radius: 0.5em;
+    margin: 1%;
+    padding: 1%;
+}
+
+#detailProject {
+    width: 65%;
+    border-radius: 0.5em;
+    border: 1px solid rgb(206, 206, 206);
+    background-color: rgb(240, 240, 240);
+    margin: 0.5%;
+    padding: 1%;
+    height: 85vh;
+}
+
+#FindAndResultDiv {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 0.5%;
 }
