@@ -2,7 +2,7 @@ import React from 'react';
 
 const DetailProject = props => {
   return (
-    <div style={{border: "1px solid black"}}>
+    <div id="detailProject">
       <a href="#">{props.project.name}</a>
       <p>{props.project.datelimit}</p>
       <img src={props.project.filePath} alt="Project Logo" />
