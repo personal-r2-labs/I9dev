@@ -14,7 +14,7 @@ class ProjectDashBoard extends Component {
 
   render() {
     return (
-      <div>
+      <div id="projectDashBoard">
         <FindProject />
         <ResultProject projects={this.state.projects} />
         <DetailProject project={this.state.projects[0]} />
