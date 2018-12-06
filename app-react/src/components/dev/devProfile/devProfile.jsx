@@ -7,8 +7,6 @@ const DevProfile = props => {
         <div id="first-page">
             <img id="imgProfile" width="" src={props.photoPath} alt="img" />
             <div>
-              <h4>{props.name}</h4>
-              <h4>{props.email}</h4>
               <h4>{props.skills}</h4>
           </div>
           <div id="logos" className="d-flex justify-content-around">
