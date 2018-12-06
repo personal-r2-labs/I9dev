@@ -1,7 +1,5 @@
 import React from "react";
 import Carousel from 'react-bootstrap/lib/Carousel'
-import Image from 'react-bootstrap/lib/Image'
-import Col from 'react-bootstrap/lib/Col'
 
 const DevCarrousel = () => {
   return (
