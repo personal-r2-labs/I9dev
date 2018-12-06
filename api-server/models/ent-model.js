@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const empSchema = new Schema({
+const entSchema = new Schema({
   name: String,
   email: String,
   password: String,
@@ -18,6 +18,6 @@ const empSchema = new Schema({
   timestamps: true
 });
 
-const Enterprising = mongoose.model('Enterprising', empSchema);
+const Enterprising = mongoose.model('Enterprising', entSchema);
 
 module.exports = Enterprising;

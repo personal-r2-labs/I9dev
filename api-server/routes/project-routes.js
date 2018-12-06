@@ -1,39 +1,27 @@
 const express = require('express');
+
 const router = express.Router();
 
 const Project = require('../models/project-model');
 
-router.get('/projects/', (req, res, next) => {
+// Route to get all Projects
+router.get('/projects', (req, res, next) => {
   Project.find()
-  .then((proj) => {
-    console.log("esse é proj do GET details", proj);
-    res.json(proj);
-  })
-  .catch((error) => {
-    console.log(error);
-  })
-});
-
-router.get('/projects/:id', (req, res, next) => {
-  console.log("esse é o conteudo do proj req.params", req.params.id);
-
-  Project.findOne({
-      _id: req.params.id
-    })
     .then((proj) => {
-      console.log("esse é proj do GET details", proj.name);
-      res.json(emp);
+      console.log('esse é proj do GET details', proj);
+      res.json(proj);
     })
     .catch((error) => {
       console.log(error);
-    })
+    });
 });
 
+// Route to create a new Project
 router.post('/projects', (req, res, next) => {
   const createProj = new Project(req.body);
   createProj.save({
     name: req.body.name,
-    email: req.body.email,
+    email: req.body.email
   })
     .then((response) => {
       res.json(response);
@@ -43,39 +31,54 @@ router.post('/projects', (req, res, next) => {
     });
 });
 
-router.put('/projects/:id', (req, res, next) => {
-  console.log("esse é o conteudo do emp req.params", req.params);
-  const {
-    name,
-    email
-  } = req.body;
-
-  Project.findByIdAndUpdate({
-      _id: req.params.id
-    }, {
-      name,
-      email
-    })
+// Router to get a Project by ID
+router.get('/projects/:id', (req, res, next) => {
+  console.log('esse é o conteudo do proj req.params', req.params.id);
+  Project.findOne({
+    _id: req.params.id
+  })
     .then((proj) => {
-      console.log("esse é proj do PUT details", proj);
-      res.json(proj);
+      console.log('esse é proj do GET details', proj.name);
+      res.json(emp);
     })
     .catch((error) => {
       console.log(error);
-    })
+    });
 });
 
-router.delete('/projects/:id', (req, res, next) => {
-  console.log("esse é o proj req.params", req.params);
+// router.put('/projects/:id', (req, res, next) => {
+//   console.log('esse é o conteudo do emp req.params', req.params);
+//   const {
+//     name,
+//     email
+//   } = req.body;
 
+//   Project.findByIdAndUpdate({
+//     _id: req.params.id
+//   }, {
+//     name,
+//     email
+//   })
+//     .then((proj) => {
+//       console.log('esse é proj do PUT details', proj);
+//       res.json(proj);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// });
+
+// Route to delete a Project
+router.delete('/projects/:id', (req, res, next) => {
+  console.log('esse é o proj req.params', req.params);
   Project.findByIdAndRemove(req.params.id)
     .then((proj) => {
-      console.log("esse é proj do get details", proj);
+      console.log('esse é proj do get details', proj);
       res.json(proj);
     })
     .catch((error) => {
       console.log(error);
-    })
+    });
 });
 
 module.exports = router;

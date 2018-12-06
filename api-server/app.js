@@ -10,6 +10,8 @@ const path = require('path');
 const session = require ('express-session');
 const passport = require('passport');
 
+const cors = require('cors');
+
 require('./configs/mongodb');
 
 const app_name = require('./package.json').name;
@@ -29,11 +31,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.locals.title = 'i9Dev - The best Big Monster';
 
+app.use(cors({
+  credentials: true,
+  origin: ['http://localhost:3000']
+}));
+
 const dev = require('./routes/dev-routes');
 app.use('/api', dev);
 
-const emp = require('./routes/emp-routes');
-app.use('/api', emp);
+const ent = require('./routes/ent-routes');
+app.use('/api', ent);
+
 
 const project = require('./routes/project-routes');
 app.use('/api', project);
