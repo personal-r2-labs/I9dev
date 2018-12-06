@@ -15,10 +15,12 @@ class App extends Component {
         <NavBar />
         <Home />
         <CardDev />
+        <div>
         <DevCarrousel />
-        <DevDashBoard />
-        <ProjectDashBoard />
+        </div>
+        <div>
         <Footer />
+        </div>
       </div>
     );
   }

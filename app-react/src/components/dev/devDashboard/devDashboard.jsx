@@ -36,7 +36,7 @@ class DevDashBoard extends Component {
       description
     } = this.state;
     return (
-      <section id="section-devDashBoard" className="d-flex align-items-center">
+      <section id="section-devDashBoard" className="d-flex align-items-center justify-content-center">
         <div className="devDashBoard">
           <DevProfile
             photoPath={photoPath}
@@ -50,8 +50,10 @@ class DevDashBoard extends Component {
         </div>
         <div id="myProjects">
           <div className="myProjects-1">
+          <h2>Meus projetos</h2>
           </div>
           <div className="myProjects-1">
+          <h2>qualquer outra coisa</h2>
           </div>
         </div>
       </section>
