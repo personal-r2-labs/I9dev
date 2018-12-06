@@ -3,6 +3,8 @@
 
 * {
     font-family: fira sans;
+    margin: 0;
+    padding: 0;
 }
 
 /* NAVBAR */
@@ -109,61 +111,56 @@ p {
 /* DEV-DASHBOARD*/
 
 #section-devDashBoard {
-    height: 100vh;
+    height: 660px;
+    border: 1px solid black;
+}
+
+#dashBoard {
+    display: flex;
     border: 1px solid red;
 }
 
-.devDashBoard {
-    width: 25%;
-    height: 450px;
+.left-profile {
+    width: 30%;
+    min-width: 200px;
     overflow: auto;
-    padding: 0.5%;
     margin-left: 0.5%;
-    font-size: 1.3em;
-    zborder: 1px solid black;
-}
-
-#imgProfile {
-    max-height: 100px;
-}
-
-#logos {
+    border: 1px solid black;
     display: flex;
-    align-content: center;
-    margin-top: 5%; 
+    justify-content: start;
 }
 
-#logos a {
-    width: 100%;
+.left-profile ul {
+    list-style:none;
+    padding-top: 5%;
+    margin-left: 5%;
 }
 
-#first-page {
-    text-align: center;
+.left-profile ul h4 {
+    font-size: 1.3em;
 }
 
-#first-page h4 {
-    font-weight: 600;
-    line-height: 150%;
-    font-family: Ubuntu;
-    color: rgb(94, 94, 94);
+.left-profile ul li {
+    font-size: 1.5em;
+}
+
+#profile-icons {
+    display: flex;
+    margin-left: 5%;
+}
+
+#profile-icons div {
+    width: 50%;
 }
 
 #profile-description {
-    font-family: Ubuntu;
-    font-weight: lighter;
-    margin-top: 5%;
-}
-
-#second-page {
-    zborder: 1px solid red;
-
+    font-size: 1.5em;
 }
 
 /* PROJECT-DASHBOARD */
 
 #projectDashBoard {
     display: flex;
-
 }
 
 #resultCardProject{

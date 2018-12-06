@@ -9,7 +9,6 @@ class DevDashBoard extends Component {
     this.state = {
       devProfile: DevData
     };
-    console.log(this.state.devProfile);
   }
 
   render() {
@@ -24,9 +23,9 @@ class DevDashBoard extends Component {
     } = this.state.devProfile[0];
     return (
       <section id="section-devDashBoard">
-      <NavBarInside />
-        <div>
-          <div className="devDashBoard">
+        <NavBarInside />
+        <div id="dashBoard">
+          <div className="left-profile">
             <DevProfile photoPath={photoPath} name={name} email={email} github={github} linkedin={linkedin} skills={skills} description={description} />
           </div>
         </div>
