@@ -1,25 +1,30 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,900');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 
 * {
     font-family: fira sans;
 }
 
-/* /////////////////////////////////////////////////////// */
+/* NAVBAR */
 
 #navBar {
     position: fixed;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+    height: 50px;
+}
+
+#navBar a {
+    font-size: 1.8em;
 }
 
 #fix-nav {
     position: fixed;
     width: 100%;
-    height: 11vh;
+    height: 10vh;
 }
 
-/* ////////////////////////////////////////////////////////
- */
+/* ////////////////////////////////////////////////////////*/
 
 #projects-2 {
     width: 50%;
@@ -37,7 +42,7 @@
     list-style: none;
 }
 
-/* //////////////////////////////////// */
+/* HOME */
 
 #home {
     background-image: url("/images/rawpixel-706373-unsplash.jpg");
@@ -45,30 +50,50 @@
     height: 100vh;
 }
 
-/* //////////////////////////////////// */
+/* CARD-DEV */
 
 #cardDev {
-    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     text-align: center;
     flex-wrap: wrap;
+    font-size: 1.8em;
 }
 
-#cardDev div {
-    width: 30%;
+.div-one button, .div-two button, .div-three button {
+    font-size: 1em;
+}
+
+.div-one, .div-two, .div-three {
+    border-radius: 0.5em;
+    border: 2px solid rgb(206, 206, 206);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 500px;
+    min-width: 200px;
+    margin: 3%;
+}
+
+#cardDev p {
+    color: grey;
+    font-weight: 300;
+    margin: 5%;
 }
 
 
-/* ///////////////////////////////////////////////////////////
- */
+/* FOOTER */
+
 #footer {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 1.8em;
 }
 
 #footer {
@@ -76,47 +101,65 @@
     height: 20%;
 }
 
-/* /////////////////////////////////////////////////////////////////// */
-
 p {
     margin: 1%;
+    font-size: 1em;
 }
 
-/* /////////////////////////////////////////////////////////////////////
- */
+/* DEV-DASHBOARD*/
+
+#section-devDashBoard {
+    height: 100vh;
+    border: 1px solid red;
+}
+
+.devDashBoard {
+    width: 25%;
+    height: 450px;
+    overflow: auto;
+    padding: 0.5%;
+    margin-left: 0.5%;
+    font-size: 1.3em;
+    zborder: 1px solid black;
+}
 
 #imgProfile {
     max-height: 100px;
 }
 
-.devDashBoard {
-    width: 25%;
-    height: 75vh;
-    border: 1px solid rgb(206, 206, 206);
-    border-radius: 0.5em;
-    overflow: auto;
-    background-color: rgb(240, 240, 240);
-    padding: 1%;
-}
-
-#myProjects {
-    height: 80vh;
-    width: 100%;
+#logos {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly; 
-    align-items: center;
+    align-content: center;
+    margin-top: 5%; 
 }
 
-.myProjects-1 {
-    width: 99%;
-    height: 35vh;
-    border-radius: 0.5em;
-    border: 1px solid rgb(206, 206, 206);
-    background-color: rgb(240, 240, 240);
+#logos a {
+    width: 100%;
 }
 
-/* ////////////////////////////////////////////// */
+#first-page {
+    text-align: center;
+}
+
+#first-page h4 {
+    font-weight: 600;
+    line-height: 150%;
+    font-family: Ubuntu;
+    color: rgb(94, 94, 94);
+}
+
+#profile-description {
+    font-family: Ubuntu;
+    font-weight: lighter;
+    margin-top: 5%;
+}
+
+#second-page {
+    zborder: 1px solid red;
+
+}
+
+/* PROJECT-DASHBOARD */
 
 #projectDashBoard {
     display: flex;
@@ -148,3 +191,4 @@ p {
     width: 35%;
     margin: 0.5%;
 }
+

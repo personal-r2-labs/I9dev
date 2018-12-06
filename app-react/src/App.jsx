@@ -12,13 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar />
-        <Home />
-        <CardDev />
-        <DevCarrousel />
         <DevDashBoard />
-        <ProjectDashBoard />
-        <Footer />
       </div>
     );
   }
