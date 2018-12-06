@@ -4,7 +4,6 @@ import NavBar from './components/navBar/navBar'
 import DevDashBoard from './components/dev/devDashboard/devDashboard.jsx'
 import ProjectDashBoard from './components/project/projectDashboard/projectDashboard';
 import Home from './components/home/home'
-import CardDev from './components/dev/cardDev/cardDev'
 import Footer from './components/footer/footer'
 
 class App extends Component {
@@ -13,9 +12,8 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Home />
-        <CardDev />
         <div>
-        <DevDashBoard />
+        <ProjectDashBoard />
         </div>
         <div>
         <Footer />

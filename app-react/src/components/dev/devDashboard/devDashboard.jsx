@@ -8,22 +8,6 @@ class DevDashBoard extends Component {
     this.state = {
     };
   }
-  getProfile = () => {
-    // const { params } = this.props.match;
-    axios.get(`http://localhost:5000/api/projects`)
-    .then(responseFromApi => {
-      const theProfile = responseFromApi.data;
-      this.setState(theProfile);
-      console.log(this.state);
-    })
-    .catch(err => {
-      console.log(err)
-    })
-  }
-
-  componentDidMount(){
-    this.getProfile();
-  }
 
   render() {
     const {
