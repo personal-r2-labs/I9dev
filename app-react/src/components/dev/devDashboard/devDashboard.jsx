@@ -8,7 +8,9 @@ class DevDashBoard extends Component {
     this.state = {
     };
   }
-
+  getProfile = () => {
+    
+  }
   render() {
     const {
       photoPath,

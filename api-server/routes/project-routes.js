@@ -46,7 +46,7 @@ router.get('/projects/:id', (req, res, next) => {
     });
 });
 
-// router.put('/projects/:id', (req, res, next) => {
+// router.patch('/projects/:id', (req, res, next) => {
 //   console.log('esse é o conteudo do emp req.params', req.params);
 //   const {
 //     name,
