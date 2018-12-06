@@ -1,18 +1,22 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const Enterprising = require('./emp-model');
+const Developer = require('./dev-model');
+
+const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   name: String,
   category: String,
   description: String,
   filePath: String,
-  // owner: Schema.Types.ObjectId,
-  // dev: Schema.Types.ObjectId,
+  // owner: { type: Schema.Types.ObjectId, ref: 'Enterprising' },
+  // dev: { type: Schema.Types.ObjectId, ref: 'Developer' },
   messages: Array,
-  // status: { Type: String, default: 'waiting', enum: ['waiting','in progress', 'pending', 'completed'] },
+  // status: { Type: String, default: 'waiting', enum: ['waiting', 'in progress', 'pending', 'completed'] },
   dateLimit: Date,
   solicitation: Boolean
-}, {
+}, 
+{
   timestamps: true
 });
 

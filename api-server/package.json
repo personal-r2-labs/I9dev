@@ -4,7 +4,7 @@
   "description": "The server for API to App i9Dev",
   "main": "app.js",
   "scripts": {
-    "test": "node app.js"
+    "test": "DEBUG=i9Dev:* nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.3",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
