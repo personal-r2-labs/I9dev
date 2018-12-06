@@ -107,6 +107,28 @@ p {
 }
 
 /* DEV-DASHBOARD*/
+#dashboard {
+    display: flex;
+    border: 1px solid red;
+}
+
+.dashboard-size {
+    border: 1px solid black;
+    width: 100%;
+    margin: 10px 0 0 20px;
+}
+
+.dashboard-size {
+    margin: 10px 0 5px 10px;
+}
+
+.dashboard-h1 {
+
+}
+
+.dashboard-size-personal {
+    margin: 10px 0 5px 10px;
+}
 
 #section-devDashBoard {
     height: 100vh;

@@ -25,9 +25,18 @@ class DevDashBoard extends Component {
     return (
       <section id="section-devDashBoard">
       <NavBarInside />
-        <div>
+        <div id="dashboard">
           <div className="devDashBoard">
             <DevProfile photoPath={photoPath} name={name} email={email} github={github} linkedin={linkedin} skills={skills} description={description} />
+          </div>
+
+          <div className="dashboard-size">
+            <div className="dashboard-size-personal">
+              <h1 className="dashboard-h1">Jeremy Rose</h1>
+              <p>Product Designer</p>
+              <span>Ranking</span>
+              <button>Send Message</button>
+            </div>
           </div>
         </div>
       </section>
