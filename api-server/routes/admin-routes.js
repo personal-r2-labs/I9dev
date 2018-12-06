@@ -1,14 +1,14 @@
 const express = require('express');
-const Developer = require('../models/dev-model');
+const Administrator = require('../models/admin-model');
 
 const router = express.Router();
 
 // Route to get all Developers
-router.get('/dev', (req, res, next) => {
-  Developer.find()
-    .then((dev) => {
-      console.log('esse é proj do GET details', dev);
-      res.json(dev);
+router.get('/adm', (req, res, next) => {
+  Administrator.find()
+    .then((adm) => {
+      console.log('esse é proj do GET details', adm);
+      res.json(adm);
     })
     .catch((error) => {
       console.log(error);
@@ -16,14 +16,15 @@ router.get('/dev', (req, res, next) => {
 });
 
 // Route to create a new Developer
-router.post('/dev', (req, res, next) => {
-  const theDev = new Developer(req.body);
-  theDev.save({
+router.post('/adm', (req, res, next) => {
+  const theAdm = new Administrator(req.body);
+  theAdm.save({
     name: req.body.name,
-    email: req.body.email
+    email: req.body.email,
+    password: req.body.password
   })
-    .then((dev) => {
-      res.json(dev);
+    .then((adm) => {
+      res.json(adm);
     })
     .catch((error) => {
       console.log(error);
@@ -31,14 +32,14 @@ router.post('/dev', (req, res, next) => {
 });
 
 // Router to get a Developer by ID
-router.get('/dev/:id', (req, res, next) => {
+router.get('/adm/:id', (req, res, next) => {
   console.log('esse é o conteudo do developer req.params', req.params.id);
-  Developer.findOne({
+  Administrator.findOne({
     _id: req.params.id
   })
-    .then((dev) => {
-      console.log('esse é dev do get details', dev.name);
-      res.json(dev);
+    .then((adm) => {
+      console.log('esse é adm do get details', adm.name);
+      res.json(adm);
     })
     .catch((error) => {
       console.log(error);
@@ -68,12 +69,12 @@ router.get('/dev/:id', (req, res, next) => {
 // });
 
 // Route to delete a Developer
-router.delete('/dev/:id', (req, res, next) => {
+router.delete('/adm/:id', (req, res, next) => {
   console.log('esse é o conteudo do developer req.params', req.params);
-  Developer.findByIdAndRemove(req.params.id)
-    .then((dev) => {
-      console.log('esse é dev do get details', dev);
-      res.json(dev);
+  Administrator.findByIdAndRemove(req.params.id)
+    .then((adm) => {
+      console.log('esse é adm do get details', adm);
+      res.json(adm);
     })
     .catch((error) => {
       console.log(error);

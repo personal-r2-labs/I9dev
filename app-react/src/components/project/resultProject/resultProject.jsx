@@ -1,14 +1,15 @@
 import React from 'react';
-import ResultCardProject from '../resultCardProject/resultCardProject'
+import ResultCardProject from '../resultCardProject/resultCardProject';
 
-const ResultProject = (props) => {
-  return (
+const ResultProject = props => {
+  console.log(props);
+    return (
       <div className="d-flex flex-column ">
         {props.projects.map((project, idx) => {
-          return <ResultCardProject project={project} key={idx} />
+          return <ResultCardProject project={project} key={idx} />;
         })}
       </div>
-  )
-}
+    );
+  }
 
 export default ResultProject;

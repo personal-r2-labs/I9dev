@@ -10,7 +10,7 @@ const DetailProject = props => {
       <p>{props.project.description}</p>
       <p>{props.project.status}</p>
     </div>
-  );
+  )
 };
 
 export default DetailProject;

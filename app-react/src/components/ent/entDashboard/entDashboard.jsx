@@ -1,26 +1,37 @@
-import React, { Component } from "react";
-import axios from 'axios';
-import DevProfile from '../devProfile/devProfile';
+import React, { Component } from 'react';
 
-class DevDashBoard extends Component {
+class EntDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      name: 'Ray Charles',
+      email: 'ray.charles@ironhack.com',
+      linkedin: 'http://www.linkedin.com/ray.charles',
+      facebook: 'http://www.facebook.com/ray.charles',
+      photoPath:
+        'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
+      projects: [
+        {
+          name: 'Lorem Ipsum sdosdsmdosdm',
+          description: 'Lorem Impsunsds',
+          owner: 'Ray Charles'
+        },
+        {
+          name: 'Lorem Ipsum sdosdsmdosdm',
+          description: 'Lorem Impsunsds',
+          owner: 'Ray Charles'
+        },
+        {
+          name: 'Lorem Ipsum sdosdsmdosdm',
+          description: 'Lorem Impsunsds',
+          owner: 'Ray Charles'
+        }
+      ]
     };
   }
-  getProfile = () => {
-    
-  }
+
   render() {
-    const {
-      photoPath,
-      name,
-      email,
-      github,
-      linkedin,
-      skills,
-      description
-    } = this.state;
+    const { name, email, linkedin, facebook, projects, photoPath } = this.state;
     return (
       <section id="dashboard">
         <div class="ui card" id="profile-div">
@@ -28,12 +39,11 @@ class DevDashBoard extends Component {
             <img src={photoPath} />
           </div>
           <div class="content">
-            <a class="header">Skills</a>
+            <a class="header">Company Name</a>
             <div class="meta">
-              <span class="date">Full-Stack Web Developer</span>
+              <span class="date">Position at the company</span>
             </div>
             <div class="description">
-              {skills}
             </div>
             <div class="meta">
               <span class="date">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
@@ -50,7 +60,7 @@ class DevDashBoard extends Component {
         <div class="ui internally celled grid">
           <div class="row">         
             <div class="ten wide column devDashBoard-profile-margin">
-              <h1>{name}</h1>
+              <h1>Name of the Entrepreneurship</h1>
               <div class="ui list">
                 <div class="item">
                   <i class="users icon"></i>
@@ -82,10 +92,10 @@ class DevDashBoard extends Component {
 
           <div class="row">
             <div class="ten wide column devDashBoard-profile-margin">
-              <h1>Projetos</h1>
+              <h1>Published Projects</h1>
               <div class="ui card">
                 <div class="content">
-                  <div class="header">Projeto Ironhack</div>
+                  <div class="header">Project Ironhack</div>
                   <div class="meta">
                     <p>Freelance</p>
                     <a>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</a>
@@ -101,4 +111,5 @@ class DevDashBoard extends Component {
     );
   }
 }
-export default DevDashBoard;
+
+export default EntDashboard;

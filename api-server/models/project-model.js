@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Enterprising = require('./emp-model');
+const Enterprising = require('./ent-model');
 const Developer = require('./dev-model');
 
 const Schema = mongoose.Schema;
