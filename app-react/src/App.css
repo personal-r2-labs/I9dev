@@ -109,25 +109,51 @@ p {
 }
 
 /* DEV-DASHBOARD*/
-
-#section-devDashBoard {
-    height: 660px;
-    border: 1px solid black;
-}
-
-#dashBoard {
+#dashboard {
     display: flex;
     border: 1px solid red;
 }
 
+.right-profile {
+    width: 80%;
+    border: 1px solid #f0f0f0;
+    padding-right: 5%;
+    box-shadow: 2px 2px #949393;
+    border-radius: 1%;
+    margin: 0.5%;
+}
+
+.profile-info {
+}
+
+
+.dashboard-size-personal {
+    margin: 10px 0 5px 10px;
+}
+
+#section-devDashBoard {
+    height: 660px;
+}
+
+#dashBoard {
+    display: flex;
+}
+
 .left-profile {
-    width: 30%;
+    width: 20%;
     min-width: 200px;
+    border-radius: 1%;
     overflow: auto;
     margin-left: 0.5%;
-    border: 1px solid black;
     display: flex;
     justify-content: start;
+    box-shadow: 2px 2px #949393;
+    border: 1px solid #f0f0f0;
+    color: rgb(134, 134, 134);
+}
+
+.left-profile img {
+    margin: 1% 5%;
 }
 
 .left-profile ul {
@@ -145,12 +171,14 @@ p {
 }
 
 #profile-icons {
-    display: flex;
     margin-left: 5%;
+    display: flex;
+    align-items: flex-start;
+    width: 80%;
 }
 
 #profile-icons div {
-    width: 50%;
+    width: 90%;
 }
 
 #profile-description {

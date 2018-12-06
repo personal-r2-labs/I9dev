@@ -28,6 +28,12 @@ class DevDashBoard extends Component {
           <div className="left-profile">
             <DevProfile photoPath={photoPath} name={name} email={email} github={github} linkedin={linkedin} skills={skills} description={description} />
           </div>
+
+          <div className="right-profile">
+            <div className="profile-info">
+              <h1>{name}</h1>
+            </div>
+          </div>
         </div>
       </section>
     );
