@@ -3,6 +3,17 @@ const router = express.Router();
 
 const Project = require('../models/project-model');
 
+router.get('/projects/', (req, res, next) => {
+  Project.find()
+  .then((proj) => {
+    console.log("esse é proj do GET details", proj);
+    res.json(proj);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+});
+
 router.get('/projects/:id', (req, res, next) => {
   console.log("esse é o conteudo do proj req.params", req.params.id);
 

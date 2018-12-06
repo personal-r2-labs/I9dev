@@ -21,6 +21,7 @@ mongoose.connect(`mongodb://localhost:27017/${dbtitle}`, { useNewUrlParser: true
         const newDeveloper = new Developer(developer);
         newDeveloper.save()
           .then(() => {
+            console.log(newDeveloper);
             mongoose.connection.close();
           })
           .catch((err) => {
@@ -33,6 +34,7 @@ mongoose.connect(`mongodb://localhost:27017/${dbtitle}`, { useNewUrlParser: true
         const newProject = new Project(project);
         newProject.save()
           .then(() => {
+            console.log(newProject);
             mongoose.connection.close();
           })
           .catch((err) => {
@@ -45,6 +47,7 @@ mongoose.connect(`mongodb://localhost:27017/${dbtitle}`, { useNewUrlParser: true
         const newEnterprising = new Enterprising(enterprising);
         newEnterprising.save()
           .then(() => {
+            console.log(newEnterprising);
             mongoose.connection.close();
           })
           .catch((err) => {
@@ -57,6 +60,7 @@ mongoose.connect(`mongodb://localhost:27017/${dbtitle}`, { useNewUrlParser: true
         const newAdministrator = new Administrator(administrator);
         newAdministrator.save()
           .then(() => {
+            console.log(newAdministrator);
             mongoose.connection.close();
           })
           .catch((err) => {
