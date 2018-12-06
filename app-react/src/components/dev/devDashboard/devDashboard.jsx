@@ -1,14 +1,28 @@
 import React, { Component } from "react";
-import DevProfile from "../devProfile/devProfile";
-import DevData from "../../../data/devData.json";
+import axios from 'axios';
+import DevProfile from '../devProfile/devProfile';
 
 class DevDashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      devProfile: DevData
     };
-    console.log(this.state.devProfile);
+  }
+  getProfile = () => {
+    // const { params } = this.props.match;
+    axios.get(`http://localhost:5000/api/projects`)
+    .then(responseFromApi => {
+      const theProfile = responseFromApi.data;
+      this.setState(theProfile);
+      console.log(this.state);
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  componentDidMount(){
+    this.getProfile();
   }
 
   render() {
@@ -20,7 +34,7 @@ class DevDashBoard extends Component {
       linkedin,
       skills,
       description
-    } = this.state.devProfile[0];
+    } = this.state;
     return (
       <section id="section-devDashBoard" className="d-flex align-items-center">
         <div className="devDashBoard">
@@ -44,5 +58,4 @@ class DevDashBoard extends Component {
     );
   }
 }
-
 export default DevDashBoard;

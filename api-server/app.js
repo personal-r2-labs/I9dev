@@ -30,12 +30,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.locals.title = 'i9Dev - The best Big Monster';
 
 const dev = require('./routes/dev-routes');
-app.use('/dev', dev);
+app.use('/api', dev);
 
 const emp = require('./routes/emp-routes');
-app.use('/emp', emp);
+app.use('/api', emp);
 
 const project = require('./routes/project-routes');
-app.use('/project', project);
+app.use('/api', project);
 
 module.exports = app;
