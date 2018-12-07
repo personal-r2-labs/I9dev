@@ -1,4 +1,5 @@
 import React from 'react'
+import { Dropdown } from 'semantic-ui-react'
 
 const NavBar1 = () => {
     return (
@@ -6,13 +7,14 @@ const NavBar1 = () => {
         <a class="active header item">
           i9Dev
         </a>
-        <div class="two fields">
-          <select class="ui fluid dropdown">
-            <option value="">Projects</option>
-            <option value="FP">Find Projects</option>
-            <option value="FD">Find Developers</option>
-          </select>
-        </div>
+
+        <Dropdown text="Projects" color="black">
+          <Dropdown.Menu>
+            <Dropdown.Item text="Search all Projects" />
+            <Dropdown.Item text="Search for Developers" />
+          </Dropdown.Menu>
+        </Dropdown>
+
         <a class=" header item">
           Find project
         </a>
