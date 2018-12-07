@@ -6,10 +6,10 @@ const NavBar1 = () => {
         <a className="active header item">
           i9Dev
         </a>
-        <a className=" header item">
+        <a className="header item">
           Find project
         </a>
-        <a className=" header item">
+        <a className="header item">
           Profile
         </a>
         <a className="header item">

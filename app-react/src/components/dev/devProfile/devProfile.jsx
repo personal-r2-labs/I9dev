@@ -1,7 +1,7 @@
 import React from "react";
 
 const DevProfile = props => {
-  console.log(props.skills)
+  console.log('DevProfile', props)
   return (
     <div className="ui card shadow" id="profile-div">
       <div className="image">
