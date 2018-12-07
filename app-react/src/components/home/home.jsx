@@ -50,8 +50,7 @@ const Home = () => {
               <div class="six wide right floated column">
                 <img
                   src="/images/image-profile/perfil-resilencia.jpg"
-                  class="ui large bordered rounded image"
-                />
+                  class="ui large bordered rounded image"/>
               </div>
             </div>
             <div class="row">
