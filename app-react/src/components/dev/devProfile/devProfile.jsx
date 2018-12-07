@@ -3,20 +3,21 @@ import React from "react";
 const DevProfile = props => {
   console.log(props.skills)
   return (
-    <div id="devProfile">
-      <img src={props.photoPath} alt="img" width="55%" />
-      <ul>
-        <li><h4>Skills</h4></li>
-        {props.skills.map(skill => {
-          console.log(skill)
-          return (
-            <li>{skill}</li>
-          )
-        })}
-      </ul>
-      <div id="profile-icons">
-        <div>
-          <a href={props.linkedin}><img src="/images/icons/linkedin.svg" width="20%" alt="linkedin" /></a>
+    <div id="devProfile" className="d-flex justify-content-start">
+      <div>
+        <div id="first-page">
+            <img id="imgProfile" width="" src={props.photoPath} alt="img" />
+            <div>
+              <h4>{props.skills}</h4>
+          </div>
+          <div id="logos" className="d-flex justify-content-around">
+              <a href={props.linkedin}>
+                <img src="/images/icons/linkedin.svg" width="25%" alt="linkedin" />
+              </a>
+              <a href={props.github}>
+                <img src="/images/icons/github-sign.svg" width="25%" alt="github" />
+              </a>
+          </div>
         </div>
         <div>
           <a href={props.github}><img src="/images/icons/github-sign.svg" width="20%" alt="github" /></a>

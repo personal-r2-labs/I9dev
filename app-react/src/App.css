@@ -7,27 +7,6 @@
     padding: 0;
 }
 
-/* NAVBAR */
-
-#navBar {
-    position: fixed;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    height: 50px;
-}
-
-#navBar a {
-    font-size: 1.8em;
-}
-
-#fix-nav {
-    position: fixed;
-    width: 100%;
-    height: 10vh;
-}
-
-/* ////////////////////////////////////////////////////////*/
-
 #projects-2 {
     width: 50%;
     height: 100vh;
@@ -44,88 +23,36 @@
     list-style: none;
 }
 
-/* HOME */
-
-#home {
-    background-image: url("/images/rawpixel-706373-unsplash.jpg");
-    background-size: cover;
-    height: 100vh;
-}
-
-/* CARD-DEV */
-
-#cardDev {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    flex-wrap: wrap;
-    font-size: 1.8em;
-}
-
-.div-one button, .div-two button, .div-three button {
-    font-size: 1em;
-}
-
-.div-one, .div-two, .div-three {
-    border-radius: 0.5em;
-    border: 2px solid rgb(206, 206, 206);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 25%;
-    height: 500px;
-    min-width: 200px;
-    margin: 3%;
-}
-
-#cardDev p {
-    color: grey;
-    font-weight: 300;
-    margin: 5%;
-}
-
-
-/* FOOTER */
-
-#footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 1.8em;
-}
-
-#footer {
-    width: 100%;
-    height: 20%;
-}
-
-p {
-    margin: 1%;
-    font-size: 1em;
-}
-
 /* DEV-DASHBOARD*/
 #dashboard {
     display: flex;
-    border: 1px solid red;
+    width: 100%;
+    height: 600px;
+    margin: 3%;
+    /* border: 1px solid red; */
 }
 
-.right-profile {
-    width: 80%;
-    border: 1px solid #f0f0f0;
-    padding-right: 5%;
-    box-shadow: 2px 2px #949393;
-    border-radius: 1%;
-    margin: 0.5%;
+#profile-div {
+    width: 25%;
+    min-width: 200px;
 }
 
-.profile-info {
+.devDashBoard-size-personal {
+    width: 100%;
+    margin: 10px 0 0 20px;
 }
 
+.devDashBoard-profile-margin {
+    margin-left: 2%;
+}
+
+.devDashBoard-h1 {
+
+}
+
+.devDashBoard-size-project {
+
+}
 
 .dashboard-size-personal {
     margin: 10px 0 5px 10px;
@@ -217,3 +144,97 @@ p {
     margin: 0.5%;
 }
 
+/* Home */
+
+#fix-nav {
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#bg-home {
+    background-image: url("/images/background/rawpixel-706373-unsplash.jpg");
+    background-size: cover;
+    color: white;
+    padding-top:0; 
+}
+
+.hidden.menu {
+    display: none;
+  }
+  .masthead.segment {
+    min-height: 700px;
+    padding: 1em 0em;
+  }
+  .masthead .logo.item img {
+    margin-right: 1em;
+  }
+  .masthead .ui.menu .ui.button {
+    margin-left: 0.5em;
+  }
+  .masthead h1.ui.header {
+    margin-top: 3em;
+    margin-bottom: 0em;
+    font-size: 4em;
+    font-weight: normal;
+  }
+  .masthead h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+  }
+  .ui.vertical.stripe {
+    padding: 8em 0em;
+  }
+  .ui.vertical.stripe h3 {
+    font-size: 2em;
+  }
+  .ui.vertical.stripe .button + h3,
+  .ui.vertical.stripe p + h3 {
+    margin-top: 3em;
+  }
+  .ui.vertical.stripe .floated.image {
+    clear: both;
+  }
+  .ui.vertical.stripe p {
+    font-size: 1.33em;
+  }
+  .ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em;
+  }
+  .quote.stripe.segment {
+    padding: 0em;
+  }
+  .quote.stripe.segment .grid .column {
+    padding-top: 5em;
+    padding-bottom: 5em;
+  }
+  .footer.segment {
+    padding: 5em 0em;
+  }
+  .secondary.pointing.menu .toc.item {
+    display: none;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .ui.fixed.menu {
+      display: none !important;
+    }
+    .secondary.pointing.menu .item,
+    .secondary.pointing.menu .menu {
+      display: none;
+    }
+    .secondary.pointing.menu .toc.item {
+      display: block;
+    }
+    .masthead.segment {
+      min-height: 350px;
+    }
+    .masthead h1.ui.header {
+      font-size: 2em;
+      margin-top: 1.5em;
+    }
+    .masthead h2 {
+      margin-top: 0.5em;
+      font-size: 1.5em;
+    }
+  }
