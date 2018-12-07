@@ -1,52 +1,54 @@
-import React, { Component } from 'react'
-import { Form } from 'semantic-ui-react'
+import React from 'react'
+import { Tab, Form, Input, Button, Icon  } from 'semantic-ui-react'
 
-const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
+const panes = [
+  { menuItem: 'Developer', render: () => <Tab.Pane>
+    <Form action=''>
+      <Form.Group widths='equal'>
+        <Form.Input fluid label='First name' placeholder='First name' />
+        <Form.Input fluid label='Last name' placeholder='Last name' />
+      </Form.Group>
+      <Form.Group widths='equal'>
+        <Form.Input fluid label='Contact Email' placeholder='Email' />
+      </Form.Group>
+      <Form.Group widths='equal'>
+        <Form.Input fluid label='Linkedin Page' placeholder='Linkedin URL' />
+      </Form.Group>
+      <Form.Field inline>
+        <label>GitHub ID</label>
+        <Input placeholder='First name' />
+      </Form.Field>
+      <Form.TextArea label='Description' placeholder='Tell us more about you...' />
+      <Button type="submit" icon labelPosition='right'>
+      Submit
+      <Icon name='save' />
+    </Button>
+    </Form>
+  </Tab.Pane> },
+
+  { menuItem: 'Entrepreneurship', render: () => <Tab.Pane>
+    <div>
+    <Form action=''>
+      <Form.Group widths='equal'>
+        <Form.Input fluid label='First name' placeholder='First name' />
+        <Form.Input fluid label='Last name' placeholder='Last name' />
+      </Form.Group>
+      <Form.Group widths='equal'>
+        <Form.Input fluid label='Contact Email' placeholder='Email' />
+      </Form.Group>
+      <Form.Group widths='equal'>
+        <Form.Input fluid label='Linkedin Page' placeholder='Linkedin URL' />
+      </Form.Group>
+      <Form.TextArea label='Description' placeholder='Tell us more about you...' />
+      <Button type="submit" icon labelPosition='right'>
+      Submit
+      <Icon name='save' />
+    </Button>
+    </Form>
+    </div>
+  </Tab.Pane> },
 ]
 
-class SignUp2 extends Component {
-  state = {}
+const TabToggle = () => <Tab panes={panes} />
 
-  handleChange = (e, { value }) => this.setState({ value })
-
-  render() {
-    const { value } = this.state
-    return (
-      <Form>
-        <Form.Group widths='equal'>
-          <Form.Input fluid label='First name' placeholder='First name' />
-          <Form.Input fluid label='Last name' placeholder='Last name' />
-          <Form.Select fluid label='Gender' options={options} placeholder='Gender' />
-        </Form.Group>
-        <Form.Group inline>
-          <label>Size</label>
-          <Form.Radio
-            label='Small'
-            value='sm'
-            checked={value === 'sm'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Medium'
-            value='md'
-            checked={value === 'md'}
-            onChange={this.handleChange}
-          />
-          <Form.Radio
-            label='Large'
-            value='lg'
-            checked={value === 'lg'}
-            onChange={this.handleChange}
-          />
-        </Form.Group>
-        <Form.TextArea label='About' placeholder='Tell us more about you...' />
-        <Form.Checkbox label='I agree to the Terms and Conditions' />
-        <Form.Button>Submit</Form.Button>
-      </Form>
-    )
-  }
-}
-
-export default SignUp2;
+export default TabToggle;
