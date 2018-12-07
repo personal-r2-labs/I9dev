@@ -6,7 +6,14 @@ const NavBar1 = () => {
         <a className="active header item">
           i9Dev
         </a>
-        <a className=" header item">
+        <div class="two fields">
+          <select class="ui fluid dropdown">
+            <option value="">Projects</option>
+            <option value="FP">Find Projects</option>
+            <option value="FD">Find Developers</option>
+          </select>
+        </div>
+        <a class=" header item">
           Find project
         </a>
         <a className=" header item">

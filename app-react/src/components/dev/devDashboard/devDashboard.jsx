@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import DevProfile from '../devProfile/devProfile';
+<<<<<<< HEAD
 import DevData from "../../../data/devData.json";
 import NavBar1 from "../../navBar/navBar1";
 import DevProfile from "../devProfile/devProfile.jsx";
+=======
+import NavBar1 from '../../navBar/navBar1'
+>>>>>>> 895762fd5fb06877510c48714c62d4cfd8158605
 
 class DevDashBoard extends Component {
   constructor(props) {

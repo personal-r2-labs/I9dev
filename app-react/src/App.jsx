@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import ButtonExampleInverted from './components/test/ButtonExampleInverted'
+import SignUp from './components/auth/SignUp/signUp'
+import NavBar1 from './components/navBar/navBar1'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <ButtonExampleInverted />
+        <NavBar1 />
+        <SignUp />
       </div>
     );
   }
