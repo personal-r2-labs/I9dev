@@ -8,7 +8,7 @@ const NavBar1 = () => {
           i9Dev
         </a>
 
-        <Dropdown text="Projects" color="black">
+        <Dropdown text="Projects" className="NavBar-FontColor">
           <Dropdown.Menu>
             <Dropdown.Item text="Search all Projects" />
             <Dropdown.Item text="Search for Developers" />
