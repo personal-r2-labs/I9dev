@@ -8,9 +8,28 @@ class DevDashBoard extends Component {
     this.state = {
     };
   }
-  getProfile = () => {
-    
+  getDev = () => {
+    // const { params } = this.props.match;
+    axios
+      .get(`http://localhost:5000/api/dev`)
+      .then(responseFromApi => {
+        const theDev = responseFromApi.data;
+        this.setState({ devProfile: theDev });
+        // console.log(this.state);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  componentDidMount() {
+    this.getDev();
   }
+
+  setDev = () => {
+    axios.post('http://localhost:5000/api/')
+  }
+
   render() {
     const {
       photoPath,

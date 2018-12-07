@@ -1,40 +1,16 @@
 import React, { Component } from 'react';
-import EmpProfile from '../empProfile/empProfile';
+import EntProfile from '../entProfile/entProfile';
 
-class EmpDashboard extends Component {
+class EntDashboard extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: 'Ray Charles',
-      email: 'ray.charles@ironhack.com',
-      linkedin: 'http://www.linkedin.com/ray.charles',
-      facebook: 'http://www.facebook.com/ray.charles',
-      photoPath:
-        'https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg',
-      projects: [
-        {
-          name: 'Lorem Ipsum sdosdsmdosdm',
-          description: 'Lorem Impsunsds',
-          owner: 'Ray Charles'
-        },
-        {
-          name: 'Lorem Ipsum sdosdsmdosdm',
-          description: 'Lorem Impsunsds',
-          owner: 'Ray Charles'
-        },
-        {
-          name: 'Lorem Ipsum sdosdsmdosdm',
-          description: 'Lorem Impsunsds',
-          owner: 'Ray Charles'
-        }
-      ]
-    };
+    this.state = {};
   }
-
+  
   render() {
     const { name, email, linkedin, facebook, projects, photoPath } = this.state;
     return (
-      <EmpProfile
+      <EntProfile
         name={name}
         email={email}
         linkedin={linkedin}
@@ -46,4 +22,4 @@ class EmpDashboard extends Component {
   }
 }
 
-export default EmpDashboard;
+export default EntDashboard;
