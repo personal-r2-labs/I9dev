@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar1 />
-        <SignUp2 />
+        <AddProject />
       </div>
     );
   }
