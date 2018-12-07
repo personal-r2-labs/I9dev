@@ -5,34 +5,24 @@ const DevProfile = props => {
     <div id="devProfile" className="d-flex justify-content-start">
       <div>
         <div id="first-page">
-          <div className="d-flex">
-            <img id="imgProfile" src={props.photoPath} alt="img" />
+            <img id="imgProfile" width="" src={props.photoPath} alt="img" />
             <div>
-              <p>Name: {props.name}</p>
-              <p>Email: {props.email}</p>
-              <p>Skills: {props.skills}</p>
-            </div>
+              <h4>{props.skills}</h4>
           </div>
           <div id="logos" className="d-flex justify-content-around">
-            <div>
               <a href={props.linkedin}>
-                <img
-                  src="/images/linkedin-icon.png"
-                  width="35%"
-                  alt="linkedin"
-                />
+                <img src="/images/icons/linkedin.svg" width="25%" alt="linkedin" />
               </a>
-            </div>
-            <div>
               <a href={props.github}>
-                <img src="/images/github-icon.png" width="20%" alt="github" />
+                <img src="/images/icons/github-sign.svg" width="25%" alt="github" />
               </a>
-            </div>
           </div>
         </div>
-        <div className="d-flex flex-fill">
-          <p>Description: {props.description}</p>
+        <div id='profile-description'>
+          <p>{props.description}</p>
         </div>
+      </div>
+      <div id='second-page'>
       </div>
     </div>
   );

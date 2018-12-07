@@ -11,7 +11,7 @@ const NavBar = () => {
               <a className="nav-link text-white" href="#cardDev">How it works</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-white" href="#">Projects</a>
+              <a className="nav-link text-white" href="#">Projects</a>  
             </li>
             <li className="nav-item active">
               <a className="nav-link text-white" href="#footer">About</a>
@@ -22,6 +22,7 @@ const NavBar = () => {
           </span>
         </div>
       </nav>
+      <div id="fix-nav"></div>
     </div>
   );
 };
