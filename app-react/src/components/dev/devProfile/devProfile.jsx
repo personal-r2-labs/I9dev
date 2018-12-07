@@ -1,6 +1,7 @@
 import React from "react";
 
 const DevProfile = props => {
+  console.log(props.skills)
   return (
     <div id="devProfile" className="d-flex justify-content-start">
       <div>
@@ -18,11 +19,12 @@ const DevProfile = props => {
               </a>
           </div>
         </div>
-        <div id='profile-description'>
-          <p>{props.description}</p>
+        <div>
+          <a href={props.github}><img src="/images/icons/github-sign.svg" width="20%" alt="github" /></a>
         </div>
       </div>
-      <div id='second-page'>
+      <div id="profile-description">
+      <p>{props.description}</p>
       </div>
     </div>
   );

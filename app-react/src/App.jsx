@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import NavBar from './components/navBar/navBar'
 import DevDashBoard from './components/dev/devDashboard/devDashboard.jsx'
-import ProjectDashBoard from './components/project/projectDashboard/projectDashboard';
 import Home from './components/home/home'
-import Footer from './components/footer/footer'
 import EntDashboard from './components/ent/entDashboard/entDashboard'
 import AddProject from './components/project/addProject/addProject'
+import SignUp from './components/auth/SignUp/signUp'
+import NavBar1 from './components/navBar/navBar1'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <AddProject />
+        <NavBar1 />
+        <SignUp />
       </div>
     );
   }

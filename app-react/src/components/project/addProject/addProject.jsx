@@ -56,7 +56,7 @@ const AddProject = () => {
         </ul>
       </div>
 
-      <div class="ui animated button" tabindex="0">
+      <div class="ui animated button massive" tabindex="0">
         <div class="visible content">Submit</div>
         <div class="hidden content">
           <i class="save outline icon"></i>
