@@ -3,29 +3,25 @@ import React from "react";
 const DevProfile = props => {
   console.log(props.skills)
   return (
-    <div id="devProfile" className="d-flex justify-content-start">
-      <div>
-        <div id="first-page">
-            <img id="imgProfile" width="" src={props.photoPath} alt="img" />
-            <div>
-              <h4>{props.skills}</h4>
-          </div>
-          <div id="logos" className="d-flex justify-content-around">
-              <a href={props.linkedin}>
-                <img src="/images/icons/linkedin.svg" width="25%" alt="linkedin" />
-              </a>
-              <a href={props.github}>
-                <img src="/images/icons/github-sign.svg" width="25%" alt="github" />
-              </a>
-          </div>
+    <div className="ui card shadow" id="profile-div">
+      <div className="image">
+        <img src={props.photoPath} />
+      </div> 
+        <div className="content">
+          <a className="header">Skills</a>
+            <div className="meta">
+            <span className="date">Full-Stack Web Developer</span>
         </div>
-        <div>
-          <a href={props.github}><img src="/images/icons/github-sign.svg" width="20%" alt="github" /></a>
+        <div className="description">
+          {props.skills}
         </div>
-      </div>
-      <div id="profile-description">
-      <p>{props.description}</p>
-      </div>
+        <div className="meta">
+          <span className="date">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+        </div>
+        </div>
+        <div className="extra content">
+          <a><i className="window restore outline icon"></i>22 Projects</a>
+        </div>
     </div>
   );
 };

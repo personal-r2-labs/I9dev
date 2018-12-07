@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import DevProfile from "../devProfile/devProfile";
 import DevData from "../../../data/devData.json";
 import NavBar1 from "../../navBar/navBar1";
+import DevProfile from "../devProfile/devProfile.jsx";
 
 class DevDashBoard extends Component {
   constructor(props) {
@@ -49,30 +49,7 @@ class DevDashBoard extends Component {
         <section>
           <NavBar1 />
           <div id="dashboard">
-            <div className="ui card shadow" id="profile-div">
-              <div className="image">
-                <img src={photoPath} />
-              </div> 
-              <div className="content">
-                <a className="header">Skills</a>
-                <div className="meta">
-                  <span className="date">Full-Stack Web Developer</span>
-                </div>
-                <div className="description">
-                  {skills}
-                </div>
-                <div className="meta">
-                  <span className="date">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
-                </div>
-              </div>
-              <div className="extra content">
-                <a>
-                  <i className="window restore outline icon"></i>
-                  22 Projects
-                </a>
-              </div>
-            </div>
-
+          <DevProfile skills={skills} photoPath={photoPath} />
             <div className="ui internally celled grid">
               <div className="row">
                 <div className="ten wide column devDashBoard-profile-margin">
