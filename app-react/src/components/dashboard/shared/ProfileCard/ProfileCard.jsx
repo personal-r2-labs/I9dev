@@ -6,7 +6,7 @@ const DevProfileCard = (props) => {
     <Card id="card-profile" className="shadow">
         <Image src={props.photoPath} />
         <Card.Content>
-            <Card.Header>{props.name}</Card.Header>
+            <Card.Header>{ props.name     }</Card.Header>
             <Card.Meta>
             <span className='date'>Joined in 2015</span>
         </Card.Meta>
