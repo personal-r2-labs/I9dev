@@ -3,10 +3,10 @@ import "./devDashboard.css";
 import axios from "axios";
 import ProfileCard from "../shared/ProfileCard/ProfileCard";
 import Info from "../shared/info/Info";
-import { Grid, Segment, GridColumn, Card } from "semantic-ui-react";
+import { Grid, GridColumn } from "semantic-ui-react";
 import LastProjects from "../shared/lastProjects/LastProjects";
 import StatusCard from "../shared/statusCard/StatusCard";
-import NavBar1 from "../shared/NavBar/navBar1"
+import NavBar1 from "../shared/NavBar/navBar1";
 
 class DevDashBoard extends Component {
   /*   constructor(props) {
@@ -46,20 +46,20 @@ class DevDashBoard extends Component {
       field = <div onClick={event => this.handleEditField(event)} className="content"><p>{this.state.initialText}</p></div>;
     } */
     return (
-        <div>
-            <NavBar1 />
-      <Grid columns={3} id="grid" stackable container doubling>
-        <Grid.Row>
-          <ProfileCard />
-          <Grid.Column width={7}>
-            <Info />
-            <StatusCard />
-          </Grid.Column>
-          <GridColumn width={5}>
-            <LastProjects />
-          </GridColumn>
-        </Grid.Row>
-      </Grid>
+      <div>
+        <NavBar1 />
+        <Grid columns={3} id="grid" stackable container doubling>
+          <Grid.Row>
+            <ProfileCard />
+            <Grid.Column width={7}>
+              <Info />
+              <StatusCard />
+            </Grid.Column>
+            <GridColumn width={5}>
+              <LastProjects />
+            </GridColumn>
+          </Grid.Row>
+        </Grid>
       </div>
     );
   }

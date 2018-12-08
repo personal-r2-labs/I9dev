@@ -14,7 +14,6 @@ const NavBar1 = () => {
 
         <Dropdown text='Projects' pointing className='link item'>
           <Dropdown.Menu>
-            <Dropdown.Header>Categories</Dropdown.Header>
             <Dropdown.Item>Home Goods</Dropdown.Item>
             <Dropdown.Item>Bedroom</Dropdown.Item>
           </Dropdown.Menu>
