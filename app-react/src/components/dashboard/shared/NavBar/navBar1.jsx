@@ -8,24 +8,23 @@ const NavBar1 = () => {
           i9Dev
         </a>
 
-        <Dropdown text="Projects" className="NavBar-FontColor">
-          <Dropdown.Menu>
-            <Dropdown.Item text="Search all Projects" />
-            <Dropdown.Item text="Search for Developers" />
-          </Dropdown.Menu>
-        </Dropdown>
-
-        <a class=" header item">
-          Find project
-        </a>
         <a className="header item">
           Profile
         </a>
+
+        <Dropdown text='Projects' pointing className='link item'>
+          <Dropdown.Menu>
+            <Dropdown.Header>Categories</Dropdown.Header>
+            <Dropdown.Item>Home Goods</Dropdown.Item>
+            <Dropdown.Item>Bedroom</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+
         <a className="header item">
           About us
         </a>
         <div className="right menu">
-          <a className="item header">profile name</a>
+          <a className="item center">Hello! Guilherme Davi</a>
           <a className="item">Logout</a>
         </div>
       </div>

@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import DevDashBoard from './components/dashboard/DevDashboard/DevDashboard'
+import './App.css'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+class AppTest extends Component {
+  render() {
+    return (
+      <div className="App">
+        <DevDashBoard />
+      </div>
+    );
+  }
+}
+
+export default AppTest;
