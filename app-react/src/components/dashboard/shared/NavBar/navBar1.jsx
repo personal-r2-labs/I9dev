@@ -1,4 +1,5 @@
 import React from 'react'
+import { Dropdown } from 'semantic-ui-react'
 
 const NavBar1 = () => {
     return (
@@ -6,7 +7,15 @@ const NavBar1 = () => {
         <a className="active header item">
           i9Dev
         </a>
-        <a className="header item">
+
+        <Dropdown text="Projects" className="NavBar-FontColor">
+          <Dropdown.Menu>
+            <Dropdown.Item text="Search all Projects" />
+            <Dropdown.Item text="Search for Developers" />
+          </Dropdown.Menu>
+        </Dropdown>
+
+        <a class=" header item">
           Find project
         </a>
         <a className="header item">
