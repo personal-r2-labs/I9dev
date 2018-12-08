@@ -1,9 +1,8 @@
 import React, { Component } from "react";
+import axios from 'axios';
 import DevData from "../../../data/devData.json";
-import NavBar1 from "../../navBar/navBar1";
-import DevProfile from "../devProfile/devProfile.jsx";
-import DevCardInfo from "../devProfile/devCardInfo.jsx";
-import Container from "../devProfile/container.jsx";
+import DevProfileCard from "../devProfileCard/devProfileCard.jsx";
+import { Grid, Image, Card, Icon, Segment, List, ListItem, Header } from 'semantic-ui-react';
 
 class DevDashBoard extends Component {
   constructor(props) {
@@ -48,12 +47,57 @@ class DevDashBoard extends Component {
     }
 
     return (
-        <section>
-          <NavBar1 />
-          <Container name={name} email={email} skills={skills} photoPath={photoPath} field={field}/>
-       </section>
+      <Grid columns={2} basic>
+      <Grid.Row>
+        <Grid.Column width={5}>
+          <Image src='/images/wireframe/media-paragraph.png' />
+          <DevProfileCard name={name} photoPath={photoPath} description={description} />
+        </Grid.Column>
+
+        <Grid.Column>
+          <Grid.Row >
+
+          <List>
+            <List.Item className="margin-top">
+              <List.Icon name='users' />
+              <List.Content>Semantic UI</List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name='marker' />
+              <List.Content>New York, NY</List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name='mail' />
+              <List.Content>
+                <a href='mailto:jack@semantic-ui.com'>jack@semantic-ui.com</a>
+              </List.Content>
+            </List.Item>
+            <List.Item>
+              <List.Icon name='linkify' />
+              <List.Content>
+                <a href='http://www.semantic-ui.com'>semantic-ui.com</a>
+              </List.Content>
+            </List.Item>
+          </List>
+
+          </Grid.Row>
+          <Grid.Row id="address">
+            <List>
+              <List.Item>
+                <List.Header as='h3'>Address:</List.Header>
+                <ListItem>Rua Ivai, 277</ListItem>
+                <ListItem>Tatuapé</ListItem>
+                <ListItem>São Paulo - SP</ListItem>
+                <ListItem>Brazil</ListItem>
+              </List.Item>
+            </List>
+          </Grid.Row>
+        </Grid.Column>
+
+      </Grid.Row>
+  
+    </Grid>
     );
   }
 }
-
 export default DevDashBoard;

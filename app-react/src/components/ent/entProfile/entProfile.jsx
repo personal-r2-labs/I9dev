@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EmpProfile = (props) => {
+const EntProfile = (props) => {
   return (
     <div>
       <p>Name: {props.name}</p>
@@ -19,4 +19,4 @@ const EmpProfile = (props) => {
   )
 }
 
-export default EmpProfile;
+export default EntProfile;
