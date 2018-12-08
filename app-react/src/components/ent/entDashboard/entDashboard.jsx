@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBar1 from '../../navBar/navBar1';
 
 class EntDashboard extends Component {
   constructor(props) {
@@ -9,7 +10,10 @@ class EntDashboard extends Component {
   render() {
     const { name, email, linkedin, facebook, projects, photoPath } = this.state;
     return (
-      <section id="dashboard">
+      <section >
+      <NavBar1 />
+      <div id="dashboard">
+
         <div class="ui card" id="profile-div">
           <div class="image">
             <img src={photoPath} />
@@ -82,6 +86,7 @@ class EntDashboard extends Component {
             </div>
 
           </div>
+        </div>
         </div>
       </section>
     );

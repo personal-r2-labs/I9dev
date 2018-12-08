@@ -36,9 +36,40 @@ class DevDashBoard extends Component {
       linkedin,
       skills,
       description
+<<<<<<< HEAD
     } = this.state.devProfile[0];
 
     let field;
+=======
+    } = this.state;
+    return (
+        <section>
+          <NavBar1 />
+          <div id="dashboard">
+            <div class="ui card shadow" id="profile-div">
+              <div class="image">
+                <img src={photoPath} />
+              </div> 
+              <div class="content">
+                <a class="header">Skills</a>
+                <div class="meta">
+                  <span class="date">Full-Stack Web Developer</span>
+                </div>
+                <div class="description">
+                  {skills}
+                </div>
+                <div class="meta">
+                  <span class="date">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
+                </div>
+              </div>
+              <div class="extra content">
+                <a>
+                  <i class="window restore outline icon"></i>
+                  22 Projects
+                </a>
+              </div>
+            </div>
+>>>>>>> 8200bccc176ec58d86c977b039c35fb1fa652728
 
     if(this.state.isEditing){
       field = <input type="text" value={this.state.initialText} onChange={event => this.handleChange(event)} />;
@@ -54,6 +85,7 @@ class DevDashBoard extends Component {
           <DevProfileCard name={name} photoPath={photoPath} description={description} />
         </Grid.Column>
 
+<<<<<<< HEAD
         <Grid.Column>
           <Grid.Row >
 
@@ -97,6 +129,26 @@ class DevDashBoard extends Component {
       </Grid.Row>
   
     </Grid>
+=======
+              <div class="row">
+                <div class="ten wide column devDashBoard-profile-margin">
+                  <h1>Projetos</h1>
+                  <div class="ui card shadow">
+                    <div class="content">
+                      <div class="header">Projeto Ironhack</div>
+                      <div class="meta">
+                        <p>Freelance</p>
+                        <a>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</a>
+                      </div>
+                    </div>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+        </div>
+       </section>
+>>>>>>> 8200bccc176ec58d86c977b039c35fb1fa652728
     );
   }
 }
