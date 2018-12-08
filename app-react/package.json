@@ -4,15 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "faker": "^4.1.0",
+    "lodash": "^4.17.11",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
-<<<<<<< HEAD
-=======
-    "semantic-ui": "^2.4.2",
->>>>>>> 396fc58e2ac8890fc21c2bd5a901b5e2b34639a1
     "semantic-ui-react": "^0.83.0"
   },
   "scripts": {

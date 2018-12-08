@@ -1,22 +1,35 @@
 import React, { Component } from 'react';
 import './App.css';
-<<<<<<< HEAD
-import SignUp from './components/auth/SignUp/signUp'
-=======
-import DevDashBoard from './components/dev/devDashboard/devDashboard.jsx'
-import Home from './components/home/home'
-import EntDashboard from './components/ent/entDashboard/entDashboard'
-import AddProject from './components/project/addProject/addProject'
-import SignUp2 from './components/auth/SignUp/SignUp2'
->>>>>>> 396fc58e2ac8890fc21c2bd5a901b5e2b34639a1
-import NavBar1 from './components/navBar/navBar1'
+import { Switch, Route } from 'react-router-dom';
+
+//Home Page Component
+import Home from './components/home/home';
+
+//SignUp and Login Component
+import LoginSignUp from './components/auth/LoginSignUp/LoginSignUp';
+
+// Projects Components
+import Projects from './components/project/projectDashboard/projectDashboard';
+import ProjectDetails from './components/project/projectDetails/projectDetails';
+
+// Developers Component
+import Dev from './components/dev/devDashboard/devDashboard';
+
+// Enterprise Component
+import Ent from './components/ent/entDashboard/entDashboard';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <NavBar1 />
-        <SignUp2 />
+      <Switch >
+        <Route exact path='/' component={Home} />
+        <Route path='/projects' component={Projects} />
+        <Route path='/projects/:id' component={ProjectDetails} />
+        <Route path='/loginsignup' component={LoginSignUp} />
+        <Route path='/dev' component={Dev} />
+        <Route path='/ent' component={Ent} />
+      </Switch>
       </div>
     );
   }
