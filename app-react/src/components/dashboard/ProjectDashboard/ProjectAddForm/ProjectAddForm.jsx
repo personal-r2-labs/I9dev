@@ -19,10 +19,10 @@ const AddProject = () => {
         <input type="date" name="dateExpire" placeholder="dd/mm/yyyy" />
       </div>
       <Form.TextArea label='Description' placeholder='Tell us about your project' />
-       <Button type="submit" icon labelPosition='right'>
-        Submit
+        <Button type="submit" icon labelPosition='right'>
+          Submit
         <Icon name='save' />
-       </Button>
+        </Button>
     </Form>
   );
 };
