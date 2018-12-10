@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 
 const bodyParser = require('body-parser');
@@ -43,8 +42,17 @@ app.use('/api', dev);
 const ent = require('./routes/ent-routes');
 app.use('/api', ent);
 
-
 const project = require('./routes/project-routes');
 app.use('/api', project);
+
+const auth = require('./routes/auth-routes');
+app.use('/api', auth);
+
+//Passport Setup
+require('./configs/passport/strategy');
+
+// app.use(session({ secret: "cats" }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 module.exports = app;

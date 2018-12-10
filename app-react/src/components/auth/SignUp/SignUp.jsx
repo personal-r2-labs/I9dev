@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tab, Form, Input, Button, Icon, Grid, Segment, Divider  } from 'semantic-ui-react'
+import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react'
 
 import '../auth.css'
 
@@ -8,15 +8,15 @@ const panes = [
     <Tab.Pane>
       <Grid columns='equal'>
         <Grid.Column>
-          <Form size='large' action=''>
+          <Form action='http://localhost:5000/api/signup/dev' method='POST' size='large'>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Full name' placeholder='Full name' />
+              <Form.Input fluid label='Full name' name='name' placeholder='Full name' />
             </Form.Group>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Contact Email' placeholder='Email' />
+              <Form.Input fluid label='Contact Email' name='email' placeholder='Email' />
             </Form.Group>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Password' placeholder='Password' />
+              <Form.Input fluid label='Password' name='password' placeholder='Password' />
             </Form.Group>
             <Button type="submit" icon labelPosition='right'>
              Submit
@@ -24,9 +24,11 @@ const panes = [
             </Button>
           </Form>
         </Grid.Column>
+
         <Grid.Column width='1'>
           <Divider vertical>Or</Divider>
         </Grid.Column>
+
         <Grid.Column id="Signup-Column" verticalAlign="middle">
           <Button id="Signup-Column-Item" color='facebook'>
             <Icon name='facebook' /> Facebook
@@ -45,15 +47,15 @@ const panes = [
     <Tab.Pane>
       <Grid columns='equal'>
         <Grid.Column>
-          <Form size='large' action=''>
+          <Form action='http://localhost:5000/api/signup/ent' method='POST' size='large'>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Full name' placeholder='Full name' />
+              <Form.Input fluid name='name' label='Full name' placeholder='Full name' />
             </Form.Group>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Contact Email' placeholder='Email' />
+              <Form.Input fluid name='email' label='Contact Email' placeholder='Email' />
             </Form.Group>
             <Form.Group widths='equal'>
-              <Form.Input fluid label='Password' placeholder='Password' />
+              <Form.Input fluid name='password' label='Password' placeholder='Password' />
             </Form.Group>
             <Button type="submit" icon labelPosition='right'>
               Submit
