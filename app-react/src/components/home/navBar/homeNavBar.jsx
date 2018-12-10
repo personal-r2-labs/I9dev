@@ -20,7 +20,7 @@ class HomeNavBar extends Component {
 
     return (
       <Segment id='color'>
-        <Menu inverted pointing secondary attached="top">
+        <Menu inverted pointing secondary attached="top" stackable>
           <Menu.Item
             name="i9Dev"
             active={activeItem === "i9Dev"}

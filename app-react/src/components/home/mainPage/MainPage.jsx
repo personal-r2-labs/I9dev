@@ -1,12 +1,16 @@
 import React from "react";
-import HomeNavBar from "../navBar/homeNavBar";
-import MainImage from "../mainImage/MainImage";
+import HomeNavContainer from "../homeHeader/HomeHeaderResponsive";
+import MobileContainer from "../homeHeader/MobileContainer";
+import HomeSectionOne from "../homeHeader/HomeSectionOne";
+import HomeHeaderResponsive from "../homeHeader/HomeHeaderResponsive";
 
 const MainPage = () => {
   return (
   <section>
-    <HomeNavBar />
-    <MainImage />
+    <HomeHeaderResponsive />
+    <MobileContainer />
+    <HomeNavContainer />
+    <HomeSectionOne />
   </section>
   );
 };
