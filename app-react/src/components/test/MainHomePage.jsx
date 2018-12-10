@@ -85,14 +85,13 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a">
-                  Home
-                </Menu.Item>
+                <Menu.Item as="a">i9Dev</Menu.Item>
+                <Menu.Item as="a">Home</Menu.Item>
                 <Menu.Item as="a">Work</Menu.Item>
                 <Menu.Item as="a">Company</Menu.Item>
                 <Menu.Item as="a">Careers</Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
+                  <Button href="login" as="a" inverted={!fixed}>
                     Log in
                   </Button>
                   <Button
@@ -144,9 +143,7 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a">
-            Home
-          </Menu.Item>
+          <Menu.Item as="a">Home</Menu.Item>
           <Menu.Item as="a">Work</Menu.Item>
           <Menu.Item as="a">Company</Menu.Item>
           <Menu.Item as="a">Careers</Menu.Item>
@@ -163,7 +160,9 @@ class MobileContainer extends Component {
                 Login
               </Button>
             </Form>
-          <Divider horizontal inverted>Or</Divider>
+            <Divider horizontal inverted>
+              Or
+            </Divider>
             <Button color="facebook">
               <Icon name="facebook" />
             </Button>
@@ -218,7 +217,7 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node
 };
 
-const MainHomePage = () => (
+const MainHomePage = (props) => (
   <ResponsiveContainer>
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
@@ -280,38 +279,45 @@ const MainHomePage = () => (
       </Grid>
     </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
+      <Container text inverted>
+      <Header id="#login" as="h3" style={{ fontSize: "2em" }} textAlign="center">
+        You can login with email and password or with your social medias, your choice!
         </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button>
+        <Grid>
+          <Grid.Column width={10}>
+            <Form>
+              <Form.Field>
+                <label>Email</label>
+                <input placeholder="John@Travolta" />
+              </Form.Field>
+              <Form.Field>
+                <label>Password</label>
+                <input placeholder="Swordfish" />
+              </Form.Field>
+              <Form.Field />
+              <Button type="submit" primary>Get in!</Button>
+            </Form>
+          </Grid.Column>
+          <Grid.Column width={15}>
+            <Button color="facebook" >
+              <Icon name="facebook" /> Facebook
+            </Button>
+            <Button color="linkedin">
+              <Icon name="linkedin" /> Linkedin
+            </Button>
+            <Button color="grey">
+              <Icon name="github" /> GitHub
+            </Button>
+          </Grid.Column>
+        </Grid>
         <Divider
           as="h4"
           className="header"
           horizontal
           style={{ margin: "3em 0em", textTransform: "uppercase" }}
         >
-          <a href="#">Case Studies</a>
+          <a href="#">Or</a>
         </Divider>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur
-          filler content, but it's really true. It took years of gene splicing
-          and combinatory DNA research, but our bananas can really dance.
-        </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
       </Container>
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>

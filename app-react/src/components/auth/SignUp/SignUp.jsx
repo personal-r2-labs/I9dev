@@ -1,6 +1,5 @@
 import React from 'react'
-import { Tab, Form, Input, Button, Icon, Grid, Segment, Divider  } from 'semantic-ui-react'
-
+import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react'
 import '../auth.css'
 
 const panes = [
