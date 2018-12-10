@@ -85,7 +85,7 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" active>
+                <Menu.Item as="a">
                   Home
                 </Menu.Item>
                 <Menu.Item as="a">Work</Menu.Item>
@@ -144,7 +144,7 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a" active>
+          <Menu.Item as="a">
             Home
           </Menu.Item>
           <Menu.Item as="a">Work</Menu.Item>
@@ -245,7 +245,7 @@ const MainHomePage = () => (
               bordered
               rounded
               size="large"
-              src="/images/wireframe/white-image.png"
+              src="/images/image-profile/perfil-resilencia.jpg"
             />
           </Grid.Column>
         </Grid.Row>
