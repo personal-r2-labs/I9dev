@@ -2,9 +2,10 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import { Search, Grid, GridColumn } from 'semantic-ui-react';
 import ProjectResult from '../ProjectResult/ProjectResult';
+import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
 import axios from 'axios';
 
-export default class SearchExampleStandard extends Component {
+export default class ProjectSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -16,11 +17,9 @@ export default class SearchExampleStandard extends Component {
 
   componentWillMount() {
     this.resetComponent();
-    // this.getProjects();
   }
 
   getProjects = () => {
-    // const { params } = this.props.match;
     axios
       .get(`http://localhost:5000/api/projects`)
       .then(responseFromApi => {
@@ -35,8 +34,10 @@ export default class SearchExampleStandard extends Component {
   resetComponent = () =>
     this.setState({ isLoading: false, results: [], value: '' });
 
+  handleSearchOption = (e, { option }) => this.setState({ option });
+
   handleResultSelect = (e, { result }) =>
-    this.setState({ value: result.category });
+    this.setState({ value: result[this.state.option] });
 
   handleSearchChange = (e, { value }) => {
     this.setState({ isLoading: true, value });
@@ -45,7 +46,7 @@ export default class SearchExampleStandard extends Component {
       if (this.state.value.length < 1) return this.resetComponent();
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
-      const isMatch = result => re.test(result.category);
+      const isMatch = result => re.test(result[this.state.option]);
       console.log(this.source);
       this.setState({
         isLoading: false,
@@ -55,10 +56,11 @@ export default class SearchExampleStandard extends Component {
   };
 
   render() {
-    const { isLoading, value, results } = this.state;
+    const { isLoading, value, results, option } = this.state;
+    console.log(option);
     return (
       <Grid>
-        <Grid.Column width={6}>
+        <GridColumn width={10}>
           <Search
             loading={isLoading}
             onResultSelect={this.handleResultSelect}
@@ -69,8 +71,10 @@ export default class SearchExampleStandard extends Component {
             showNoResults={false}
             {...this.props}
           />
-        </Grid.Column>
-        <GridColumn width={2}>
+          <ProjectSearchOption
+            changed={this.handleSearchOption}
+            checked={option}
+          />
           <ProjectResult projects={results} />
         </GridColumn>
         {/* <Grid.Column width={10}>
