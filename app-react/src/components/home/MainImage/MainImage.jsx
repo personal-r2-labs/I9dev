@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header, Button } from 'semantic-ui-react';
-import './backgroundImage.css';
+import './MainImage.css';
 
 const MainImage = () => {
     return(

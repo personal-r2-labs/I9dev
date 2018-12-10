@@ -3,30 +3,30 @@ import './App.css';
 import { Switch, Route } from 'react-router-dom';
 
 //Home Page Component
-import Home from './components/home/home';
+import MainPage from './components/home/MainPage/MainPage';
 
 //SignUp and Login Component
-import LoginSignUp from './components/auth/LoginSignUp/LoginSignUp';
+import SignUp from './components/auth/SignUp/SignUp';
 
 // Projects Components
-import Projects from './components/project/projectDashboard/projectDashboard';
-import ProjectDetails from './components/project/projectDetails/projectDetails';
+import Projects from './components/dashboard/ProjectDashboard/ProjectDashboard';
+import ProjectDetails from './components/dashboard/ProjectDashboard/ProjectDetails/ProjectDetails';
 
 // Developers Component
-import Dev from './components/dev/devDashboard/devDashboard';
+import Dev from './components/dashboard/DevDashboard/DevDashboard';
 
 // Enterprise Component
-import Ent from './components/ent/entDashboard/entDashboard';
+import Ent from './components/dashboard/EntDashboard/EntDashboard';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
       <Switch >
-        <Route exact path='/' component={Home} />
+        <Route exact path='/' component={MainPage} />
         <Route path='/projects' component={Projects} />
         <Route path='/projects/:id' component={ProjectDetails} />
-        <Route path='/loginsignup' component={LoginSignUp} />
+        <Route path='/signup' component={SignUp} />
         <Route path='/dev' component={Dev} />
         <Route path='/ent' component={Ent} />
       </Switch>

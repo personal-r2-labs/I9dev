@@ -1,6 +1,6 @@
 import React from "react";
-import HomeNavBar from "../navBar/homeNavBar";
-import MainImage from "../mainImage/MainImage";
+import HomeNavBar from "../HomeNavBar/HomeNavBar";
+import MainImage from "../MainImage/MainImage";
 
 const MainPage = () => {
   return (
