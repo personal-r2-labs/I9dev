@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Image, Icon, Grid, Segment, List} from 'semantic-ui-react'
+import {Card, Image, Icon, Grid, Segment} from 'semantic-ui-react'
 
 const ProfileCard = (props) => {
     return(

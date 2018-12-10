@@ -3,36 +3,24 @@ import React, { Component } from 'react';
 import { Search, Grid, GridColumn } from 'semantic-ui-react';
 import ProjectResult from '../ProjectResult/ProjectResult';
 import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
-import axios from 'axios';
+
 
 export default class ProjectSearch extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.source = '';
+    this.state = {
+      option: 'title'
+    };
   }
-  componentDidMount() {
-    this.getProjects();
-  }
-
+  
   componentWillMount() {
     this.resetComponent();
+    console.log('[App.js] Method componentWillMount()')
   }
 
-  getProjects = () => {
-    axios
-      .get(`http://localhost:5000/api/projects`)
-      .then(responseFromApi => {
-        const theProfile = responseFromApi.data;
-        this.source = theProfile;
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
-
-  resetComponent = () =>
+  resetComponent = () => {
     this.setState({ isLoading: false, results: [], value: '' });
+  }
 
   handleSearchOption = (e, { option }) => this.setState({ option });
 
@@ -47,17 +35,15 @@ export default class ProjectSearch extends Component {
 
       const re = new RegExp(_.escapeRegExp(this.state.value), 'i');
       const isMatch = result => re.test(result[this.state.option]);
-      console.log(this.source);
       this.setState({
         isLoading: false,
-        results: _.filter(this.source, isMatch)
+        results: _.filter(this.props.source, isMatch)
       });
     }, 300);
   };
-
+  
   render() {
     const { isLoading, value, results, option } = this.state;
-    console.log(option);
     return (
       <Grid>
         <GridColumn width={10}>
@@ -75,7 +61,7 @@ export default class ProjectSearch extends Component {
             changed={this.handleSearchOption}
             checked={option}
           />
-          <ProjectResult projects={results} />
+          <ProjectResult allProjects={this.props.source} projects={results} />
         </GridColumn>
         {/* <Grid.Column width={10}>
           <Segment>
