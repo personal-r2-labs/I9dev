@@ -1,12 +1,10 @@
 import React from "react";
-import HomeNavBar from "../HomeNavBar/HomeNavBar";
-import MainImage from "../MainImage/MainImage";
+import MainHomePage from "../../test/MainHomePage";
 
 const MainPage = () => {
   return (
   <section>
-    <HomeNavBar />
-    <MainImage />
+    <MainHomePage />
   </section>
   );
 };
