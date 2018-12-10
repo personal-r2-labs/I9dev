@@ -18,6 +18,7 @@ router.get('/projects', (req, res, next) => {
 
 // Route to create a new Project
 router.post('/projects', (req, res, next) => {
+  console.log(req.params);
   const createProj = new Project(req.body);
   createProj.save({
     name: req.body.name,

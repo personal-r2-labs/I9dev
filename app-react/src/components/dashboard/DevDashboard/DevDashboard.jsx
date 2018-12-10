@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./devDashboard.css";
+import "./DevDashboard.css";
 import axios from "axios";
 import ProfileCard from "../shared/ProfileCard/ProfileCard";
 import Info from "../shared/info/Info";

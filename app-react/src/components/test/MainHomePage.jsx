@@ -14,7 +14,8 @@ import {
   Segment,
   Sidebar,
   Visibility,
-} from 'semantic-ui-react'
+} from 'semantic-ui-react';
+import './MainImage.css';
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -68,12 +69,14 @@ class DesktopContainer extends Component {
           onBottomPassedReverse={this.hideFixedMenu}
         >
           <Segment
+            id="bgImage"
             inverted
             textAlign='center'
-            style={{ minHeight: 700, padding: '1em 0em' }}
+            style={{ minHeight: 700, padding: '0.01em 0em' }}
             vertical
           >
             <Menu
+              id="bgNav"
               fixed={fixed ? 'top' : null}
               inverted={!fixed}
               pointing={!fixed}
@@ -144,23 +147,19 @@ class MobileContainer extends Component {
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
+            id="bgImage"
             inverted
             textAlign='center'
-            style={{ minHeight: 350, padding: '1em 0em' }}
+            style={{ minHeight: 350, padding: '0em 0em' }}
             vertical
           >
-            <Container>
+            <Container id="bgNav">
               <Menu inverted pointing secondary size='large'>
                 <Menu.Item onClick={this.handleToggle}>
                   <Icon name='sidebar' />
                 </Menu.Item>
                 <Menu.Item position='right'>
-                  <Button as='a' inverted>
-                    Log in
-                  </Button>
-                  <Button as='a' inverted style={{ marginLeft: '0.5em' }}>
-                    Sign Up
-                  </Button>
+                    i9Dev
                 </Menu.Item>
               </Menu>
             </Container>
@@ -189,7 +188,7 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node,
 }
 
-const HomepageLayout = () => (
+const MainHomePage = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: '8em 0em' }} vertical>
       <Grid container stackable verticalAlign='middle'>
@@ -312,4 +311,5 @@ const HomepageLayout = () => (
     </Segment>
   </ResponsiveContainer>
 )
-export default HomepageLayout
+
+export default MainHomePage;

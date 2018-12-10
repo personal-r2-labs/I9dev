@@ -2,13 +2,19 @@ import _ from 'lodash'
 import faker from 'faker'
 import React, { Component } from 'react'
 import { Search, Grid, Header, Segment } from 'semantic-ui-react'
+import axios from 'axios';
 
-const source = _.times(5, () => ({
-  title: faker.company.companyName(),
-  description: faker.company.catchPhrase(),
-  image: faker.internet.avatar(),
-  price: faker.finance.amount(0, 100, 2, '$'),
-}))
+
+const source = axios
+    .get(`http://localhost:5000/api/projects`)
+    .then(responseFromApi => {
+      const theProfile = responseFromApi.data;
+      this.setState({ projects: theProfile });
+      console.log(this.state);
+    })
+    .catch(err => {
+      console.log(err);
+    });
 
 export default class SearchExampleStandard extends Component {
   componentWillMount() {
