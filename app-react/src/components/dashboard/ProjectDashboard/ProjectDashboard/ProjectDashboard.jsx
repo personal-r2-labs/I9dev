@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProjectsData from '../../../data/projectData.json';
-import DetailProject from '../detailProject/detailProject';
-import FindProject from '../findProject/findProject';
+// import ProjectsData from '../../../data/projectData.json';
+// import DetailProject from '../detailProject/detailProject';
+// import FindProject from '../findProject/findProject';
 import ResultProject from '../resultProject/resultProject';
 import axios from 'axios';
 

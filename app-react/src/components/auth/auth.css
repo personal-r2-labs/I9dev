@@ -1,0 +1,18 @@
+#Signup-Column {
+  display: flex;
+}
+
+#Signup-Column-Item {
+  margin: 10px;
+  font-size: 20px;
+}
+
+.color {
+  font: xx-large;
+  color: blue;
+}
+
+.ui.tabular.menu .active.item {
+  color: blue;
+  font-size: large;
+}
