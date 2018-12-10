@@ -4,7 +4,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const Developer = require('../../models/user-model');
 const Enterprising = require('../../models/ent-model');
 
-// passport.initialize();
+
 
 passport.use(new LocalStrategy(
   function(email, password, done) {

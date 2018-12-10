@@ -43,7 +43,7 @@ const panes = [
       </Grid>
     </Tab.Pane> },
 
-  { menuItem: 'Enteprenurship', render: () => 
+  { menuItem: 'Enterprising', render: () => 
     <Tab.Pane>
       <Grid columns='equal'>
         <Grid.Column>
