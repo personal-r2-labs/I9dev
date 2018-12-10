@@ -14,8 +14,7 @@ import {
   Segment,
   Sidebar,
   Visibility,
-  Form,
-  MenuItem
+  Form
 } from "semantic-ui-react";
 import "./MainImage.css";
 
@@ -171,8 +170,8 @@ class MobileContainer extends Component {
             <Button color="twitter">
               <Icon name="twitter" />
             </Button>
-            <Button color="google plus">
-              <Icon name="google plus" />
+            <Button color="grey">
+              <Icon name="github" />
             </Button>
           </Menu.Item>
           <Menu.Item as="a">Sign Up</Menu.Item>
