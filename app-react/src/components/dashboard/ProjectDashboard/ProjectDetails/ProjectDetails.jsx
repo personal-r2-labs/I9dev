@@ -1,16 +1,39 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const DetailProject = props => {
-  return (
-    <div id="detailProject">
-      <a href="#">{props.project.name}</a>
-      <p>{props.project.datelimit}</p>
-      <img src={props.project.filePath} alt="Project Logo" />
-      <p>{props.project.category}</p>
-      <p>{props.project.description}</p>
-      <p>{props.project.status}</p>
-    </div>
-  )
-};
+class ProjectDetails extends Component {
+  constructor(props){
+      super(props);
+      this.state = {};
+  }
 
-export default DetailProject;
+  componentDidMount(){
+      this.getSingleProject();
+  }
+
+  getSingleProject = () => {
+    console.log('[ProjectDetails.js] getSingleProject', this.props.match);
+      const { params } = this.props.match;
+      axios.get(`http://localhost:5000/api/projects/${params.id}`)
+      .then( responseFromApi =>{
+          const theProject = responseFromApi.data;
+          this.setState(theProject);
+      })
+      .catch((err)=>{
+          console.log(err)
+      })
+  }
+
+  render(){
+    return(
+      <div>
+        <h1>{this.state.title}</h1>
+        <p>{this.state.description}</p>
+        <Link to={'/projects'}>Back to projects</Link>
+      </div>
+    )
+  }
+}
+
+export default ProjectDetails;
