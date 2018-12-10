@@ -1,5 +1,5 @@
 import React from "react";
-import { Header, Segment, List, Card, Feed } from "semantic-ui-react";
+import { Segment, List } from "semantic-ui-react";
 
 const Info = props => {
   return (

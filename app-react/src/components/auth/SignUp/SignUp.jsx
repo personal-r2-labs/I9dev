@@ -18,7 +18,7 @@ const panes = [
               <Form.Input fluid label='Password' placeholder='Password' />
             </Form.Group>
             <Button type="submit" icon labelPosition='right'>
-             Submit
+              Submit
             <Icon name='save' />
             </Button>
           </Form>
