@@ -12,30 +12,28 @@ class SignUp extends Component {
 
   handleFormSubmitDev = event => {
     event.preventDefault();
-    const { name, email, password } = this.state;
+    const { username, password } = this.state;
     axios
       .post("http://localhost:5000/api/signup/dev", {
-        name ,
-        email,
+        username ,
         password
       })
       .then(() => {
-        this.setState({ name: "", email: "", password: "", role: "dev" });
+        this.setState({ username: "", password: "", role: "dev" });
       })
       .catch(error => console.log(error));
   };
 
   handleFormSubmitEnt = event => {
     event.preventDefault();
-    const { name, email, password } = this.state;
+    const { username, password } = this.state;
     axios
       .post("http://localhost:5000/api/signup/ent", {
-        name ,
-        email,
+        username,
         password
       })
       .then(() => {
-        this.setState({ name: "", email: "", password: "", role: "ent" });
+        this.setState({ username: "",  password: "", role: "ent" });
       })
       .catch(error => console.log(error));
   };
@@ -55,14 +53,14 @@ class SignUp extends Component {
                 <Form.Group widths='equal'>
                   <Form.Input 
                     fluid
-                    name="name"
+                    name="username"
                     type="text"
-                    label="Full Name"
-                    placeholder="Full Name"
-                    value={this.state.name}
+                    label="Username"
+                    placeholder="Create an username"
+                    value={this.state.username}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                <Form.Group widths='equal'>
+                {/* <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="email"
@@ -71,7 +69,7 @@ class SignUp extends Component {
                     placeholder="Email"
                     value={this.state.email}
                     onChange={e => this.handleChange(e)} />
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group widths='equal'>
                   <Form.Input
                     fluid
@@ -111,16 +109,16 @@ class SignUp extends Component {
             <Grid.Column>
             <Form onSubmit={this.handleFormSubmitEnt} size='large'>
               <Form.Group widths='equal'>
-                  <Form.Input 
+              <Form.Input 
                     fluid
-                    name="name"
+                    name="username"
                     type="text"
-                    label="Full Name"
-                    placeholder="Full Name"
-                    value={this.state.name}
+                    label="Username"
+                    placeholder="Create an username"
+                    value={this.state.username}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                <Form.Group widths='equal'>
+                {/* <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="email"
@@ -129,7 +127,7 @@ class SignUp extends Component {
                     placeholder="Email"
                     value={this.state.email}
                     onChange={e => this.handleChange(e)} />
-                </Form.Group>
+                </Form.Group> */}
                 <Form.Group widths='equal'>
                   <Form.Input
                     fluid
