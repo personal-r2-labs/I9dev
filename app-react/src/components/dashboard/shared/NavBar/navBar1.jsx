@@ -1,16 +1,17 @@
-import React from 'react'
-import { Dropdown } from 'semantic-ui-react'
+import React from 'react';
+import { Dropdown } from 'semantic-ui-react';
+import { NavLink }from 'react-router-dom';
 
 const NavBar1 = () => {
     return (
       <div className="ui inverted menu">
-        <a className="active header item">
+        <NavLink to='/' className="active header item">
           i9Dev
-        </a>
+        </NavLink>
 
-        <a className="header item">
+        <NavLink to='/' className="header item">
           Profile
-        </a>
+        </NavLink>
 
         <Dropdown text='Projects' pointing className='link item'>
           <Dropdown.Menu>
@@ -19,12 +20,12 @@ const NavBar1 = () => {
           </Dropdown.Menu>
         </Dropdown>
 
-        <a className="header item">
+        <NavLink to='/' className="header item">
           About us
-        </a>
+        </NavLink>
         <div className="right menu">
-          <a className="item center">Hello! Guilherme Davi</a>
-          <a className="item">Logout</a>
+          <NavLink to='/' className="item center">Hello! Guilherme Davi</NavLink>
+          <NavLink to='/' className="item">Logout</NavLink>
         </div>
       </div>
     )

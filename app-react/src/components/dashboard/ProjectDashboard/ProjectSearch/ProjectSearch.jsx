@@ -1,30 +1,25 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { Search, Grid, GridColumn } from 'semantic-ui-react';
-import ProjectResult from '../ProjectResult/ProjectResult';
-import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
-
 
 export default class ProjectSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      option: 'title'
+      option: 'title',
+      projects: this.props.source
     };
   }
   
   componentWillMount() {
     this.resetComponent();
-    console.log('[App.js] Method componentWillMount()')
   }
 
   resetComponent = () => {
     this.setState({ isLoading: false, results: [], value: '' });
   }
 
-  handleSearchOption = (e, { option }) => this.setState({ option });
-
-  handleResultSelect = (e, { result }) =>
+  handleResultSelect = (e, { result }) => 
     this.setState({ value: result[this.state.option] });
 
   handleSearchChange = (e, { value }) => {
@@ -43,7 +38,7 @@ export default class ProjectSearch extends Component {
   };
   
   render() {
-    const { isLoading, value, results, option } = this.state;
+    const { isLoading, value, results } = this.state;
     return (
       <Grid>
         <GridColumn width={10}>
@@ -54,14 +49,9 @@ export default class ProjectSearch extends Component {
               leading: true
             })}
             value={value}
-            showNoResults={false}
+            results={results}
             {...this.props}
           />
-          <ProjectSearchOption
-            changed={this.handleSearchOption}
-            checked={option}
-          />
-          <ProjectResult allProjects={this.props.source} projects={results} />
         </GridColumn>
         {/* <Grid.Column width={10}>
           <Segment>
