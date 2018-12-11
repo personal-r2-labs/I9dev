@@ -285,14 +285,14 @@ const MainHomePage = (props) => (
         </Header>
         <Grid>
           <Grid.Column width={10}>
-            <Form>
+            <Form action='http://localhost:5000/api/login' method='POST'>
               <Form.Field>
                 <label>Email</label>
-                <input placeholder="John@Travolta" />
+                <input name="email" placeholder="John@Travolta" />
               </Form.Field>
               <Form.Field>
                 <label>Password</label>
-                <input placeholder="Swordfish" />
+                <input name="password" placeholder="Swordfish" />
               </Form.Field>
               <Form.Field />
               <Button type="submit" primary>Get in!</Button>

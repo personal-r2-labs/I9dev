@@ -53,7 +53,11 @@ app.use('/api', auth);
 require('./configs/passport/strategy');
 
 app.use(express.static("public"));
-app.use(session({ secret: "cats" }));
+app.use(session({ 
+  secret: "cats",
+  resave: true,
+  saveUninitialized: true
+ }));
 
 passport.serializeUser((loggedInUser, cb) => {
   cb(null, loggedInUser._id);
