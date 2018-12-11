@@ -7,7 +7,7 @@ const ProjectsList = props => {
     <List celled>
       {props.projects.map(project => {
         return (
-          <List.Content key={project._id} clicked={() => props.clicked(project._id)}>
+          <List.Content key={project._id}>
           <Link to={`/projects/${project._id}`}><List.Header>{project.title}</List.Header></Link>
               {project.category}
               {project.description}

@@ -1,40 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
-class ProjectDetails extends Component {
-  constructor(props){
-      super(props);
-      this.state = {}
-      };
-
-  componentDidMount(){
-      this.getSingleProject();
-  }
-
-  getSingleProject = () => {
-    console.log('[ProjectDetails.js] getSingleProject', this.props);
-      const { params } = this.props.match;
-      axios.get(`http://localhost:5000/api/projects/${params.id}`)
-      .then( responseFromApi =>{
-          const theProject = responseFromApi.data;
-          this.setState({theProject});
-      })
-      .catch((err)=>{
-          console.log(err)
-      })
-  }
-
-  render(){
-    console.log(this.state);
-    return(
+const ProjectDetails = (props) => {
+  console.log(props.project);  
+  return(
       <div>
-        <h1>{this.state.title}</h1>
-        <p>{this.state.description}</p>
-        <Link to={'/projects'}>Back to projects</Link>
+        <h2>Hey Ho lets go</h2>
       </div>
     )
   }
-}
 
 export default ProjectDetails;
