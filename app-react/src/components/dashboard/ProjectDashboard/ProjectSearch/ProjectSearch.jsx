@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { Search, Grid, GridColumn, Segment, Header } from 'semantic-ui-react';
-import ProjectResult from '../ProjectResult/ProjectResult';
+import { Search, Grid, GridColumn } from 'semantic-ui-react';
 import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
 
 
@@ -55,23 +54,22 @@ export default class ProjectSearch extends Component {
               leading: true
             })}
             value={value}
-            showNoResults={false}
+            results={results}
             {...this.props}
           />
           <ProjectSearchOption
             changed={this.handleSearchOption}
             checked={option}
           />
-          <ProjectResult projects={results} />
         </GridColumn>
-        <Grid.Column width={10}>
+        {/* <Grid.Column width={10}>
           <Segment>
             <Header>State</Header>
             <pre style={{ overflowX: 'auto' }}>{JSON.stringify(this.state, null, 2)}</pre>
             <Header>Options</Header>
             <pre style={{ overflowX: 'auto' }}>{JSON.stringify(this.source, null, 2)}</pre>
           </Segment>
-        </Grid.Column>
+        </Grid.Column> */}
       </Grid>
     );
   }

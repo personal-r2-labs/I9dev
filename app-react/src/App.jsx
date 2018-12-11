@@ -10,7 +10,6 @@ import SignUp from './components/auth/SignUp/SignUp';
 
 // Projects Components
 import Projects from './components/dashboard/ProjectDashboard/ProjectDashboard';
-import ProjectDetails from './components/dashboard/ProjectDashboard/ProjectDetails/ProjectDetails';
 import AddProject from './components/dashboard/ProjectDashboard/ProjectAddForm/ProjectAddForm';
 
 // Developers Component
@@ -24,8 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="projects/add" component={AddProject} />
-          {/* <Route path="/projects/:id" component={ProjectDetails} /> */}
+          <Route path="/projects/add" component={AddProject} />
           <Route path="/projects" component={Projects} />
           <Route path="/signup" component={SignUp} />
           <Route path="/dev" component={Dev} />
