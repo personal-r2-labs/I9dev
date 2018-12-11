@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { Search, Grid, GridColumn } from 'semantic-ui-react';
+import { Search, Grid, GridColumn, Segment, Header } from 'semantic-ui-react';
 import ProjectResult from '../ProjectResult/ProjectResult';
 import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
 
@@ -9,7 +9,8 @@ export default class ProjectSearch extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      option: 'title'
+      option: 'title',
+      projects: this.props.source
     };
   }
   
@@ -24,7 +25,7 @@ export default class ProjectSearch extends Component {
 
   handleSearchOption = (e, { option }) => this.setState({ option });
 
-  handleResultSelect = (e, { result }) =>
+  handleResultSelect = (e, { result }) => 
     this.setState({ value: result[this.state.option] });
 
   handleSearchChange = (e, { value }) => {
@@ -61,16 +62,16 @@ export default class ProjectSearch extends Component {
             changed={this.handleSearchOption}
             checked={option}
           />
-          <ProjectResult allProjects={this.props.source} projects={results} />
+          <ProjectResult projects={results} />
         </GridColumn>
-        {/* <Grid.Column width={10}>
+        <Grid.Column width={10}>
           <Segment>
             <Header>State</Header>
             <pre style={{ overflowX: 'auto' }}>{JSON.stringify(this.state, null, 2)}</pre>
             <Header>Options</Header>
             <pre style={{ overflowX: 'auto' }}>{JSON.stringify(this.source, null, 2)}</pre>
           </Segment>
-        </Grid.Column> */}
+        </Grid.Column>
       </Grid>
     );
   }

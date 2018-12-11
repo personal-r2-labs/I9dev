@@ -9,7 +9,7 @@ class ProjectDashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: ''
+      projects: []
     };
   }
 
@@ -32,7 +32,6 @@ class ProjectDashBoard extends Component {
   };
 
   render() {
-    console.log(this.state.projects);
     return (
       <div id="projectDashBoard">
         <div>
