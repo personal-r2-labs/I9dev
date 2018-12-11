@@ -35,7 +35,7 @@ router.post('/signup/ent', (req, res, next) => {
     });
 });
 
-router.post('/login', function(req, res) {
+router.post('/login', passport.authenticate('local'), function(req, res) {
   console.log('esse é o log de login', req.body);
   res.json('');
 });

@@ -7,7 +7,7 @@ const hbs = require('hbs');
 const logger = require('morgan');
 const path = require('path');
 
-const session = require ('express-session');
+const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
@@ -23,7 +23,7 @@ const app = express();
 //Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.set('views', path.join(__dirname, 'views'));
@@ -37,27 +37,16 @@ app.use(cors({
   origin: ['http://localhost:3000']
 }));
 
-const dev = require('./routes/dev-routes');
-app.use('/api', dev);
-
-const ent = require('./routes/ent-routes');
-app.use('/api', ent);
-
-const project = require('./routes/project-routes');
-app.use('/api', project);
-
-const auth = require('./routes/auth-routes');
-app.use('/api', auth);
 
 //Passport Setup
 require('./configs/passport/strategy');
 
 app.use(express.static("public"));
-app.use(session({ 
+app.use(session({
   secret: "cats",
   resave: true,
   saveUninitialized: true
- }));
+}));
 
 passport.serializeUser((loggedInUser, cb) => {
   cb(null, loggedInUser._id);
@@ -91,5 +80,22 @@ passport.use(new LocalStrategy((username, password, next) => {
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/dev',
+  failureRedirect: '/signup'
+}));
+
+const dev = require('./routes/dev-routes');
+app.use('/api', dev);
+
+const ent = require('./routes/ent-routes');
+app.use('/api', ent);
+
+const project = require('./routes/project-routes');
+app.use('/api', project);
+
+const auth = require('./routes/auth-routes');
+app.use('/api', auth);
 
 module.exports = app;

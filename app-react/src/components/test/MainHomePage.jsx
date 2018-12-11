@@ -288,7 +288,7 @@ const MainHomePage = (props) => (
             <Form action='http://localhost:5000/api/login' method='POST'>
               <Form.Field>
                 <label>Email</label>
-                <input name="email" placeholder="John@Travolta" />
+                <input name="username" placeholder="John@Travolta" />
               </Form.Field>
               <Form.Field>
                 <label>Password</label>
