@@ -6,6 +6,7 @@ const express = require('express');
 const hbs = require('hbs');
 const logger = require('morgan');
 const path = require('path');
+const User = require('./models/user-model')
 
 const session = require('express-session');
 const passport = require('passport');
@@ -63,7 +64,7 @@ passport.deserializeUser((userIdFromSession, cb) => {
 });
 
 passport.use(new LocalStrategy((username, password, next) => {
-  User.findOne({ email: username }, (err, user) => {
+  User.findOne({ username: username }, (err, user) => {
     if (err) {
       return next(err);
     }
