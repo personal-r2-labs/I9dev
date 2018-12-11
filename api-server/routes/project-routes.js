@@ -39,8 +39,8 @@ router.get('/projects/:id', (req, res, next) => {
     _id: req.params.id
   })
     .then((proj) => {
-      console.log('esse é proj do GET details', proj.name);
-      res.json(emp);
+      console.log('esse é proj do GET details', proj.title);
+      res.json(proj);
     })
     .catch((error) => {
       console.log(error);

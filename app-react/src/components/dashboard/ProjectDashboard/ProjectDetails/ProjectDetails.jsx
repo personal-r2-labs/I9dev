@@ -5,7 +5,12 @@ import { Link } from 'react-router-dom';
 class ProjectDetails extends Component {
   constructor(props){
       super(props);
-      this.state = {};
+      this.state = {
+        project: {
+          title: '',
+          description:''
+        }
+      };
   }
 
   componentDidMount(){
@@ -18,7 +23,7 @@ class ProjectDetails extends Component {
       axios.get(`http://localhost:5000/api/projects/${params.id}`)
       .then( responseFromApi =>{
           const theProject = responseFromApi.data;
-          this.setState(theProject);
+          this.setState({project: theProject});
       })
       .catch((err)=>{
           console.log(err)
@@ -26,10 +31,11 @@ class ProjectDetails extends Component {
   }
 
   render(){
+    console.log(this.state);
     return(
       <div>
-        <h1>{this.state.title}</h1>
-        <p>{this.state.description}</p>
+        <h1>{this.state.project.title}</h1>
+        <p>{this.state.project.description}</p>
         <Link to={'/projects'}>Back to projects</Link>
       </div>
     )
