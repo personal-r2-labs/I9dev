@@ -12,7 +12,7 @@ const entSchema = new Schema({
   facebookID: String,
   facebookToken: String,
   description: String,
-  photoPath: String
+  photoPath: String,
 },
 {
   timestamps: true

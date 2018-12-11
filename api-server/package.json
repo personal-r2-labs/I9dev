@@ -22,8 +22,11 @@
   },
   "homepage": "https://github.com/romulo2franca/freelar#readme",
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^2.0.3",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.5",
@@ -35,7 +38,11 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.18.7",
     "passport": "^0.4.0",
+    "passport-facebook": "^2.1.1",
+    "passport-github": "^1.1.0",
+    "passport-linkedin": "^1.0.0",
     "passport-local": "^1.0.0",
+    "passport-oauth": "^1.0.0",
     "path": "^0.12.7"
   }
 }
