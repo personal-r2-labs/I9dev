@@ -16,6 +16,8 @@ const bcrypt = require('bcrypt');
 const cors = require('cors');
 
 require('./configs/mongodb');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -45,10 +47,14 @@ require('./configs/passport/strategy');
 
 app.use(express.static("public"));
 app.use(session({
-  secret: "cats",
-  resave: true,
-  saveUninitialized: true
-}));
+    secret: 'basic-auth-secret',
+    cookie: { maxAge: 6000000 },
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 24 * 60 * 60 // 1 day
+    })
+  })
+);
 
 passport.serializeUser((loggedInUser, cb) => {
   cb(null, loggedInUser._id);
@@ -81,7 +87,6 @@ passport.use(new LocalStrategy((username, password, next) => {
 }));
 
 app.use(passport.initialize());
-app.use(passport.session());
 
 const dev = require('./routes/dev-routes');
 app.use('/api', dev);
