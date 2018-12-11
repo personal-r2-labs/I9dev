@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Menu, Dropdown } from "semantic-ui-react";
 
-export default class MenuExampleInverted extends Component {
+export default class TesteNavBar extends Component {
   state = { activeItem: "home" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });

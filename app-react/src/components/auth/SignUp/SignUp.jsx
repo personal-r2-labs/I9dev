@@ -22,7 +22,7 @@ class SignUp extends Component {
                 <Form.Group widths='equal'>
                   <Form.Input fluid label='Password' placeholder='Password' />
                 </Form.Group>
-                <Button type="submit" icon labelPosition='right'>
+                <Button type="submit" icon labelPosition='right' primary>
                   Submit
                 <Icon name='save' />
                 </Button>
@@ -59,13 +59,13 @@ class SignUp extends Component {
                 <Form.Group widths='equal'>
                   <Form.Input fluid label='Password' placeholder='Password' />
                 </Form.Group>
-                <Button type="submit" icon labelPosition='right'>
+                <Button type="submit" icon labelPosition='right' primary>
                   Submit
                   <Icon name='save' />
                 </Button>
               </Form>
             </Grid.Column>
-              <Grid.Column width='1'>
+              <Grid.Column width={1}>
                 <Divider vertical>Or</Divider>
             </Grid.Column>
             <Grid.Column id="Signup-Column" verticalAlign="middle">
@@ -80,7 +80,7 @@ class SignUp extends Component {
         </Tab.Pane> },
     ]
     return(
-      <div>
+      <div style={{minWidth:'390px'}}>
       <TestNavBar />
       <Tab panes={panes} />
       </div>
