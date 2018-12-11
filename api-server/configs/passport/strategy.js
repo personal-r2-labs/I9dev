@@ -4,17 +4,15 @@ const LocalStrategy = require('passport-local').Strategy;
 const Developer = require('../../models/user-model');
 const Enterprising = require('../../models/ent-model');
 
-
-
 passport.use(new LocalStrategy(
-  function(email, password, done) {
-    Developer.findOne({ email: email }, function (err, user) {
+  function(username, password, done) {
+    User.findOne({ username: email }, function (err, username) {
       if (err) { 
         return done(err); }
-      if (!email) {
-        return done(null, false, { message: 'Incorrect email.' });
+      if (!username) {
+        return done(null, false, { message: 'Incorrect username.' });
       }
-      if (!email.validPassword(password)) {
+      if (!username.validPassword(password)) {
         return done(null, false, { message: 'Incorrect password.' });
       }
       return done(null, email);

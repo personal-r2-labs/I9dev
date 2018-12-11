@@ -1,14 +1,30 @@
 const express = require('express');
 const User = require('../models/user-model');
 const passport = require('../configs/passport/strategy');
+const bcrypt = require('bcrypt');
+const bcryptSalt = 10;
 
 const router = express.Router();
 
 // Route to create a new user account 
 router.post('/signup/dev', (req, res, next) => {
-  const theUser = new User(req.body);
+  const { username, password } = req.body;
+  console.log('este é o resultado dos dados enviados dev form', req.body);
+
+  let salt;
+  let hashPass;
+  console.log(password);
+  if (password !== undefined) {
+    salt = bcrypt.genSaltSync(bcryptSalt);
+    hashPass = bcrypt.hashSync(password, salt);
+  }
+
+  const theUser = new User({
+    username,
+    password: hashPass
+  });
   theUser.role = 'dev';
-  console.log('este é o resultado do req body', req.body);
+
   theUser.save({
   })
     .then((dev) => {
@@ -21,23 +37,32 @@ router.post('/signup/dev', (req, res, next) => {
 });
 
 router.post('/signup/ent', (req, res, next) => {
-  const theEnt = new User(req.body);
-  theEnt.role = 'ent';
-  console.log('este é o resultado do req body ent', req.body);
-  theEnt.save({
+  const { username, password } = req.body;
+  console.log('este é o resultado dos dados enviados pelo ent form', req.body);
+
+  let salt;
+  let hashPass;
+  console.log(password);
+  if (password !== undefined) {
+    salt = bcrypt.genSaltSync(bcryptSalt);
+    hashPass = bcrypt.hashSync(password, salt);
+  }
+
+  const theUser = new User({
+    username,
+    password: hashPass
+  });
+  theUser.role = 'ent';
+
+  theUser.save({
   })
     .then((ent) => {
       console.log('Este é o novo ent criado', ent);
       res.json(ent);
     })
     .catch((error) => {
-      console.log('Qualquer coisa', error);
+      console.log(error);
     });
-});
-
-router.post('/login', function(req, res) {
-  console.log('esse é o log de login', req.body);
-  res.json('');
 });
 
 module.exports = router;

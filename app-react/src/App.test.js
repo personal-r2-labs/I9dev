@@ -12,7 +12,6 @@ import SignUp from './components/auth/SignUp/SignUp';
 import Projects from './components/dashboard/ProjectDashboard/ProjectDashboard';
 import ProjectDetails from './components/dashboard/ProjectDashboard/ProjectDetails/ProjectDetails';
 import AddProject from './components/dashboard/ProjectDashboard/ProjectAddForm/ProjectAddForm';
-import SignUp from './components/auth/SignUp/SignUp'; 
 
 // Developers Component
 import Dev from './components/dashboard/DevDashboard/DevDashboard';
@@ -24,7 +23,15 @@ class AppTest extends Component {
   render() {
     return (
       <div className="App">
-      <SignUp />
+        <Switch >
+          <Route exact path='/' component={MainPage} />
+          <Route path='/projects' component={Projects} />
+          <Route path='/add' component={AddProject} />
+          <Route path='/projects/:id' component={ProjectDetails} />
+          <Route path='/signup' component={SignUp} />
+          <Route path='/dev' component={Dev} />
+          <Route path='/ent' component={Ent} />
+        </Switch>
       </div>
     );
   }

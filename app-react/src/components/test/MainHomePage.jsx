@@ -17,6 +17,7 @@ import {
   Form
 } from "semantic-ui-react";
 import "./MainImage.css";
+import Login from './LoginForm';
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -148,18 +149,7 @@ class MobileContainer extends Component {
           <Menu.Item as="a">Company</Menu.Item>
           <Menu.Item as="a">Careers</Menu.Item>
           <Menu.Item as="a">
-            <Form>
-              <Form.Field>
-                <input placeholder="Email: John@Travolta" />
-              </Form.Field>
-              <Form.Field>
-                <input placeholder="Password: Swordfish" />
-              </Form.Field>
-              <Form.Field />
-              <Button type="submit" inverted>
-                Login
-              </Button>
-            </Form>
+            <Login />
             <Divider horizontal inverted>
               Or
             </Divider>
@@ -285,18 +275,7 @@ const MainHomePage = (props) => (
         </Header>
         <Grid>
           <Grid.Column width={10}>
-            <Form action='http://localhost:5000/api/login' method='POST'>
-              <Form.Field>
-                <label>Email</label>
-                <input name="email" placeholder="John@Travolta" />
-              </Form.Field>
-              <Form.Field>
-                <label>Password</label>
-                <input name="password" placeholder="Swordfish" />
-              </Form.Field>
-              <Form.Field />
-              <Button type="submit" primary>Get in!</Button>
-            </Form>
+          <Login />
           </Grid.Column>
           <Grid.Column width={15}>
             <Button color="facebook" >

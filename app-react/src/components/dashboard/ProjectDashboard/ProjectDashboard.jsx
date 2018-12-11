@@ -60,9 +60,8 @@ class ProjectDashBoard extends Component {
           <ProjectSearch projects={this.state.projects} />
           <ProjectsList
             projects={this.state.projects}
-            clicked={this.getSingleProject()}
           />
-          <ProjectDetails project={this.state.theProject}/>
+          <ProjectDetails {}/>
         </div>
         <div>
           <Route path="/projects/:id" exact component={ProjectDetails} />
