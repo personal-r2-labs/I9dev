@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import "./DevDashboard.css";
-import ProfileCard from "../shared/ProfileCard/ProfileCard";
-import Info from "../shared/info/Info";
-import { Grid, GridColumn } from "semantic-ui-react";
-import LastProjects from "../shared/lastProjects/LastProjects";
-import StatusCard from "../shared/statusCard/StatusCard";
-import NavBar1 from "../shared/NavBar/navBar1";
+import React, { Component } from 'react';
+import './DevDashboard.css';
+import ProfileCard from '../shared/ProfileCard/ProfileCard';
+import Info from '../shared/info/Info';
+import { Grid, GridColumn } from 'semantic-ui-react';
+import LastProjects from '../shared/lastProjects/LastProjects';
+import StatusCard from '../shared/statusCard/StatusCard';
+import NavBar1 from '../shared/NavBar/navBar1';
 
 class DevDashBoard extends Component {
-  /*   constructor(props) {
+  constructor(props) {
     super(props);
-    this.state()
- }
+    this.state();
+  }
 
-   handleEditField(event) {
+  handleEditField(event) {
     event.preventDefault();
     console.log(event.target.textContent);
     this.setState({ isEditing: true, initialText: event.target.textContent });
@@ -24,7 +24,6 @@ class DevDashBoard extends Component {
     event.preventDefault();
     this.setState({ initialText: event.target.value });
   }
-  */
 
   render() {
     /*     const {
