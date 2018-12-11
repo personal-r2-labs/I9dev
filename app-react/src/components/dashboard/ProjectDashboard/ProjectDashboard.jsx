@@ -38,7 +38,7 @@ class ProjectDashBoard extends Component {
         <div>
           <ProjectSearch source={this.state.projects} />
         </div>
-        <Route exact path="projects/:id" component={ProjectDetails} />
+        <Route path="projects/:id" component={ProjectDetails} />
       </div>
     );
   }

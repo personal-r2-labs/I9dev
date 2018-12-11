@@ -24,13 +24,13 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          {/* <Route path="/" component={MainPage} /> */}
-          <Route exact path="/projects" component={Projects} />
-          {/* <Route exact path="projects/add" component={AddProject} /> */}
+          <Route path="projects/add" component={AddProject} />
           {/* <Route path="/projects/:id" component={ProjectDetails} /> */}
-          {/* <Route path="/signup" component={SignUp} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/signup" component={SignUp} />
           <Route path="/dev" component={Dev} />
-          <Route path="/ent" component={Ent} /> */}
+          <Route path="/ent" component={Ent} />
+          <Route path="/" component={MainPage} />
         </Switch>
       </div>
     );
