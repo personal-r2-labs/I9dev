@@ -1,0 +1,9 @@
+#bgImage {
+    background-image: url('/images/background/rawpixel-706373-unsplash.jpg');
+    background-size: cover;
+}
+
+#bgNav {
+    background-color: rgba(0 , 0, 0, 0.6);
+}
+
