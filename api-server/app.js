@@ -11,6 +11,7 @@ const User = require('./models/user-model')
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const bcrypt = require('bcrypt');
 
 const cors = require('cors');
 
@@ -64,7 +65,7 @@ passport.deserializeUser((userIdFromSession, cb) => {
 });
 
 passport.use(new LocalStrategy((username, password, next) => {
-  User.findOne({ username: username }, (err, user) => {
+  User.findOne({ email: username }, (err, user) => {
     if (err) {
       return next(err);
     }
@@ -81,11 +82,6 @@ passport.use(new LocalStrategy((username, password, next) => {
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.post('/login', passport.authenticate('local', {
-  successRedirect: '/dev',
-  failureRedirect: '/signup'
-}));
 
 const dev = require('./routes/dev-routes');
 app.use('/api', dev);
