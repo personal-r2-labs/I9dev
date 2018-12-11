@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Form, Button, Icon, Header, Segment } from "semantic-ui-react";
-import NavBar1 from "../../shared/NavBar/navBar1";
 import TesteNavBar from "../../shared/NavBar/testeNavBar"
 
 class AddProject extends Component {
