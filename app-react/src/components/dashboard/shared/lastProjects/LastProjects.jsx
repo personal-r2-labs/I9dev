@@ -14,7 +14,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="1 day ago" />
                 <Feed.Summary>
-                  You added <a>Jenny Hess</a> to your <a>coworker</a> group.
+                  You addedJenny Hess to yourcoworker group.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -23,7 +23,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -32,7 +32,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="4 days ago" />
                 <Feed.Summary>
-                  You added <a>Elliot Baker</a> to your <a>musicians</a> group.
+                  You addedElliot Baker to yourmusicians group.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -41,7 +41,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -50,7 +50,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -59,7 +59,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -68,7 +68,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -77,7 +77,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>
@@ -86,7 +86,7 @@ const LastProjects = () => {
               <Feed.Content>
                 <Feed.Date content="3 days ago" />
                 <Feed.Summary>
-                  You added <a>Molly Malone</a> as a friend.
+                  You addedMolly Malone as a friend.
                 </Feed.Summary>
               </Feed.Content>
             </Feed.Event>

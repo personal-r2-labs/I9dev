@@ -8,23 +8,23 @@ import StatusCard from "../shared/statusCard/StatusCard";
 import NavBar1 from "../shared/NavBar/navBar1";
 
 class DevDashBoard extends Component {
-  /*   constructor(props) {
-    super(props);
-    this.state()
- }
+//   constructor(props) {
+//     super(props);
+//     this.state()
+//  }
 
-   handleEditField(event) {
-    event.preventDefault();
-    console.log(event.target.textContent);
-    this.setState({ isEditing: true, initialText: event.target.textContent });
-    console.log('editfield', this.state.initialText);
-  }
+//    handleEditField(event) {
+//     event.preventDefault();
+//     console.log(event.target.textContent);
+//     this.setState({ isEditing: true, initialText: event.target.textContent });
+//     console.log('editfield', this.state.initialText);
+//   }
 
-  handleChange(event) {
-    event.preventDefault();
-    this.setState({ initialText: event.target.value });
-  }
-  */
+//   handleChange(event) {
+//     event.preventDefault();
+//     this.setState({ initialText: event.target.value });
+//   }
+
 
   render() {
     /*     const {

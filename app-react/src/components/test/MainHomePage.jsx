@@ -316,7 +316,7 @@ const MainHomePage = (props) => (
           horizontal
           style={{ margin: "3em 0em", textTransform: "uppercase" }}
         >
-          <a href="#">Or</a>
+          Or
         </Divider>
       </Container>
     </Segment>

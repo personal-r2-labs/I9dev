@@ -7,11 +7,11 @@ import StatusCard from "../shared/statusCard/StatusCard"
 import { Grid, GridColumn } from "semantic-ui-react"
 
 class EntDashboard extends Component {
-  /*   constructor(props) {
+     constructor(props) {
     super(props);
     this.state = {};
   }
-   */
+   
   render() {
     return (
       <div>

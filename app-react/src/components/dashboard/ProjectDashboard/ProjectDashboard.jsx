@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Route, Switch } from 'react-router-dom';
+import { Route} from 'react-router-dom';
 
 import ProjectSearch from './ProjectSearch/ProjectSearch';
 import ProjectsList from './ProjectsList/ProjectsList';
@@ -16,7 +16,6 @@ class ProjectDashBoard extends Component {
 
   componentDidMount() {
     this.getProjects();
-    console.log('[ProjectDashboard.js] Method componentDidMount()');
   }
 
   projectSelectedHandler(id) {
@@ -24,7 +23,6 @@ class ProjectDashBoard extends Component {
   }
 
   getProjects = () => {
-    console.log('[ProjectDashboard.js] Method getProjects()');
     axios
       .get(`http://localhost:5000/api/projects`)
       .then(responseFromApi => {
@@ -40,7 +38,7 @@ class ProjectDashBoard extends Component {
     return (
       <div id="projectDashBoard">
         <div>
-          <ProjectSearch source={this.state.projects} />
+          <ProjectSearch projects={this.state.projects} />
           <ProjectsList projects={this.state.projects} clicked={this.projectSelectedHandler} />
         </div>
         <div>

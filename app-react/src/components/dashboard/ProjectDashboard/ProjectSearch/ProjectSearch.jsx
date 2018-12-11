@@ -1,8 +1,6 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { Search, Grid, GridColumn } from 'semantic-ui-react';
-import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
-
 
 export default class ProjectSearch extends Component {
   constructor(props) {
@@ -15,14 +13,11 @@ export default class ProjectSearch extends Component {
   
   componentWillMount() {
     this.resetComponent();
-    console.log('[App.js] Method componentWillMount()')
   }
 
   resetComponent = () => {
     this.setState({ isLoading: false, results: [], value: '' });
   }
-
-  handleSearchOption = (e, { option }) => this.setState({ option });
 
   handleResultSelect = (e, { result }) => 
     this.setState({ value: result[this.state.option] });
@@ -43,7 +38,7 @@ export default class ProjectSearch extends Component {
   };
   
   render() {
-    const { isLoading, value, results, option } = this.state;
+    const { isLoading, value, results } = this.state;
     return (
       <Grid>
         <GridColumn width={10}>
@@ -56,10 +51,6 @@ export default class ProjectSearch extends Component {
             value={value}
             results={results}
             {...this.props}
-          />
-          <ProjectSearchOption
-            changed={this.handleSearchOption}
-            checked={option}
           />
         </GridColumn>
         {/* <Grid.Column width={10}>
