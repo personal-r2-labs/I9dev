@@ -16,19 +16,19 @@ router.get('/ent', (req, res, next) => {
 });
 
 // Route to create a new Enterprising
-router.post('/ent', (req, res, next) => {
-  const createEnt = new Enterprising(req.body);
-  createEnt.save({
-    name: req.body.name,
-    email: req.body.email
-  })
-    .then((ent) => {
-      res.json(ent);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
+// router.post('/ent', (req, res, next) => {
+//   const createEnt = new Enterprising(req.body);
+//   createEnt.save({
+//     name: req.body.name,
+//     email: req.body.email
+//   })
+//     .then((ent) => {
+//       res.json(ent);
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// });
 
 // Router to get a Enterprising by ID
 router.get('/ent/:id', (req, res, next) => {

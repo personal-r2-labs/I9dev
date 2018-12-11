@@ -4,21 +4,20 @@ import {
   Button,
   Container,
   Divider,
-  Grid,
   Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
-  Form
+  Visibility
 } from "semantic-ui-react";
 import "./MainImage.css";
 import HomeSectionOne from "./HomeSectionOne";
 import HomeSectionTwo from "./HomeSectionTwo";
+import Login from "./LoginForm";
+import HomeSectionThree from "./HomeSectionThree";
+import HomeSectionFour from "./HomeSectionFour";
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -88,10 +87,9 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item as="a">i9Dev</Menu.Item>
-                <Menu.Item as="a">Home</Menu.Item>
-                <Menu.Item as="a">Work</Menu.Item>
-                <Menu.Item as="a">Company</Menu.Item>
-                <Menu.Item as="a">Careers</Menu.Item>
+                <Menu.Item as="a">How it works</Menu.Item>
+                <Menu.Item as="a">Projects</Menu.Item>
+                <Menu.Item as="a">About us</Menu.Item>
                 <Menu.Item position="right">
                   <Button href="login" as="a" inverted={!fixed}>
                     Log in
@@ -110,7 +108,6 @@ class DesktopContainer extends Component {
             <HomepageHeading />
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
     );
@@ -145,23 +142,12 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a">Home</Menu.Item>
-          <Menu.Item as="a">Work</Menu.Item>
-          <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
+          <Menu.Item as="a">i9Dev</Menu.Item>
+          <Menu.Item as="a">How it works</Menu.Item>
+          <Menu.Item as="a">Projects</Menu.Item>
+          <Menu.Item as="a">About us</Menu.Item>
           <Menu.Item as="a">
-            <Form>
-              <Form.Field>
-                <input placeholder="Email: John@Travolta" />
-              </Form.Field>
-              <Form.Field>
-                <input placeholder="Password: Swordfish" />
-              </Form.Field>
-              <Form.Field />
-              <Button type="submit" inverted>
-                Login
-              </Button>
-            </Form>
+            <Login />
             <Divider horizontal inverted>
               Or
             </Divider>
@@ -219,87 +205,12 @@ ResponsiveContainer.propTypes = {
   children: PropTypes.node
 };
 
-const MainHomePage = (props) => (
+const MainHomePage = props => (
   <ResponsiveContainer>
     <HomeSectionOne />
     <HomeSectionTwo />
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text inverted>
-      <Header id="#login" as="h3" style={{ fontSize: "2em" }} textAlign="center">
-        You can login with email and password or with your social medias, your choice!
-        </Header>
-        <Grid>
-          <Grid.Column width={10}>
-            <Form>
-              <Form.Field>
-                <label>Email</label>
-                <input placeholder="John@Travolta" />
-              </Form.Field>
-              <Form.Field>
-                <label>Password</label>
-                <input placeholder="Swordfish" />
-              </Form.Field>
-              <Form.Field />
-              <Button type="submit" primary>Get in!</Button>
-            </Form>
-          </Grid.Column>
-          <Grid.Column width={15}>
-            <Button color="facebook" >
-              <Icon name="facebook" /> Facebook
-            </Button>
-            <Button color="linkedin">
-              <Icon name="linkedin" /> Linkedin
-            </Button>
-            <Button color="grey">
-              <Icon name="github" /> GitHub
-            </Button>
-          </Grid.Column>
-        </Grid>
-        <Divider
-          as="h4"
-          className="header"
-          horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
-        >
-          <a href="#">Or</a>
-        </Divider>
-      </Container>
-    </Segment>
-    <Segment inverted vertical style={{ padding: "5em 0em" }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="About" />
-              <List link inverted>
-                <List.Item as="a">Sitemap</List.Item>
-                <List.Item as="a">Contact Us</List.Item>
-                <List.Item as="a">Religious Ceremonies</List.Item>
-                <List.Item as="a">Gazebo Plans</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
-              <List link inverted>
-                <List.Item as="a">Banana Pre-Order</List.Item>
-                <List.Item as="a">DNA FAQ</List.Item>
-                <List.Item as="a">How To Access</List.Item>
-                <List.Item as="a">Favorite X-Men</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as="h4" inverted>
-                Footer Header
-              </Header>
-              <p>
-                Extra space for a call to action inside the footer that could
-                help re-engage users.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
-    </Segment>
+    <HomeSectionThree />
+    <HomeSectionFour />
   </ResponsiveContainer>
 );
 

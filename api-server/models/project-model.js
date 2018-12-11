@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Enterprising = require('./ent-model');
-const Developer = require('./dev-model');
+const Developer = require('./user-model');
 
 const Schema = mongoose.Schema;
 
