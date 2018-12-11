@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react'
+import { Tab, Form, Button, Icon, Grid, Divider, Container  } from 'semantic-ui-react'
 import '../auth.css'
+import TestNavBar from '../../dashboard/shared/NavBar/testeNavBar'
 
 class SignUp extends Component {
   state = {};
@@ -79,7 +80,10 @@ class SignUp extends Component {
         </Tab.Pane> },
     ]
     return(
+      <div>
+      <TestNavBar />
       <Tab panes={panes} />
+      </div>
     )
   }
 }
