@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Route } from 'react-router-dom';
+import React, { Component } from "react";
+import axios from "axios";
+import { Route } from "react-router-dom";
+import { Grid, Image } from "semantic-ui-react";
 
-import TesteNavBar from '../shared/NavBar/testeNavBar';
-import ProjectSearch from './ProjectSearch/ProjectSearch';
-import ProjectsList from './ProjectsList/ProjectsList';
-import ProjectDetails from './ProjectDetails/ProjectDetails';
+import TesteNavBar from "../shared/NavBar/testeNavBar";
+import ProjectSearch from "./ProjectSearch/ProjectSearch";
+import ProjectsList from "./ProjectsList/ProjectsList";
+import ProjectDetails from "./ProjectDetails/ProjectDetails";
 
 class ProjectDashBoard extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class ProjectDashBoard extends Component {
     this.state = {
       projects: [],
       theProject: {},
-      selectedId: ''
+      selectedId: ""
     };
   }
 
@@ -22,7 +23,7 @@ class ProjectDashBoard extends Component {
   }
 
   projectSelectedHandler = id => {
-    this.props.history.push('/projects/' + id);
+    this.props.history.push("/projects/" + id);
   };
 
   getProjects = () => {
@@ -37,13 +38,30 @@ class ProjectDashBoard extends Component {
       });
   };
 
-  updateProjects = () => {
-
-  }
+  updateProjects = () => {};
 
   render() {
     return (
-      <div id="projectDashBoard">
+      <div>
+        <TesteNavBar />
+        <Grid stackable>
+          <Grid.Column width={5} style={{ marginLeft: "1em" }}>
+            <ProjectSearch projects={this.state.projects} />
+            <ProjectsList
+              projects={this.state.projects}
+              clicked={this.projectSelectedHandler}
+            />
+          </Grid.Column>
+          <Grid.Column width={10} style={{ marginTop: '8em' }}>
+            <Route
+              path={this.props.match.url + "/:id"}
+              exact
+              component={ProjectDetails}
+            />
+          </Grid.Column>
+        </Grid>
+      </div>
+      /*       <div id="projectDashBoard">
         <TesteNavBar />
         <div>
           <ProjectSearch projects={this.state.projects} />
@@ -55,7 +73,7 @@ class ProjectDashBoard extends Component {
         <div>
             <Route path={this.props.match.url + '/:id'} exact component={ProjectDetails} />
         </div>
-      </div>
+      </div> */
     );
   }
 }

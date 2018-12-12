@@ -19,6 +19,9 @@ import Dev from './components/dashboard/DevDashboard/DevDashboard';
 // Enterprise Component
 import Ent from './components/dashboard/EntDashboard/EntDashboard';
 
+//Admin Component
+import AdminDashboard from './components/dashboard/AdminDashboard/AdminDashboard';
+
 class AppTest extends Component {
   render() {
     return (
@@ -31,6 +34,7 @@ class AppTest extends Component {
           <Route path='/signup' component={SignUp} />
           <Route path='/dev' component={Dev} />
           <Route path='/ent' component={Ent} />
+          <Route path='/admin' component={AdminDashboard} />
         </Switch>
       </div>
     );

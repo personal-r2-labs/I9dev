@@ -16,24 +16,17 @@ export default class TesteNavBar extends Component {
           active={activeItem === "i9Dev"}
           onClick={this.handleItemClick}
         />
-        <Dropdown
-          text="Projects"
-          pointing
-          className="link item"
+        <Menu.Item
+          name="How it works"
+          active={activeItem === "How it works"}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
           name="Projects"
           active={activeItem === "Projects"}
           onClick={this.handleItemClick}
-        >
-          <Dropdown.Menu>
-            <Dropdown.Item>Dev</Dropdown.Item>
-            <Dropdown.Item>Ent</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-        <Menu.Item
-          name="friends"
-          active={activeItem === "friends"}
-          onClick={this.handleItemClick}
         />
+
         <Menu.Menu position="right">
           <Dropdown
             text="Guilherme"
@@ -44,6 +37,7 @@ export default class TesteNavBar extends Component {
             onClick={this.handleItemClick}
           >
             <Dropdown.Menu>
+              <Dropdown.Item>Profile</Dropdown.Item>
               <Dropdown.Item>Logout</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
