@@ -19,12 +19,11 @@ class ProjectDashBoard extends Component {
 
   componentDidMount() {
     this.getProjects();
-    this.getSingleProject();
   }
 
-  projectSelectedHandler(id) {
-    this.setState({ selectedId: id });
-  }
+  projectSelectedHandler = id => {
+    this.props.history.push('/projects/' + id);
+  };
 
   getProjects = () => {
     axios
@@ -38,19 +37,9 @@ class ProjectDashBoard extends Component {
       });
   };
 
-  getSingleProject = () => {
-    console.log('[ProjectDetails.js] getSingleProject', this.props);
-    const { params } = this.props.match;
-    axios
-      .get(`http://localhost:5000/api/projects/${params.id}`)
-      .then(responseFromApi => {
-        const theProject = responseFromApi.data;
-        this.setState({ theProject });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  updateProjects = () => {
+
+  }
 
   render() {
     return (
@@ -60,11 +49,11 @@ class ProjectDashBoard extends Component {
           <ProjectSearch projects={this.state.projects} />
           <ProjectsList
             projects={this.state.projects}
+            clicked={this.projectSelectedHandler}
           />
-          <ProjectDetails {}/>
         </div>
         <div>
-          <Route path="/projects/:id" exact component={ProjectDetails} />
+            <Route path={this.props.match.url + '/:id'} exact component={ProjectDetails} />
         </div>
       </div>
     );

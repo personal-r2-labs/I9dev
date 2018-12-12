@@ -1,27 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
-const ProjectDetails = (props) => {
-  console.log(props)
+class ProjectDetails extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loadedProject: {
+        title: '',
+        description: '',
+        category: '',
+        date: '',
+      }
+    };
+  }
 
-  const getProject = (id) => {
-    const theProject = oneProject => {
-      return oneProject.id === id;
+  componentDidMount() {
+    this.loadData();
+    console.log(this.props);
+  }
+
+  componentDidUpdate() {
+    this.loadData();
+    console.log(this.state.loadedProject);
+  }
+
+  loadData() {
+    if (this.props.match.params.id) {
+      if (
+        !this.state.loadedProject ||
+        (this.state.loadedProject &&
+          this.state.loadedProject._id !== this.props.match.params.id)
+      ) {
+        const { params } = this.props.match;
+        axios
+          .get(`http://localhost:5000/api/projects/${params.id}`)
+          .then(responseFromApi => {
+            const loadedProject = responseFromApi.data;
+            this.setState({ loadedProject });
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      }
     }
-    return props.projects.find(theProject)
-  };
-  
-  const { params } = props.match;
-  const foundProject = getProject(params.id, 10);
+  }
 
-  return (
-    <div>
-      <h2>{ foundProject.title } <span style={{fontSize:"14px"}}>{ foundProject.date }</span></h2>
-      <h3>Used technologies: { foundProject.category }</h3>
-      <p>{ foundProject.description }</p>
-      <Link to='/projects'>Back</Link>
-    </div>
-  )
+  render() {
+    return (
+      <div>
+        <h2>{this.state.loadedProject.title}</h2>
+        <h3>Category: {this.state.loadedProject.category}</h3>
+        <h4>Description</h4>
+        <p>{this.state.loadedProject.description}</p>
+        <button>Send a Propost</button>
+      </div>
+    );
+  }
 }
 
 export default ProjectDetails;
