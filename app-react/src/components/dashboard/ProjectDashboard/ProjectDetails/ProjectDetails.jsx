@@ -50,13 +50,13 @@ class ProjectDetails extends Component {
 
   render() {
     return (
-      <Segment>
+      <Segment stacked>
         <Header as="h1" style={{marginLeft:"0.5em"}}>
           <Header.Subheader>Title</Header.Subheader>
           {this.state.loadedProject.title}
         </Header>
-        <Grid columns={2} padded>
-          <Grid.Column width={5}>
+        <Grid columns={2} padded stacked>
+          <Grid.Column width={8}>
             <Header as="h1">
               <Header.Subheader>Category</Header.Subheader>
               {this.state.loadedProject.category}
@@ -70,7 +70,7 @@ class ProjectDetails extends Component {
         </Grid>
 
         <Grid columns={2} padded>
-          <Grid.Column width={5}>
+          <Grid.Column width={8}>
             <Header as="h1">
               <Header.Subheader>Deadline</Header.Subheader>
               12/15/2018
