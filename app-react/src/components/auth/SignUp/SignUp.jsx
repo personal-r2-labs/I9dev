@@ -20,6 +20,7 @@ class SignUp extends Component {
         password
       })
       .then(() => {
+        console.log(this.state)
         this.setState({ username: "", password: "", role: "dev" });
       })
       .catch(error => console.log(error));

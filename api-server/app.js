@@ -71,7 +71,7 @@ passport.deserializeUser((userIdFromSession, cb) => {
 });
 
 passport.use(new LocalStrategy((username, password, next) => {
-  User.findOne({ email: username }, (err, user) => {
+  User.findOne({ username }, (err, user) => {
     if (err) {
       return next(err);
     }
@@ -87,6 +87,7 @@ passport.use(new LocalStrategy((username, password, next) => {
 }));
 
 app.use(passport.initialize());
+app.use(passport.session());
 
 const dev = require('./routes/dev-routes');
 app.use('/api', dev);

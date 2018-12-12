@@ -1,6 +1,6 @@
 const express = require('express');
 const User = require('../models/user-model');
-const passport = require('../configs/passport/strategy');
+const passport = require('passport');
 const bcrypt = require('bcrypt');
 const bcryptSalt = 10;
 
@@ -11,85 +11,109 @@ router.post('/signup/dev', (req, res, next) => {
   const { name, username, password } = req.body;
   console.log('este é o resultado dos dados enviados dev form', req.body);
 
-  let salt;
-  let hashPass;
-  console.log(password);
-  if (password !== undefined) {
-    salt = bcrypt.genSaltSync(bcryptSalt);
-    hashPass = bcrypt.hashSync(password, salt);
+  if (!username || !password) {
+    res.status(400).json({ message: 'Provide username and password' });
+    return;
   }
 
-  const theUser = new User({
-    name,
-    username,
-    password: hashPass
-  });
-  theUser.role = 'dev';
+  if(password.length < 7){
+      res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
+      return;
+  }
 
-  theUser.save({
-  })
-    .then((dev) => {
-      console.log('Este é o novo dev criado', dev);
-      res.json(dev);
-    })
-    .catch((error) => {
-      console.log(error);
+  User.findOne({ username }, (err, foundUser) => {
+
+    if(err){
+        res.status(500).json({message: "Username check went bad."});
+        return;
+    }
+
+    if (foundUser) {
+        res.status(400).json({ message: 'Username taken. Choose another one.' });
+        return;
+    }
+
+    const salt     = bcrypt.genSaltSync(10);
+    const hashPass = bcrypt.hashSync(password, salt);
+    console.log(password);
+
+    const theUser = new User({
+      name,
+      username,
+      password: hashPass
     });
+    theUser.role = 'dev';
+    console.log('Este é o novo dev criado', theUser);
+
+    theUser.save({
+    })
+      .then((dev) => {
+        res.json(dev);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  })
 });
 
 router.post('/signup/ent', (req, res, next) => {
   const { name, username, password } = req.body;
-  console.log('este é o resultado dos dados enviados pelo ent form', req.body);
+  console.log('este é o resultado dos dados enviados ENT form', req.body);
 
-  let salt;
-  let hashPass;
-  console.log(password);
-  if (password !== undefined) {
-    salt = bcrypt.genSaltSync(bcryptSalt);
-    hashPass = bcrypt.hashSync(password, salt);
-  }
-
-  const theUser = new User({
-    name,
-    username,
-    password: hashPass
-  });
-  theUser.role = 'ent';
-
-  theUser.save({
-  })
-    .then((ent) => {
-      console.log('Este é o novo ent criado', ent);
-      res.json(ent);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-});
-
-const ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated() || req.user) {
-    return next();
-  }
-  res.status(400).json({ message: 'Pedido negado' });
-};
-
-
-// Route to login
-router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
-  failureRedirect: '/signup',
-  passReqToCallback: true
-}));
-
-// Route to logout
-router.get('/logout', ensureAuthenticated, (req, res, next) => {
-  if (!req.user) {
-    res.redirect('/');
+  if (!username || !password) {
+    res.status(400).json({ message: 'Provide username and password' });
     return;
   }
+
+  if(password.length < 7){
+      res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
+      return;
+  }
+
+  User.findOne({ username }, (err, foundUser) => {
+
+    if(err){
+        res.status(500).json({message: "Username check went bad."});
+        return;
+    }
+
+    if (foundUser) {
+        res.status(400).json({ message: 'Username taken. Choose another one.' });
+        return;
+    }
+
+    const salt     = bcrypt.genSaltSync(10);
+    const hashPass = bcrypt.hashSync(password, salt);
+    console.log(password);
+
+    const theUser = new User({
+      name,
+      username,
+      password: hashPass
+    });
+    theUser.role = 'ent';
+    console.log('Este é o novo ENT criado', theUser);
+
+    theUser.save({
+    })
+      .then((dev) => {
+        res.json(dev);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  })
+});
+
+// Route to login
+router.post('/login', passport.authenticate('local'), (req, res, next) => {
+  res.status(200).json(req.user);
+});
+
+// Route to logout
+router.post('/logout', (req, res, next) => {
   req.logout();
-  res.redirect('/');
+  res.status(200).json({ message: 'Log out success!' });
 });
 
 module.exports = router;
