@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Route} from 'react-router-dom';
+import React, { Component } from "react";
+import axios from "axios";
+import { Route } from "react-router-dom";
+import { Grid, Image } from "semantic-ui-react";
 
-import ProjectSearch from './ProjectSearch/ProjectSearch';
-import ProjectsList from './ProjectsList/ProjectsList';
-import ProjectDetails from './ProjectDetails/ProjectDetails';
+import TesteNavBar from "../shared/NavBar/testeNavBar";
+import ProjectSearch from "./ProjectSearch/ProjectSearch";
+import ProjectsList from "./ProjectsList/ProjectsList";
+import ProjectDetails from "./ProjectDetails/ProjectDetails";
 
 class ProjectDashBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: []
+      projects: [],
+      theProject: {},
+      selectedId: ""
     };
   }
 
@@ -18,9 +22,9 @@ class ProjectDashBoard extends Component {
     this.getProjects();
   }
 
-  projectSelectedHandler(id) {
-    this.setState({selectedId: id});
-  }
+  projectSelectedHandler = id => {
+    this.props.history.push("/projects/" + id);
+  };
 
   getProjects = () => {
     axios
@@ -34,17 +38,42 @@ class ProjectDashBoard extends Component {
       });
   };
 
+  updateProjects = () => {};
+
   render() {
     return (
-      <div id="projectDashBoard">
+      <div>
+        <TesteNavBar />
+        <Grid stackable>
+          <Grid.Column width={5} style={{ marginLeft: "1em" }}>
+            <ProjectSearch projects={this.state.projects} />
+            <ProjectsList
+              projects={this.state.projects}
+              clicked={this.projectSelectedHandler}
+            />
+          </Grid.Column>
+          <Grid.Column width={10} style={{ marginTop: '8em' }}>
+            <Route
+              path={this.props.match.url + "/:id"}
+              exact
+              component={ProjectDetails}
+            />
+          </Grid.Column>
+        </Grid>
+      </div>
+      /*       <div id="projectDashBoard">
+        <TesteNavBar />
         <div>
           <ProjectSearch projects={this.state.projects} />
-          <ProjectsList projects={this.state.projects} clicked={this.projectSelectedHandler} />
+          <ProjectsList
+            projects={this.state.projects}
+            clicked={this.projectSelectedHandler}
+          />
         </div>
         <div>
-          <Route path="/projects/:id" exact component={ProjectDetails} />
+            <Route path={this.props.match.url + '/:id'} exact component={ProjectDetails} />
         </div>
-      </div>
+      </div> */
     );
   }
 }
