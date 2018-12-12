@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NavBar1 from "../shared/NavBar/navBar1";
 import Info from "../shared/info/Info"
 import ProfileCard from "../shared/ProfileCard/ProfileCard"
 import LastProjects from "../shared/lastProjects/LastProjects"
@@ -15,7 +14,6 @@ class EntDashboard extends Component {
   render() {
     return (
       <div>
-        <NavBar1 />
         <Grid columns={3} id="grid" stackable container doubling>
           <Grid.Row>
             <ProfileCard />

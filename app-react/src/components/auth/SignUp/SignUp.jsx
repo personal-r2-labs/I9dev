@@ -114,30 +114,30 @@ class SignUp extends Component {
               <Form.Group widths='equal'>
               <Form.Input 
                     fluid
-                    name="username"
+                    name="name"
                     type="text"
-                    label="Username"
-                    placeholder="Create an username"
-                    value={this.state.username}
+                    label="Full Name"
+                    placeholder="Your full name"
+                    value={this.state.name}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                {/* <Form.Group widths='equal'>
+                <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="email"
                     type="text"
                     label="Email"
-                    placeholder="Email"
+                    placeholder="Your email"
                     value={this.state.email}
                     onChange={e => this.handleChange(e)} />
-                </Form.Group> */}
+                </Form.Group>
                 <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="password"
                     type="password"
                     label="Password"
-                    placeholder="Password"
+                    placeholder="Create a password"
                     value={this.state.password}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
@@ -163,7 +163,6 @@ class SignUp extends Component {
     ]
     return(
       <div style={{minWidth:'390px'}}>
-      <TestNavBar />
       <Tab panes={panes} />
       </div>
     )

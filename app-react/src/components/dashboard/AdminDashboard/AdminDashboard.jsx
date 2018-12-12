@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import TesteNavBar from "../shared/NavBar/testeNavBar";
 import { Segment, Table } from "semantic-ui-react";
 
 class AdminDashboard extends Component {
@@ -11,7 +10,6 @@ class AdminDashboard extends Component {
   render() {
     return (
       <div>
-        <TesteNavBar />
         <Segment>
 
           <Table celled selectable>

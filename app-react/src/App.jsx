@@ -19,20 +19,22 @@ import Dev from './components/dashboard/DevDashboard/DevDashboard';
 import Ent from './components/dashboard/EntDashboard/EntDashboard';
 
 // Admin Component
-import AdminDashboard from './components/dashboard/AdminDashboard/AdminDashboard'
+import TesteNavBar from './components/dashboard/shared/NavBar/testeNavBar';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Switch>
-          <Route path="/projects/add" component={AddProject} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/admin" component={AdminDashboard} />
-          <Route path="/dev" component={Dev} />
-          <Route path="/ent" component={Ent} />
-          <Route path="/" component={MainPage} />
+      {/* <Switch>
+        <Route path="/" component={MainPage} />
+        </Switch> */}
+        <TesteNavBar />
+          <Switch>
+            <Route path="/projects/add" component={AddProject} />
+            <Route path="/projects" component={Projects} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/dev" component={Dev} />
+            <Route path="/ent" component={Ent} />
         </Switch>
       </div>
     );

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Route } from "react-router-dom";
-import { Grid, Image } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
-import TesteNavBar from "../shared/NavBar/testeNavBar";
 import ProjectSearch from "./ProjectSearch/ProjectSearch";
 import ProjectsList from "./ProjectsList/ProjectsList";
 import ProjectDetails from "./ProjectDetails/ProjectDetails";
@@ -43,7 +42,6 @@ class ProjectDashBoard extends Component {
   render() {
     return (
       <div>
-        <TesteNavBar />
         <Grid stackable>
           <Grid.Column width={5} style={{ marginLeft: "1em" }}>
             <ProjectSearch projects={this.state.projects} />
@@ -61,19 +59,6 @@ class ProjectDashBoard extends Component {
           </Grid.Column>
         </Grid>
       </div>
-      /*       <div id="projectDashBoard">
-        <TesteNavBar />
-        <div>
-          <ProjectSearch projects={this.state.projects} />
-          <ProjectsList
-            projects={this.state.projects}
-            clicked={this.projectSelectedHandler}
-          />
-        </div>
-        <div>
-            <Route path={this.props.match.url + '/:id'} exact component={ProjectDetails} />
-        </div>
-      </div> */
     );
   }
 }
