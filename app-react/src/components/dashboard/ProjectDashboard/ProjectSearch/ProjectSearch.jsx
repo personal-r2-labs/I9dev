@@ -1,13 +1,15 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
-import { Search, Grid, GridColumn } from 'semantic-ui-react';
-import ProjectSearchOption from '../ProjectSearchOption/ProjectSearchOption';
+import { Search, Grid, GridColumn,Header, Segment } from 'semantic-ui-react';
+import ProjectSearchOption from '../ProjectSearchOptions/ProjectSearchOptions';
 import axios from 'axios';
 
 export default class ProjectSearch extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      option: 'title',
+    };
     this.source = '';
   }
   componentDidMount() {
@@ -75,14 +77,14 @@ export default class ProjectSearch extends Component {
             checked={option}
           />
         </GridColumn>
-        {/* <Grid.Column width={10}>
+        <Grid.Column width={10}>
           <Segment>
             <Header>State</Header>
             <pre style={{ overflowX: 'auto' }}>{JSON.stringify(this.state, null, 2)}</pre>
             <Header>Options</Header>
             <pre style={{ overflowX: 'auto' }}>{JSON.stringify(this.source, null, 2)}</pre>
           </Segment>
-        </Grid.Column> */}
+        </Grid.Column>
       </Grid>
     );
   }
