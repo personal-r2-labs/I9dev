@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import './DevDashboard.css';
-import ProfileCard from '../shared/ProfileCard/ProfileCard';
-import Info from '../shared/info/Info';
-import { Grid, GridColumn } from 'semantic-ui-react';
-import LastProjects from '../shared/lastProjects/LastProjects';
-import StatusCard from '../shared/statusCard/StatusCard';
-import NavBar1 from '../shared/NavBar/navBar1';
+import React, { Component } from "react";
+import "./DevDashboard.css";
+import ProfileCard from "../shared/ProfileCard/ProfileCard";
+import Info from "../shared/info/Info";
+import { Grid, GridColumn } from "semantic-ui-react";
+import LastProjects from "../shared/lastProjects/LastProjects";
+import StatusCard from "../shared/statusCard/StatusCard";
+import NavBar1 from "../shared/NavBar/navBar1";
+import TesteNavBar from "../shared/NavBar/testeNavBar";
 
 class DevDashBoard extends Component {
 //   constructor(props) {
@@ -46,7 +47,7 @@ class DevDashBoard extends Component {
     } */
     return (
       <div>
-        <NavBar1 />
+        <TesteNavBar />
         <Grid columns={3} id="grid" stackable container doubling>
           <Grid.Row>
             <ProfileCard />

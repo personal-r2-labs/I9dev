@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react'
 import axios from "axios";
 import '../auth.css'
+import TestNavBar from '../../dashboard/shared/NavBar/testeNavBar'
 
 class SignUp extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ class SignUp extends Component {
                     value={this.state.password}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                <Button type="submit" icon labelPosition='right'>
+                <Button type="submit" icon labelPosition='right' primary>
                   Submit
                 <Icon name='save' />
                 </Button>
@@ -137,13 +138,13 @@ class SignUp extends Component {
                     value={this.state.password}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                <Button type="submit" icon labelPosition='right'>
+                <Button type="submit" icon labelPosition='right' primary>
                   Submit
                   <Icon name='save' />
                 </Button>
               </Form>
             </Grid.Column>
-              <Grid.Column width='1'>
+              <Grid.Column width={1}>
                 <Divider vertical>Or</Divider>
             </Grid.Column>
             <Grid.Column id="Signup-Column" verticalAlign="middle">
@@ -158,7 +159,10 @@ class SignUp extends Component {
         </Tab.Pane> },
     ]
     return(
+      <div style={{minWidth:'390px'}}>
+      <TestNavBar />
       <Tab panes={panes} />
+      </div>
     )
   }
 }
