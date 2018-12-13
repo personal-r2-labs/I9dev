@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Button, Grid } from 'semantic-ui-react'
 import axios from "axios";
+import TesteNavBar from '../dashboard/shared/NavBar/testeNavBar';
 
 class Login extends Component {
   constructor(props) {
@@ -36,8 +37,7 @@ class Login extends Component {
               fluid
               name="username"
               type="text"
-              label="Email"
-              placeholder="User email"
+              placeholder="username"
               value={this.state.username}
               onChange={e => this.handleChange(e)}
               />
@@ -45,7 +45,6 @@ class Login extends Component {
               fluid
               name="password"
               type="password"
-              label="Password"
               placeholder="User password"
               value={this.state.password}
               onChange={e => this.handleChange(e)}

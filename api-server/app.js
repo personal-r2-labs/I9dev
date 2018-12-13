@@ -89,34 +89,34 @@ passport.use(new LocalStrategy((username, password, next) => {
 }));
 
 // Passport Linkedin Strategy
-passport.use(new LinkedInStrategy({
-  clientID: process.env.LINKEDIN_KEY,
-  clientSecret: process.env.LINKEDIN_SECRET,
-  callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
-  scope: ['r_emailaddress', 'r_basicprofile'],
-}, function(req, accessToken, refreshToken, profile, done) {
-  User.findOne({ linkedinID: profile.id }, function (err, user) {
-    if (err) {
-      return done (err);
-    }
-    if (!user) {
-      console.log(profile);
-      newUser = new User ({
-        name: profile.firstName,
-        linkedinID: profile.id
-      });
-      newUser.save(function(err){
-        req.session.currentUser = user;
-        if (err) console.log(err);
-        return done(err, user);
-      });
-    } else {
-      req.session.currentUser = user;
-      return done(err, user)
-    }
-  });
-}
-));
+// passport.use(new LinkedInStrategy({
+//   clientID: process.env.LINKEDIN_KEY,
+//   clientSecret: process.env.LINKEDIN_SECRET,
+//   callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback",
+//   scope: ['r_emailaddress', 'r_basicprofile'],
+// }, function(req, accessToken, refreshToken, profile, done) {
+//   User.findOne({ linkedinID: profile.id }, function (err, user) {
+//     if (err) {
+//       return done (err);
+//     }
+//     if (!user) {
+//       console.log(profile);
+//       newUser = new User ({
+//         name: profile.firstName,
+//         linkedinID: profile.id
+//       });
+//       newUser.save(function(err){
+//         req.session.currentUser = user;
+//         if (err) console.log(err);
+//         return done(err, user);
+//       });
+//     } else {
+//       req.session.currentUser = user;
+//       return done(err, user)
+//     }
+//   });
+// }
+// ));
 
 
 app.use(passport.initialize());

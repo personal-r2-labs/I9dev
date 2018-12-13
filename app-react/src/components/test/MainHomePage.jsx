@@ -9,7 +9,8 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Divider
 } from "semantic-ui-react";
 import "./MainImage.css";
 import "../../App.css";
@@ -18,6 +19,7 @@ import HomeSectionTwo from "./HomeSectionTwo";
 import Login from "./LoginForm";
 import HomeSectionThree from "./HomeSectionThree";
 import HomeSectionFour from "./HomeSectionFour";
+import { Link } from "react-router-dom";
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>
@@ -91,11 +93,16 @@ class DesktopContainer extends Component {
                 <Menu.Item as="a">Projects</Menu.Item>
                 <Menu.Item as="a">About us</Menu.Item>
                 <Menu.Item position="right">
-                  <Button href="login" as="a" inverted={!fixed}>
+                  <Button
+                    inverted={!fixed}
+                    as={ Link }
+                    to="login"
+                  >
                     Log in
                   </Button>
                   <Button
-                    as="a"
+                    as={ Link }
+                    to="/signup"
                     inverted={!fixed}
                     primary={fixed}
                     style={{ marginLeft: "0.5em" }}
@@ -148,7 +155,7 @@ class MobileContainer extends Component {
           <Menu.Item as="a">About us</Menu.Item>
           <Menu.Item as="a">
             <Login inverted />
-            {/* <Divider horizontal inverted>
+            <Divider horizontal inverted>
               Or
             </Divider>
             <Button color="facebook">
@@ -159,7 +166,7 @@ class MobileContainer extends Component {
             </Button>
             <Button color="grey">
               <Icon name="github" />
-            </Button> */}
+            </Button>
           </Menu.Item>
           <Menu.Item as="a">Sign Up</Menu.Item>
         </Sidebar>

@@ -14,7 +14,7 @@ const HomeSectionThree = () => {
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Container text inverted>
         <Header
-          id="#login"
+          id="login"
           as="h3"
           style={{ fontSize: "2em" }}
           textAlign="center"
