@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Header, Card } from 'semantic-ui-react';
+import { Header, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const ProjectsList = props => {
@@ -13,7 +13,7 @@ const ProjectsList = props => {
         <Card>
         <Card.Content as="a" key={project._id} onClick={() => props.clicked(project._id)}>
             <Card.Header content={project.title} />
-            <Card.Meta content={project.category} />
+            <Card.Meta content={project.sector} />
             <Card.Description content={project.description} />
           </Card.Content>
         </Card>

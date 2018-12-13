@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
   title: String,
-  category: String,
+  sector: String,
   description: String,
   // owner: {
   //   type: Schema.Types.ObjectId,

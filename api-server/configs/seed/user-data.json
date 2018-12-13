@@ -78,5 +78,17 @@
   "email": "romulo2franca@gmail.com",
   "password": "123456",
   "role": "admin"
+},
+{
+  "photoPath":"https://storage.googleapis.com/i9dev-profiles/guilherme.jpeg",
+  "name":"AACD",
+  "username":"guilherme.davi@ironhack.com",
+  "password": "123456",
+  "githubURL":"https://github.com/Guilhermedgl",
+  "linkedinURL":"https://www.linkedin.com/in/guilherme-davi-gomes-de-lima-b138a3136/",
+  "facebookURL": "https://www.facebook.com/guilherme.davi.3",
+  "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
+  "description":"Em processo de career change, saindo de comunicação social para área tecnologia! Altamente colaborativo, criativo, dinâmico e extrovertido, aprendendo rápido e buscando oportunidades.",
+  "role": "dev"
 }
 ]

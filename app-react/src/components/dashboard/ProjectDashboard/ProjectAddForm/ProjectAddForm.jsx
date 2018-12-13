@@ -6,22 +6,22 @@ import TesteNavBar from "../../shared/NavBar/testeNavBar";
 class AddProject extends Component {
   constructor(props) {
     super(props);
-    this.state = { title: "", category: "", dateLimit: "", description: "" };
+    this.state = { title: "", sector: "", dateLimit: "", description: "" };
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { title, category, dateLimit, description } = this.state;
+    const { title, sector, dateLimit, description } = this.state;
     axios
       .post("http://localhost:5000/api/projects", {
         title,
-        category,
+        sector,
         dateLimit,
         description,
         // owner: 
       })
       .then(() => {
-        this.setState({ title: "", category: "", dateLimit: "", description: "" });
+        this.setState({ title: "", sector: "", dateLimit: "", description: "" });
       })
       .catch(error => console.log(error));
   };
@@ -57,11 +57,11 @@ class AddProject extends Component {
             <Form.Group widths="equal">
               <Form.Input
                 fluid
-                name="category"
+                name="sector"
                 type="text"
-                label="Category"
-                placeholder="Category"
-                value={this.state.category}
+                label="Sector"
+                placeholder="Sector"
+                value={this.state.sector}
                 onChange={e => this.handleChange(e)}
               />
             </Form.Group>
