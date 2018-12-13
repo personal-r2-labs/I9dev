@@ -8,16 +8,14 @@ const projectSchema = new Schema({
   title: String,
   sector: String,
   description: String,
-  // owner: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'User'
-  // },
-  // dev: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: 'User'
-  // },
+  owner: Schema.Types.ObjectId,
+  dev: Schema.Types.ObjectId,
   dateLimit: Date,
-  solicitation: Boolean
+  solicitation: Boolean,
+  status: {
+    type: String,
+    enum: ['progress', 'canceled', 'finished']
+  }
 }, {
   timestamps: true
 });

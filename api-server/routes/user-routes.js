@@ -8,7 +8,7 @@ const router = express.Router();
 
 // Route to get all Users
 router.get('/user', (req, res) => {
-  User.find({ role: req.body.role })
+  User.find({ role: req.body.role }).populate('projects')
     .then((user) => {
       res.json(user);
     })

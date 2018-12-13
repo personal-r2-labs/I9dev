@@ -25,7 +25,8 @@ const UserSchema = new Schema({
   role: {
     type: String,
     enum: ['dev', 'ent', 'admin']
-  }
+  },
+  projects: [Schema.Types.ObjectId]
 },
 {
   timestamps: true

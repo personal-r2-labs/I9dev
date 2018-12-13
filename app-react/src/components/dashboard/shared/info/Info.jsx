@@ -12,41 +12,46 @@ const Info = props => {
       </List>
 
       <List>
-        <List.Item icon="marker" content={`${'Islamabad, PK'}`} />
+        <List.Item icon="marker" content={`${props.city}, ${props.country}`} />
         <List.Item
           icon="mail"
           content={
             <a href={`mailto:${props.username}`}>{props.username}</a>
           }
         />
+        {props.website ? (
         <List.Item
           icon="linkify"
           content={<a href={`http://${props.website}`}>{props.website}</a>}
-        />
+        />) : (
+          <List.Item
+            icon="linkify"
+            content={<a href={`http://${props.website}`}>"Add your Website"</a>}
+          />)}
       </List>
 
       <List relaxed divided>
+      {props.facebook ? (
         <List.Item>
-          <List.Icon name="github" size="large" verticalAlign="middle" />
-          <List.Content>
-            <List.Header as="a" href={props.github}>GitHub</List.Header>
-            <List.Description>see my repos!</List.Description>
-          </List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon name="facebook" size="large" verticalAlign="middle" />
-          <List.Content>
-            <List.Header as="a">Facebook</List.Header>
-            <List.Description as="a">Follow me!</List.Description>
-          </List.Content>
-        </List.Item>
-        <List.Item>
-          <List.Icon name="linkedin" size="large" verticalAlign="middle" />
-          <List.Content>
-            <List.Header as="a">Linkedin</List.Header>
-            <List.Description as="a">Connect!</List.Description>
-          </List.Content>
-        </List.Item>
+        <List.Icon name="facebook" size="large" verticalAlign="middle" />
+        <List.Content>
+          <List.Header as="a" href={props.facebook}>Facebook</List.Header>
+          <List.Description as="a">Follow me!</List.Description>
+        </List.Content>
+      </List.Item>
+      ) : null 
+      }
+      {props.linkedin ? (
+         <List.Item>
+         <List.Icon name="linkedin" size="large" verticalAlign="middle" />
+         <List.Content>
+           <List.Header as="a" href={props.linkedin}>Linkedin</List.Header>
+           <List.Description as="a">Connect!</List.Description>
+         </List.Content>
+       </List.Item>
+      ) : null 
+      }
+       
       </List>
     </Segment>
   );

@@ -3,40 +3,53 @@
   "sector": "Non-governmental organization",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.",
   "datelimit": "2018-12-31T16:00:00Z",
-  "solicitation": false
+  "solicitation": false,
+  "owner": "5c12a7f7f51fc1023b3b96a2",
+  "status": "progress"
 },
 {
   "title": "Update the Landing Page",
   "sector": "Small Business",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.",
   "datelimit": "2019-03-01T16:00:00Z",
-  "solicitation": false
+  "solicitation": false,
+  "owner": "5c12a7f7f51fc1023b3b96a2",
+  "status": "progress"
 },
 {
   "title": "Create an Web App For an Asylum",
   "sector": "Health Care",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.",
   "datelimit": "2019-02-21T16:00:00Z",
-  "solicitation": false
+  "solicitation": false,
+  "owner": "5c12a7f7f51fc1023b3b96a2",
+  "status": "canceled"
+
 },
 {
   "title": "Create an App for agricultural cooperative",
   "sector": "Agriculture",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.",
   "datelimit": "2019-01-30T16:00:00Z",
-  "solicitation": false
+  "solicitation": false,
+  "owner": "5c12a7f7f51fc1023b3b96a2",
+  "status": "finished"
 },
 {
   "title": "Create a mobile App for association of residents",
   "sector": "Community",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.",
   "datelimit": "2018-12-27T16:00:00Z",
-  "solicitation": false
+  "solicitation": false,
+  "owner": "5c12a7f7f51fc1023b3b96a2",
+  "status": "finished"
 },
 {
   "title": "Create a MVP to validate an ideation",
   "sector": "Small Business",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, enim ac mollis ultrices, purus dolor bibendum turpis, eget fringilla risus nisi non libero. Pellentesque habitant morbi tristique senectus et.",
   "datelimit": "2019-06-13T16:00:00Z",
-  "solicitation": false
+  "solicitation": false,
+  "owner": "5c12a7f7f51fc1023b3b96a2",
+  "status": "progress"
 }]

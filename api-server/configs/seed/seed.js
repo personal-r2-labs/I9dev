@@ -17,22 +17,22 @@ const dbtitle = 'i9-db';
 mongoose.connect(`mongodb://localhost:27017/${dbtitle}`, { useNewUrlParser: true })
   .then(() => {
     console.log('Connected to Mongo!');
-    mongoose.connection.db.dropCollection('users', () => {
-      userData.forEach((user) => {
-        const salt = bcrypt.genSaltSync(10);
-        const hashPass = bcrypt.hashSync(user.password, salt);
-        user.password = hashPass;
-        const newUser = new User(user);
-        newUser.save()
-          .then(() => {
-            console.log(newUser);
-            mongoose.connection.close();
-          })
-          .catch((err) => {
-            throw new Error(`Error to add the user. ${err}`);
-          });
-      });
-    });
+    // mongoose.connection.db.dropCollection('users', () => {
+    //   userData.forEach((user) => {
+    //     const salt = bcrypt.genSaltSync(10);
+    //     const hashPass = bcrypt.hashSync(user.password, salt);
+    //     user.password = hashPass;
+    //     const newUser = new User(user);
+    //     newUser.save()
+    //       .then(() => {
+    //         console.log(newUser);
+    //         mongoose.connection.close();
+    //       })
+    //       .catch((err) => {
+    //         throw new Error(`Error to add the user. ${err}`);
+    //       });
+    //   });
+    // });
     mongoose.connection.db.dropCollection('projects', () => {
       projectData.map((project) => {
         const newProject = new Project(project);

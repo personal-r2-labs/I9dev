@@ -8,6 +8,7 @@ import { Grid, GridColumn } from 'semantic-ui-react';
 import LastProjects from '../shared/lastProjects/LastProjects';
 import StatusCard from '../shared/statusCard/StatusCard';
 import NavBar from '../shared/NavBarLogged/NavBarLogged';
+import Loader from '../shared/Loader/Loader';
 
 class UserDashBoard extends Component {
   constructor(props) {
@@ -19,8 +20,7 @@ class UserDashBoard extends Component {
         username: '',
         office: '',
         city: '',
-        state: '',
-        githubURL: '',
+        country: '',
         linkedinURL: '',
         facebookURL: '',
         websiteURL: '',
@@ -47,6 +47,7 @@ class UserDashBoard extends Component {
           .get(`http://localhost:5000/api/user/${params.id}`)
           .then(responseFromApi => {
             const loadedProfile = responseFromApi.data;
+            console.log(loadedProfile);
             this.setState({ loadedProfile });
           })
           .catch(err => {
@@ -74,13 +75,15 @@ class UserDashBoard extends Component {
       name,
       username,
       office,
-      githubURL,
+      city,
+      country,
       linkedinURL,
       facebookURL,
       websiteURL,
       skills,
       description,
-      role
+      role,
+      projects
     } = this.state.loadedProfile;
 
     // let field;
@@ -98,7 +101,7 @@ class UserDashBoard extends Component {
             <Grid.Row>
               <ProfileCard photo={photoPath} office={office} description={description}/>
               <Grid.Column width={7}>
-                <Info name={name} skills={skills} username={username} website={websiteURL} github={githubURL} facebook={facebookURL} linkedin={linkedinURL}/>
+                <Info name={name} skills={skills} city={city} country={country} username={username} website={websiteURL} facebook={facebookURL} linkedin={linkedinURL}/>
                 <StatusCard />
               </Grid.Column>
               <GridColumn width={5}>
@@ -109,9 +112,26 @@ class UserDashBoard extends Component {
         </div>
       );
     } else if (role === 'ent') {
+      return(
+        <div>
+          <NavBar />
+          <Grid columns={3} id="grid" stackable container doubling>
+            <Grid.Row>
+              <ProfileCard photo={photoPath} office={office} description={description}/>
+              <Grid.Column width={7}>
+                <Info name={name} skills={skills} city={city} country={country} username={username} website={websiteURL} facebook={facebookURL} linkedin={linkedinURL}/>
+                <StatusCard  />
+              </Grid.Column>
+              <GridColumn width={5}>
+                <LastProjects  />
+              </GridColumn>
+            </Grid.Row>
+          </Grid>
+        </div>
+      )
     } else if (role === 'admin') {
     } else {
-      return <div>Carregando...</div>;
+      return <Loader />;
     }
   }
 }

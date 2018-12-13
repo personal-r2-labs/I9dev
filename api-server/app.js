@@ -54,8 +54,8 @@ const project = require('./routes/project-routes');
 
 app.use('/api', project);
 
-// const auth = require('./routes/auth-routes');
+const auth = require('./routes/auth-routes');
 
-// app.use('/api', auth);
+app.use('/api', auth);
 
 module.exports = app;
