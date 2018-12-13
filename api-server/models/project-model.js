@@ -6,14 +6,14 @@ const projectSchema = new Schema({
   title: String,
   category: String,
   description: String,
-  owner: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  dev: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
+  // owner: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
+  // dev: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
   posts: Array,
   status: {
     type: String,

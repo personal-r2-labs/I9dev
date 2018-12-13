@@ -46,7 +46,7 @@ router.get('/adm/:id', (req, res, next) => {
     });
 });
 
-// router.patch('/dev/:id', (req, res, next) => {
+// router.put('/dev/:id', (req, res, next) => {
 //   console.log('esse é o conteudo do developer req.params', req.params);
 
 //   const {

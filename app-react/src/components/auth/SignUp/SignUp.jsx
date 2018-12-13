@@ -12,14 +12,15 @@ class SignUp extends Component {
 
   handleFormSubmitDev = event => {
     event.preventDefault();
-    const { username, password } = this.state;
+    const { name, password, email } = this.state;
     axios
       .post("http://localhost:5000/api/signup/dev", {
-        username ,
-        password
+        name,
+        username: email,
+        password,
       })
       .then(() => {
-        this.setState({ username: "", password: "", role: "dev" });
+        this.setState({ username: "", password: "", role: "" });
       })
       .catch(error => console.log(error));
   };

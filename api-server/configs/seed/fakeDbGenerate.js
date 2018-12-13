@@ -1,19 +1,23 @@
 const _ = require('lodash');
-const faker = require('faker');
+const faker = require('faker/locale/pt_BR');
 
 const fs = require('fs');
 
-const projects = _.times(5, () => ({
-  title: faker.company.catchPhrase(),
-  category: 'Third Sector',
-  description: faker.lorem.paragraph(),
-  dateLimit: faker.date.future(),
-  // owner:,
-  // dev:
-  status: 'waiting',
-  solicitation: false
+const projects = _.times(10, () => ({
+  username: faker.internet.userName(),
+  password: 1234,
+  name: faker.name.firstName(),
+  lastName: faker.name.lastName(),
+  email: faker.internet.exampleEmail(),
+  phone: faker.phone.phoneNumber(),
+  zipcode: faker.address.zipCode(),
+  address: faker.address.streetAddress()
+  // // owner:,
+  // // dev:
+  // status: 'waiting',
+  // solicitation: false
 
 }));
 
 const data = JSON.stringify(projects);
-fs.writeFileSync('projectsFaker.json', data);
+fs.writeFileSync('userFakerPets.json', data);

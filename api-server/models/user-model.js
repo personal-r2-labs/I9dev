@@ -3,25 +3,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
+  name: String,
   username: String,
   password: String,
-  linkedinID: String,
   linkedinURL: String,
+  linkedinID: String,
+  githubURL: String,
   githubID: String,
+  facebookURL: String,
   facebookID: String,
-  facebookToken: String,
   description: String,
   skills: Array,
   photoPath: String,
-  role: { 
+  role: {
     type: String,
-    enum: ['dev', 'ent', 'admin'],
-    }
-  },
-  {
-  timestamps: true
+    enum: ['dev', 'ent', 'admin']
   }
-);
+},
+{
+  timestamps: true
+});
 
 const User = mongoose.model('User', UserSchema);
 
