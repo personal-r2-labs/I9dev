@@ -4,8 +4,7 @@ import ScrollableAnchor from 'react-scrollable-anchor'
 
 const HomeSectionOne = () => {
   return (
-    <Segment style={{ padding: "8em 0em" }} vertical>
-    <ScrollableAnchor id={"howitworks"}>
+    <Segment id='howitworks'style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
@@ -40,7 +39,6 @@ const HomeSectionOne = () => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </ScrollableAnchor>
     </Segment>
   );
 };
