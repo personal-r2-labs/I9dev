@@ -1,0 +1,82 @@
+[{
+  "photoPath":"https://storage.googleapis.com/i9dev-profiles/andre.jpeg",
+  "name":"Andre Amancio",
+  "username":"andre.amancio@ironhack.com",
+  "password": "123456",
+  "githubURL":"https://github.com/andre",
+  "linkedinURL":"https://linkedin.com/andre",
+  "facebookURL": "https://facebook.com/andre",
+  "websiteURL": "andre.amancio.io",
+  "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
+  "description":"Experience in product development, research and operations, Consumer centered development, Technology Roadmapping, Effective entrepreneur skills with Business, Planning and Business and Consumer Development, Interpersonal communication at executive, consumer and research levels Analytical & quantitative skills; Ability to adapt and adopt new technologies, Currently learning full stack web development",
+  "role": "dev"
+},
+{
+  "photoPath":"https://storage.googleapis.com/i9dev-profiles/carol.jpeg",
+  "name":"Carol Park",
+  "username":"carol.park@ironhack.com",
+  "password": "123456",
+  "githubURL":"https://github.com/carol",
+  "linkedinURL":"https://linkedin.com/carol",
+  "facebookURL": "https://facebook.com/carol",
+  "websiteURL": "carol.park.io",
+  "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
+  "description":"Business Graduate with seven years of experience, shifting careers to seek my passion: Technology. About to conclude Ironhack's Web Development Bootcamp I'm seeking new opportunities and challenges. I have a thirst for knowledge and am eager to expand my network. Great team player, proactive, leader, strong ethic and moral values, fast learner and systemic thinker. Technologies: Javascript, MongoDB, Express, Angular, Node.js, ES6, HTML & CSS.",
+  "role": "dev"
+},
+{
+  "photoPath":"https://storage.googleapis.com/i9dev-profiles/daniel.jpeg",
+  "name":"Daniel Ferrari",
+  "username":"daniel.ferrari@ironhack.com",
+  "password": "123456",
+  "githubURL":"https://github.com/daniel",
+  "linkedinURL":"https://linkedin.com/daniel",
+  "facebookURL": "https://facebook.com/daniel",
+  "websiteURL": "daniel.ferrari.io",
+  "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
+  "description":"I'm about to finish Ironhack bootcamp in Brazil, where I have been learning Full Stack Technologies. I'm a very curious and ambitious person current living in São Paulo, Brazil. I got involved in a lot of projects as C++ Server/Client game development, Android applications and 3D character modeling. Technologies: JavaScript, MongoDB, Express, React, Node.js, ES6, HTML & CSS",
+  "role": "dev"
+},
+{
+  "photoPath":"https://storage.googleapis.com/i9dev-profiles/elaine.jpeg",
+  "name":"Elaine Henrique",
+  "username":"elaine.henrique@ironhack.com",
+  "password": "123456",
+  "githubURL":"https://github.com/elaine",
+  "linkedinURL":"https://linkedin.com/elaine",
+  "facebookURL": "https://facebook.com/elaine",
+  "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
+  "description":"Career Changer. Com grande capacidade de comunicação, organização, trabalho em equipe, líder, proativo e autodidata. Descobri na área de tecnologia um universo de possibilidades empolgantes e desafiadoras.. Hoje me pergunto por que demorei tanto?! :-) Finalizando bootcamp de desenvolvimento web full stack (Javascript, MongoDB, Express, React, Node.js, ES6, HTML/CSS, Git, GitHub.) na Ironhack.",
+  "role": "dev"
+},
+{
+  "photoPath":"https://storage.googleapis.com/i9dev-profiles/guilherme.jpeg",
+  "name":"Guilherme Davi",
+  "username":"guilherme.davi@ironhack.com",
+  "password": "123456",
+  "githubURL":"https://github.com/Guilhermedgl",
+  "linkedinURL":"https://www.linkedin.com/in/guilherme-davi-gomes-de-lima-b138a3136/",
+  "facebookURL": "https://www.facebook.com/guilherme.davi.3",
+  "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
+  "description":"Em processo de career change, saindo de comunicação social para área tecnologia! Altamente colaborativo, criativo, dinâmico e extrovertido, aprendendo rápido e buscando oportunidades.",
+  "role": "dev"
+},
+{
+  "name": "Ronaldo Rodrigues",
+  "email": "neolondres@outlook.com",
+  "password": "123456",
+  "role": "admin"
+},
+{
+  "name": "Guilherme Davi",
+  "email": "guiifire@hotmail.com",
+  "password": "123456",
+  "role": "admin"
+},
+{
+  "name": "Romulo Franca",
+  "email": "romulo2franca@gmail.com",
+  "password": "123456",
+  "role": "admin"
+}
+]

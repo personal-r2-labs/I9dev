@@ -89,14 +89,14 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item as="a">i9Dev</Menu.Item>
-                <Menu.Item as="a">How it works</Menu.Item>
+                <Menu.Item as="a" href="#howitworks">How it works</Menu.Item>
                 <Menu.Item as="a">Projects</Menu.Item>
                 <Menu.Item as="a">About us</Menu.Item>
                 <Menu.Item position="right">
                   <Button
                     inverted={!fixed}
-                    as={ Link }
-                    to="login"
+                    as="a"
+                    href="#login"
                   >
                     Log in
                   </Button>

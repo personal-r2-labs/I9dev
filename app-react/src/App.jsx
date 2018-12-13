@@ -19,9 +19,10 @@ import Dev from './components/dashboard/DevDashboard/DevDashboard';
 import Ent from './components/dashboard/EntDashboard/EntDashboard';
 
 // Admin Component
-import TesteNavBar from './components/dashboard/shared/NavBar/testeNavBar';
+import Admin from './components/dashboard/AdminDashboard/AdminDashboard';
 
 class App extends Component {
+  
   render() {
     return (
       <div className="App">
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path="/signup" component={SignUp} />
           <Route path="/dev" component={Dev} />
           <Route path="/ent" component={Ent} />
+          <Route path="/admin" component={Admin} />
           <Route path="/" component={MainPage} />
         </Switch>
       </div>

@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable prefer-destructuring */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -14,12 +16,6 @@ const projectSchema = new Schema({
   //   type: Schema.Types.ObjectId,
   //   ref: 'User'
   // },
-  posts: Array,
-  status: {
-    type: String,
-    default: 'waiting',
-    enum: ['waiting', 'in progress', 'pending', 'completed']
-  },
   dateLimit: Date,
   solicitation: Boolean
 }, {

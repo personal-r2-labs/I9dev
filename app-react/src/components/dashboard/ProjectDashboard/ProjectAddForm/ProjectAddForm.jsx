@@ -6,21 +6,22 @@ import TesteNavBar from "../../shared/NavBar/testeNavBar";
 class AddProject extends Component {
   constructor(props) {
     super(props);
-    this.state = { title: "", category: "", date: "", description: "" };
+    this.state = { title: "", category: "", dateLimit: "", description: "" };
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const { title, category, date, description } = this.state;
+    const { title, category, dateLimit, description } = this.state;
     axios
       .post("http://localhost:5000/api/projects", {
         title,
         category,
-        date,
-        description
+        dateLimit,
+        description,
+        // owner: 
       })
       .then(() => {
-        this.setState({ title: "", category: "", date: "", description: "" });
+        this.setState({ title: "", category: "", dateLimit: "", description: "" });
       })
       .catch(error => console.log(error));
   };
@@ -67,9 +68,9 @@ class AddProject extends Component {
             <Form.Group widths="equal">
               <Form.Input
                 fluid
-                name="date"
+                name="dateLimit"
                 type="date"
-                label="Desired Delivery Date"
+                label="Desired Delivery date"
                 placeholder="dd/mm/yyyy"
                 value={this.state.date}
                 onChange={e => this.handleChange(e)}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Header, Card } from 'semantic-ui-react';
+import { Header, Card } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const ProjectsList = props => {
@@ -20,7 +20,7 @@ const ProjectsList = props => {
         </Link>
       </Card.Group>
       )
-    })};
+    })}
   </div>
   );
 };

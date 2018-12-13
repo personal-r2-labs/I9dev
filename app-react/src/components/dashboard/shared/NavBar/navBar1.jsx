@@ -8,18 +8,15 @@ const NavBar1 = () => {
         <NavLink to='/' className="active header item">
           i9Dev
         </NavLink>
-
         <NavLink to='/' className="header item">
           Profile
         </NavLink>
-
         <Dropdown text='Projects' pointing className='link item'>
           <Dropdown.Menu>
             <Dropdown.Item>Home Goods</Dropdown.Item>
             <Dropdown.Item>Bedroom</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-
         <NavLink to='/' className="header item">
           About us
         </NavLink>

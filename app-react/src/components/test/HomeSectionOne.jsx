@@ -1,9 +1,11 @@
 import React from "react";
 import { Segment, Grid, Header, Image, Button} from "semantic-ui-react";
+import ScrollableAnchor from 'react-scrollable-anchor'
 
 const HomeSectionOne = () => {
   return (
     <Segment style={{ padding: "8em 0em" }} vertical>
+    <ScrollableAnchor id={"howitworks"}>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
@@ -38,6 +40,7 @@ const HomeSectionOne = () => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
+    </ScrollableAnchor>
     </Segment>
   );
 };
