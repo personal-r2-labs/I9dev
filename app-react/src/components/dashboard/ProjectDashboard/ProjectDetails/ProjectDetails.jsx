@@ -11,7 +11,7 @@ class ProjectDetails extends Component {
       loadedProject: {
         title: "",
         description: "",
-        category: "",
+        sector: "",
         date: ""
       }
     };
@@ -58,8 +58,8 @@ class ProjectDetails extends Component {
         <Grid columns={2} padded stacked>
           <Grid.Column width={8}>
             <Header as="h1">
-              <Header.Subheader>Category</Header.Subheader>
-              {this.state.loadedProject.category}
+              <Header.Subheader>Sector</Header.Subheader>
+              {this.state.loadedProject.sector}
             </Header>
           </Grid.Column>
           <Grid.Column>
