@@ -1,14 +1,16 @@
+/* eslint-disable no-undef */
 const express = require('express');
 
 const router = express.Router();
 
+const mongoose = require('mongoose');
 const Project = require('../models/project-model');
 
+
 // Route to get all Projects
-router.get('/projects', (req, res, next) => {
+router.get('/projects', (req, res) => {
   Project.find()
     .then((proj) => {
-      console.log('esse é proj do GET details', proj);
       res.json(proj);
     })
     .catch((error) => {
@@ -17,12 +19,14 @@ router.get('/projects', (req, res, next) => {
 });
 
 // Route to create a new Project
-router.post('/projects', (req, res, next) => {
-  console.log(req.params);
-  const createProj = new Project(req.body);
-  createProj.save({
-    name: req.body.name,
-    email: req.body.email
+router.post('/projects', (req, res) => {
+  const { title, description, category, dateLimit, solicitation } = req.body;
+  Project.create({
+    title,
+    description,
+    category,
+    dateLimit,
+    solicitation
   })
     .then((response) => {
       res.json(response);
@@ -33,53 +37,51 @@ router.post('/projects', (req, res, next) => {
 });
 
 // Router to get a Project by ID
-router.get('/projects/:id', (req, res, next) => {
-  console.log('esse é o conteudo do proj req.params', req.params.id);
-  Project.findOne({
-    _id: req.params.id
-  })
-    .then((proj) => {
-      console.log('esse é proj do GET details', proj.title);
-      res.json(proj);
+router.get('/projects/:id', (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Specified id is not valid' });
+    return;
+  }
+  Project.findById(req.params.id)
+    .then((response) => {
+      res.status(200).json(response);
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      res.json(err);
     });
 });
 
-// router.patch('/projects/:id', (req, res, next) => {
-//   console.log('esse é o conteudo do emp req.params', req.params);
-//   const {
-//     name,
-//     email
-//   } = req.body;
+// Route to update a project
+router.put('/projects/:id', (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Specified id is not valid' });
+    return;
+  }
 
-//   Project.findByIdAndUpdate({
-//     _id: req.params.id
-//   }, {
-//     name,
-//     email
-//   })
-//     .then((proj) => {
-//       console.log('esse é proj do PUT details', proj);
-//       res.json(proj);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// });
+  Project.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+      res.json({ message: `Project with ${req.params.id} is updated successfully.` });
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
 // Route to delete a Project
-router.delete('/projects/:id', (req, res, next) => {
-  console.log('esse é o proj req.params', req.params);
+router.delete('/projects/:id', (req, res) => {
+  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Specified id is not valid' });
+    return;
+  }
+
   Project.findByIdAndRemove(req.params.id)
-    .then((proj) => {
-      console.log('esse é proj do get details', proj);
-      res.json(proj);
+    .then(() => {
+      res.json({ message: `Project with ${req.params.id} is removed successfully.` });
     })
-    .catch((error) => {
-      console.log(error);
+    .catch((err) => {
+      res.json(err);
     });
 });
+
 
 module.exports = router;

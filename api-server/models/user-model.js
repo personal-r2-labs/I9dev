@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable prefer-destructuring */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;

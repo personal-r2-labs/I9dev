@@ -23,6 +23,7 @@
   "homepage": "https://github.com/romulo2franca/freelar#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "^0.1.1",

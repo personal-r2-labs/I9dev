@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
-import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react';
 import axios from "axios";
-import '../auth.css'
-import TestNavBar from '../../dashboard/shared/NavBar/testeNavBar'
+import './SignUp.css';
+import TestNavBar from '../../dashboard/shared/NavBar/testeNavBar';
 
 class SignUp extends Component {
   constructor(props) {
@@ -14,14 +14,15 @@ class SignUp extends Component {
     event.preventDefault();
     const { name, email, password } = this.state;
     axios
-      .post("http://localhost:5000/api/signup/dev", {
+      .post("http://localhost:5000/api/signup", {
         name,
         username: email,
-        password
+        password,
+        role: "dev"
       })
       .then(() => {
         console.log(this.state)
-        this.setState({ username: "", password: "", role: "dev" });
+        this.setState({ name: "", username: "", password: "", role: "" });
       })
       .catch(error => console.log(error));
   };
@@ -30,13 +31,14 @@ class SignUp extends Component {
     event.preventDefault();
     const { name, email, password } = this.state;
     axios
-      .post("http://localhost:5000/api/signup/ent", {
+      .post("http://localhost:5000/api/signup", {
         name,
         username: email,
-        password
+        password,
+        role: "ent"
       })
       .then(() => {
-        this.setState({ username: "",  password: "", role: "ent" });
+        this.setState({ name: "", username: "",  password: "", role: "" });
       })
       .catch(error => console.log(error));
   };
@@ -163,6 +165,7 @@ class SignUp extends Component {
     ]
     return(
       <div style={{minWidth:'390px'}}>
+      <TestNavBar />
       <Tab panes={panes} />
       </div>
     )

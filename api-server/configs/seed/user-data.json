@@ -2,7 +2,7 @@
   "photoPath":"https://storage.googleapis.com/i9dev-profiles/andre.jpeg",
   "name":"Andre Amancio",
   "username":"andre.amancio@ironhack.com",
-  "password": "",
+  "password": "123456",
   "githubURL":"https://github.com/andre",
   "linkedinURL":"https://linkedin.com/andre",
   "facebookURL": "https://facebook.com/andre",
@@ -15,7 +15,7 @@
   "photoPath":"https://storage.googleapis.com/i9dev-profiles/carol.jpeg",
   "name":"Carol Park",
   "username":"carol.park@ironhack.com",
-  "password": "",
+  "password": "123456",
   "githubURL":"https://github.com/carol",
   "linkedinURL":"https://linkedin.com/carol",
   "facebookURL": "https://facebook.com/carol",
@@ -28,7 +28,7 @@
   "photoPath":"https://storage.googleapis.com/i9dev-profiles/daniel.jpeg",
   "name":"Daniel Ferrari",
   "username":"daniel.ferrari@ironhack.com",
-  "password": "",
+  "password": "123456",
   "githubURL":"https://github.com/daniel",
   "linkedinURL":"https://linkedin.com/daniel",
   "facebookURL": "https://facebook.com/daniel",
@@ -41,7 +41,7 @@
   "photoPath":"https://storage.googleapis.com/i9dev-profiles/elaine.jpeg",
   "name":"Elaine Henrique",
   "username":"elaine.henrique@ironhack.com",
-  "password": "",
+  "password": "123456",
   "githubURL":"https://github.com/elaine",
   "linkedinURL":"https://linkedin.com/elaine",
   "facebookURL": "https://facebook.com/elaine",
@@ -53,12 +53,30 @@
   "photoPath":"https://storage.googleapis.com/i9dev-profiles/guilherme.jpeg",
   "name":"Guilherme Davi",
   "username":"guilherme.davi@ironhack.com",
-  "password": "",
+  "password": "123456",
   "githubURL":"https://github.com/Guilhermedgl",
   "linkedinURL":"https://www.linkedin.com/in/guilherme-davi-gomes-de-lima-b138a3136/",
   "facebookURL": "https://www.facebook.com/guilherme.davi.3",
   "skills":["JavaScript", "Node", "Express", "Mongo", "React", "HTML", "CSS"],
   "description":"Em processo de career change, saindo de comunicação social para área tecnologia! Altamente colaborativo, criativo, dinâmico e extrovertido, aprendendo rápido e buscando oportunidades.",
   "role": "dev"
+},
+{
+  "name": "Ronaldo Rodrigues",
+  "email": "neolondres@outlook.com",
+  "password": "123456",
+  "role": "admin"
+},
+{
+  "name": "Guilherme Davi",
+  "email": "guiifire@hotmail.com",
+  "password": "123456",
+  "role": "admin"
+},
+{
+  "name": "Romulo Franca",
+  "email": "romulo2franca@gmail.com",
+  "password": "123456",
+  "role": "admin"
 }
 ]
