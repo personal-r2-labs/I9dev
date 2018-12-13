@@ -95,7 +95,10 @@ class MobileContainer extends Component {
             <Divider horizontal inverted>
               Or
             </Divider>
-            <Button color="facebook">
+            <Button color="facebook"
+              as={ Link }
+              to="/auth/facebook">
+              {console.log('facebook')}
               <Icon name="facebook" />
             </Button>
             <Button color="twitter">
