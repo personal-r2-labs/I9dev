@@ -1,40 +1,40 @@
-# Project Title
+# i9Dev
 
-One Paragraph of project description goes here
+A filantropist website to help business owners to find web developers willing to create a web application for them, without expectations for remunaration. ONGs and social groups are welcomed to request projects too.
 
-## Getting Started
+### Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+To clone and run this application, you'll need Git, Node.js (which comes with npm) and MongoDB installed on your computer. From your command line:
 
-### Prerequisites
+```bash
+# Clone this repository
+$ git clone https://github.com/romulo2franca/freelar/
 
-What things you need to install the software and how to install them
+# Go into the repository
+$ cd freelar
+
+# Install dependencies
+$ npm install
+
+# Run the app
+$ npm start
+```
+You can download MongoDB here: https://www.mongodb.com/ 
+
+### Running
+
+You will need to run both the backend server and the front-end server. Use the following commands to do so:
 
 ```
-Give examples
+cd api-server
+npm test
 ```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+The api-server will run on the port 5000, make sure this port is not being used in your OS. You will need to have your MongoDB service running before running the api-server. After, you can start the fron-end server.
 
 ```
-Give the example
+cd app-react
+npm react
 ```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
 
 ### Break down into end to end tests
 
