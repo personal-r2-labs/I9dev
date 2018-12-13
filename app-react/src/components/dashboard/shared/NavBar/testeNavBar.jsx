@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Menu, Dropdown } from "semantic-ui-react";
+import { NavLink, Link } from "react-router-dom";
 
 export default class TesteNavBar extends Component {
-  state = { activeItem: "home" };
+  state = { activeItem: "i9Dev" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -10,20 +11,26 @@ export default class TesteNavBar extends Component {
     const { activeItem } = this.state;
 
     return (
-      <Menu inverted style={{minWidth:'390px'}}>
+      <Menu inverted fluid style={{ minWidth: '390px' }}>
         <Menu.Item
           name="i9Dev"
+          as={ Link }
+          to="/"
           active={activeItem === "i9Dev"}
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name="How it works"
-          active={activeItem === "How it works"}
+          as={ Link }
+          name="Projects"
+          to="/projects"
+          active={activeItem === "Projects"}
           onClick={this.handleItemClick}
         />
         <Menu.Item
-          name="Projects"
-          active={activeItem === "Projects"}
+          as={ Link }
+          name="Add Project"
+          to="/projects/add"
+          active={activeItem === "Add Project"}
           onClick={this.handleItemClick}
         />
 
@@ -37,8 +44,11 @@ export default class TesteNavBar extends Component {
             onClick={this.handleItemClick}
           >
             <Dropdown.Menu>
-              <Dropdown.Item>Profile</Dropdown.Item>
-              <Dropdown.Item>Logout</Dropdown.Item>
+              <Dropdown.Item as={ Link }
+                to="/dev">Profile</Dropdown.Item>
+              <Dropdown.Item as={ Link } to="/logout">
+                Logout
+              </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>

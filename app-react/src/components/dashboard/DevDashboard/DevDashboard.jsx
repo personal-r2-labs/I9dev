@@ -5,8 +5,7 @@ import Info from "../shared/info/Info";
 import { Grid, GridColumn } from "semantic-ui-react";
 import LastProjects from "../shared/lastProjects/LastProjects";
 import StatusCard from "../shared/statusCard/StatusCard";
-import NavBar1 from "../shared/NavBar/navBar1";
-import TesteNavBar from "../shared/NavBar/testeNavBar";
+import TesteNavBar from "../shared/NavBar/testeNavBar"
 
 class DevDashBoard extends Component {
 //   constructor(props) {
