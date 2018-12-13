@@ -3,13 +3,13 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Header,
   Icon,
   Menu,
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Divider
 } from "semantic-ui-react";
 import "./MainImage.css";
 import "../../App.css";
@@ -18,40 +18,9 @@ import HomeSectionTwo from "./HomeSectionTwo";
 import Login from "./LoginForm";
 import HomeSectionThree from "./HomeSectionThree";
 import HomeSectionFour from "./HomeSectionFour";
-
-const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <Header
-      as="h1"
-      content="Imagine-a-Company"
-      inverted
-      style={{
-        fontSize: mobile ? "2em" : "4em",
-        fontWeight: "normal",
-        marginBottom: 0,
-        marginTop: mobile ? "1.5em" : "3em"
-      }}
-    />
-    <Header
-      as="h2"
-      content="Do whatever you want when you want to."
-      inverted
-      style={{
-        fontSize: mobile ? "1.5em" : "1.7em",
-        fontWeight: "normal",
-        marginTop: mobile ? "0.5em" : "1.5em"
-      }}
-    />
-    <Button primary size="huge">
-      Get Started
-      <Icon name="right arrow" />
-    </Button>
-  </Container>
-);
-
-HomepageHeading.propTypes = {
-  mobile: PropTypes.bool
-};
+import HomepageHeading from "./HomePageHeading";
+import NavBar from "./NavBar";
+import { Link } from "react-router-dom";
 
 class DesktopContainer extends Component {
   state = {};
@@ -61,7 +30,6 @@ class DesktopContainer extends Component {
 
   render() {
     const { children } = this.props;
-    const { fixed } = this.state;
 
     return (
       <Responsive minWidth={Responsive.onlyTablet.minWidth}>
@@ -77,34 +45,7 @@ class DesktopContainer extends Component {
             style={{ minHeight: 700, padding: "0.01em 0em" }}
             vertical
           >
-            <Menu
-              id="bgNav"
-              fixed={fixed ? "top" : null}
-              inverted
-              pointing={!fixed}
-              secondary={!fixed}
-              size="large"
-            >
-              <Container>
-                <Menu.Item as="a">i9Dev</Menu.Item>
-                <Menu.Item as="a">How it works</Menu.Item>
-                <Menu.Item as="a">Projects</Menu.Item>
-                <Menu.Item as="a">About us</Menu.Item>
-                <Menu.Item position="right">
-                  <Button href="login" as="a" inverted={!fixed}>
-                    Log in
-                  </Button>
-                  <Button
-                    as="a"
-                    inverted={!fixed}
-                    primary={fixed}
-                    style={{ marginLeft: "0.5em" }}
-                  >
-                    Sign Up
-                  </Button>
-                </Menu.Item>
-              </Container>
-            </Menu>
+            <NavBar fixed={this.state.fixed} />
             <HomepageHeading />
           </Segment>
         </Visibility>
@@ -142,16 +83,22 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a">i9Dev</Menu.Item>
-          <Menu.Item as="a">How it works</Menu.Item>
-          <Menu.Item as="a">Projects</Menu.Item>
-          <Menu.Item as="a">About us</Menu.Item>
+          <Menu.Item as="a" href="#howitworks" inverted>
+            How it works
+          </Menu.Item>
+          <Menu.Item as={Link} name="Projects" to="/projects" />
+          <Menu.Item as="a" href="#about">
+            About us
+          </Menu.Item>
           <Menu.Item as="a">
             <Login inverted />
-            {/* <Divider horizontal inverted>
+            <Divider horizontal inverted>
               Or
             </Divider>
-            <Button color="facebook">
+            <Button color="facebook"
+              as={ Link }
+              to="/auth/facebook">
+              {console.log('facebook')}
               <Icon name="facebook" />
             </Button>
             <Button color="twitter">
@@ -159,7 +106,7 @@ class MobileContainer extends Component {
             </Button>
             <Button color="grey">
               <Icon name="github" />
-            </Button> */}
+            </Button>
           </Menu.Item>
           <Menu.Item as="a">Sign Up</Menu.Item>
         </Sidebar>

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { Segment, Header, Button, Grid } from "semantic-ui-react";
 import HeaderSubHeader from "semantic-ui-react/dist/commonjs/elements/Header/HeaderSubheader";
@@ -19,7 +18,6 @@ class ProjectDetails extends Component {
 
   componentDidMount() {
     this.loadData();
-    console.log(this.props);
   }
 
   componentDidUpdate() {
@@ -51,10 +49,11 @@ class ProjectDetails extends Component {
   render() {
     return (
       <Segment stacked>
-        <Header as="h1" style={{marginLeft:"0.5em"}}>
+        <Header as="h1" style={{ marginLeft: "0.5em" }}>
           <Header.Subheader>Title</Header.Subheader>
           {this.state.loadedProject.title}
         </Header>
+
         <Grid columns={2} padded stacked>
           <Grid.Column width={8}>
             <Header as="h1">
@@ -62,6 +61,7 @@ class ProjectDetails extends Component {
               {this.state.loadedProject.sector}
             </Header>
           </Grid.Column>
+
           <Grid.Column>
             <Header as="h1">
               <Header.Subheader>Created</Header.Subheader>2 weeks ago
@@ -76,6 +76,7 @@ class ProjectDetails extends Component {
               12/15/2018
             </Header>
           </Grid.Column>
+
           <Grid.Column>
             <Header as="h1">
               <Header.Subheader>Created by</Header.Subheader>John Connor
@@ -83,19 +84,12 @@ class ProjectDetails extends Component {
           </Grid.Column>
         </Grid>
 
-        <Header as="h2" style={{marginLeft:"0.5em"}}>
+        <Header as="h2" style={{ marginLeft: "0.5em" }}>
           <HeaderSubHeader>Description</HeaderSubHeader>
           {this.state.loadedProject.description}
         </Header>
         <Button primary>Send a Propost</Button>
       </Segment>
-      /*       <div>
-        <h2>{this.state.loadedProject.title}</h2>
-        <h3>Category: {this.state.loadedProject.category}</h3>
-        <h4>Description</h4>
-        <p>{this.state.loadedProject.description}</p>
-        <button>Send a Propost</button>
-      </div> */
     );
   }
 }

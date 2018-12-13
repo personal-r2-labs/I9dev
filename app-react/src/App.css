@@ -9,3 +9,6 @@ body {
 .ui.form .field>label {
   color: white;
 }
+.ui.secondary.inverted.pointing.menu .item {
+  color: white;
+}

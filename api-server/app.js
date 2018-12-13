@@ -42,8 +42,7 @@ app.use(cors({
   origin: ['http://localhost:3000']
 }));
 
-app.locals.title = 'i9Dev - The best Big Monster';
-
+app.locals.title = 'i9Dev';
 
 // Routes Middleware
 const user = require('./routes/user-routes');
