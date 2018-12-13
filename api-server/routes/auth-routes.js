@@ -108,6 +108,7 @@ router.post('/signup/ent', (req, res, next) => {
 // Route to login
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
   res.status(200).json(req.user);
+  res.redirect('/dev');
 });
 
 // Route to logout

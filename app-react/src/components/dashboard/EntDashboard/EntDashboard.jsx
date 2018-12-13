@@ -4,6 +4,7 @@ import ProfileCard from "../shared/ProfileCard/ProfileCard"
 import LastProjects from "../shared/lastProjects/LastProjects"
 import StatusCard from "../shared/statusCard/StatusCard"
 import { Grid, GridColumn } from "semantic-ui-react"
+import TesteNavBar from "../shared/NavBar/testeNavBar"
 
 class EntDashboard extends Component {
      constructor(props) {
@@ -14,6 +15,7 @@ class EntDashboard extends Component {
   render() {
     return (
       <div>
+        <TesteNavBar />
         <Grid columns={3} id="grid" stackable container doubling>
           <Grid.Row>
             <ProfileCard />

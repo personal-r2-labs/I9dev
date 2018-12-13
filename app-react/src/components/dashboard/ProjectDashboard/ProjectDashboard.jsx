@@ -6,6 +6,7 @@ import { Grid } from "semantic-ui-react";
 import ProjectSearch from "./ProjectSearch/ProjectSearch";
 import ProjectsList from "./ProjectsList/ProjectsList";
 import ProjectDetails from "./ProjectDetails/ProjectDetails";
+import TesteNavBar from "../shared/NavBar/testeNavBar"
 
 class ProjectDashBoard extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class ProjectDashBoard extends Component {
   render() {
     return (
       <div>
+        <TesteNavBar />
         <Grid stackable>
           <Grid.Column width={5} style={{ marginLeft: "1em" }}>
             <ProjectSearch projects={this.state.projects} />

@@ -25,16 +25,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {/* <Switch>
-        <Route path="/" component={MainPage} />
-        </Switch> */}
-        <TesteNavBar />
-          <Switch>
-            <Route path="/projects/add" component={AddProject} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/dev" component={Dev} />
-            <Route path="/ent" component={Ent} />
+        <Switch>
+          <Route path="/projects/add" component={AddProject} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/dev" component={Dev} />
+          <Route path="/ent" component={Ent} />
+          <Route path="/" component={MainPage} />
         </Switch>
       </div>
     );
