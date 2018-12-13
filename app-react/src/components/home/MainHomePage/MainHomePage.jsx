@@ -12,14 +12,13 @@ import {
   Divider
 } from "semantic-ui-react";
 import "./MainImage.css";
-import "../../App.css";
-import HomeSectionOne from "./HomeSectionOne";
-import HomeSectionTwo from "./HomeSectionTwo";
-import Login from "./LoginForm";
-import HomeSectionThree from "./HomeSectionThree";
-import HomeSectionFour from "./HomeSectionFour";
-import HomepageHeading from "./HomePageHeading";
-import NavBar from "./NavBar";
+import HomeSectionOne from "../HomeSectionOne/HomeSectionOne";
+import HomeSectionTwo from "../HomeSectionTwo/HomeSectionTwo";
+import Login from "../../dashboard/shared/LoginForm/LoginForm";
+import HomeSectionThree from "../HomeSectionThree/HomeSectionThree";
+import HomeSectionFour from "../HomeSectionFour/HomeSectionFour";
+import HomepageHeading from "../HomePageHeading/HomePageHeading";
+import NavBar from "../NavBar/NavBar";
 import { Link } from "react-router-dom";
 
 class DesktopContainer extends Component {

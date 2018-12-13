@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./DevDashboard.css";
 import ProfileCard from "../shared/ProfileCard/ProfileCard";
 import Info from "../shared/info/Info";
 import { Grid, GridColumn } from "semantic-ui-react";
