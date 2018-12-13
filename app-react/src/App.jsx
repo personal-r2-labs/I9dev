@@ -12,14 +12,8 @@ import SignUp from './components/auth/SignUp/SignUp';
 import Projects from './components/dashboard/ProjectDashboard/ProjectDashboard';
 import AddProject from './components/dashboard/ProjectDashboard/ProjectAddForm/ProjectAddForm';
 
-// Developers Component
-import Dev from './components/dashboard/DevDashboard/DevDashboard';
-
-// Enterprise Component
-import Ent from './components/dashboard/EntDashboard/EntDashboard';
-
-// Admin Component
-import Admin from './components/dashboard/AdminDashboard/AdminDashboard';
+// Users Component Dashboard
+import User from './components/dashboard/UserDashboard/UserDashboard';
 
 class App extends Component {
   
@@ -30,9 +24,11 @@ class App extends Component {
           <Route path="/projects/add" component={AddProject} />
           <Route path="/projects" component={Projects} />
           <Route path="/signup" component={SignUp} />
-          <Route path="/dev" component={Dev} />
-          <Route path="/ent" component={Ent} />
-          <Route path="/admin" component={Admin} />
+          <Route
+              path="/user/:id"
+              exact
+              component={User}
+            />
           <Route path="/" component={MainPage} />
         </Switch>
       </div>

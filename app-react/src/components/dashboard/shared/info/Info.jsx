@@ -6,23 +6,22 @@ const Info = props => {
     <Segment>
       <List>
         <List.Item>
-          <List.Header as="h2">Guilherme Davi</List.Header>
-          JavaScript, Node, Express, Mongo and React.
+          <List.Header as="h2">{props.name}</List.Header>
+        {props.skills.join(' | ')}
         </List.Item>
       </List>
 
       <List>
-        <List.Item icon="users" content="Semantic UI" />
-        <List.Item icon="marker" content="New York, NY" />
+        <List.Item icon="marker" content={`${'Islamabad, PK'}`} />
         <List.Item
           icon="mail"
           content={
-            <a href="mailto:jack@semantic-ui.com">jack@semantic-ui.com</a>
+            <a href={`mailto:${props.username}`}>{props.username}</a>
           }
         />
         <List.Item
           icon="linkify"
-          content={<a href="http://www.semantic-ui.com">semantic-ui.com</a>}
+          content={<a href={`http://${props.website}`}>{props.website}</a>}
         />
       </List>
 
@@ -30,14 +29,14 @@ const Info = props => {
         <List.Item>
           <List.Icon name="github" size="large" verticalAlign="middle" />
           <List.Content>
-            <List.Header as="a">GitHub</List.Header>
-            <List.Description as="a">see my repos!</List.Description>
+            <List.Header as="a" href={props.github}>GitHub</List.Header>
+            <List.Description>see my repos!</List.Description>
           </List.Content>
         </List.Item>
         <List.Item>
           <List.Icon name="facebook" size="large" verticalAlign="middle" />
           <List.Content>
-            <List.Header as="a">Faceebok</List.Header>
+            <List.Header as="a">Facebook</List.Header>
             <List.Description as="a">Follow me!</List.Description>
           </List.Content>
         </List.Item>

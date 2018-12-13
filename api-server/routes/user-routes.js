@@ -21,6 +21,7 @@ router.get('/user', (req, res) => {
 router.get('/user/:id', (req, res) => {
   User.findOne({ _id: req.params.id })
     .then((user) => {
+      console.log(user);
       res.json(user);
     })
     .catch((error) => {

@@ -24,7 +24,6 @@ class ProjectDetails extends Component {
 
   componentDidUpdate() {
     this.loadData();
-    console.log(this.state.loadedProject);
   }
 
   loadData() {
@@ -35,6 +34,7 @@ class ProjectDetails extends Component {
           this.state.loadedProject._id !== this.props.match.params.id)
       ) {
         const { params } = this.props.match;
+        console.log(this.props)
         axios
           .get(`http://localhost:5000/api/projects/${params.id}`)
           .then(responseFromApi => {

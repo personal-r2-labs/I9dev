@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react';
 import axios from "axios";
 import './SignUp.css';
-import TestNavBar from '../../dashboard/shared/NavBar/testeNavBar';
+import NavBar from '../../dashboard/shared/NavBarLogged/NavBarLogged';
 
 class SignUp extends Component {
   constructor(props) {
@@ -165,7 +165,7 @@ class SignUp extends Component {
     ]
     return(
       <div style={{minWidth:'390px'}}>
-      <TestNavBar />
+      <NavBar />
       <Tab panes={panes} />
       </div>
     )

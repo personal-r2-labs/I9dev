@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Menu, Dropdown } from "semantic-ui-react";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default class TesteNavBar extends Component {
+export default class NavBarLogged extends Component {
   state = { activeItem: "i9Dev" };
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
