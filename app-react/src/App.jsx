@@ -18,6 +18,9 @@ import Dev from './components/dashboard/DevDashboard/DevDashboard';
 // Enterprise Component
 import Ent from './components/dashboard/EntDashboard/EntDashboard';
 
+// Admin Component
+import TesteNavBar from './components/dashboard/shared/NavBar/testeNavBar';
+
 class App extends Component {
   
   render() {

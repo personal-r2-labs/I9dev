@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Divider,
   Header,
   Icon,
   Menu,
@@ -13,6 +12,7 @@ import {
   Visibility
 } from "semantic-ui-react";
 import "./MainImage.css";
+import "../../App.css";
 import HomeSectionOne from "./HomeSectionOne";
 import HomeSectionTwo from "./HomeSectionTwo";
 import Login from "./LoginForm";
@@ -147,8 +147,8 @@ class MobileContainer extends Component {
           <Menu.Item as="a">Projects</Menu.Item>
           <Menu.Item as="a">About us</Menu.Item>
           <Menu.Item as="a">
-            <Login />
-            <Divider horizontal inverted>
+            <Login inverted />
+            {/* <Divider horizontal inverted>
               Or
             </Divider>
             <Button color="facebook">
@@ -159,7 +159,7 @@ class MobileContainer extends Component {
             </Button>
             <Button color="grey">
               <Icon name="github" />
-            </Button>
+            </Button> */}
           </Menu.Item>
           <Menu.Item as="a">Sign Up</Menu.Item>
         </Sidebar>

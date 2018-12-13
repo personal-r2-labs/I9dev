@@ -12,25 +12,27 @@ class SignUp extends Component {
 
   handleFormSubmitDev = event => {
     event.preventDefault();
-    const { name, password, email } = this.state;
+    const { name, email, password } = this.state;
     axios
       .post("http://localhost:5000/api/signup/dev", {
         name,
         username: email,
-        password,
+        password
       })
       .then(() => {
-        this.setState({ username: "", password: "", role: "" });
+        console.log(this.state)
+        this.setState({ username: "", password: "", role: "dev" });
       })
       .catch(error => console.log(error));
   };
 
   handleFormSubmitEnt = event => {
     event.preventDefault();
-    const { username, password } = this.state;
+    const { name, email, password } = this.state;
     axios
       .post("http://localhost:5000/api/signup/ent", {
-        username,
+        name,
+        username: email,
         password
       })
       .then(() => {
@@ -54,30 +56,30 @@ class SignUp extends Component {
                 <Form.Group widths='equal'>
                   <Form.Input 
                     fluid
-                    name="username"
+                    name="name"
                     type="text"
-                    label="Username"
-                    placeholder="Create an username"
-                    value={this.state.username}
+                    label="Full Name"
+                    placeholder="Your full name"
+                    value={this.state.name}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                {/* <Form.Group widths='equal'>
+                <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="email"
                     type="text"
                     label="Email"
-                    placeholder="Email"
+                    placeholder="Your email"
                     value={this.state.email}
                     onChange={e => this.handleChange(e)} />
-                </Form.Group> */}
+                </Form.Group>
                 <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="password"
                     type="password"
                     label="Password"
-                    placeholder="Password"
+                    placeholder="Create a password"
                     value={this.state.password}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
@@ -112,30 +114,30 @@ class SignUp extends Component {
               <Form.Group widths='equal'>
               <Form.Input 
                     fluid
-                    name="username"
+                    name="name"
                     type="text"
-                    label="Username"
-                    placeholder="Create an username"
-                    value={this.state.username}
+                    label="Full Name"
+                    placeholder="Your full name"
+                    value={this.state.name}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
-                {/* <Form.Group widths='equal'>
+                <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="email"
                     type="text"
                     label="Email"
-                    placeholder="Email"
+                    placeholder="Your email"
                     value={this.state.email}
                     onChange={e => this.handleChange(e)} />
-                </Form.Group> */}
+                </Form.Group>
                 <Form.Group widths='equal'>
                   <Form.Input
                     fluid
                     name="password"
                     type="password"
                     label="Password"
-                    placeholder="Password"
+                    placeholder="Create a password"
                     value={this.state.password}
                     onChange={e => this.handleChange(e)} />
                 </Form.Group>
@@ -161,7 +163,6 @@ class SignUp extends Component {
     ]
     return(
       <div style={{minWidth:'390px'}}>
-      <TestNavBar />
       <Tab panes={panes} />
       </div>
     )

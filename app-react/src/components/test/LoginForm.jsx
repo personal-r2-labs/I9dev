@@ -36,16 +36,16 @@ class Login extends Component {
               fluid
               name="username"
               type="text"
-              label="email"
+              label="Email"
               placeholder="User email"
-              value={this.state.email}
+              value={this.state.username}
               onChange={e => this.handleChange(e)}
               />
             <Form.Input
               fluid
               name="password"
               type="password"
-              label="password"
+              label="Password"
               placeholder="User password"
               value={this.state.password}
               onChange={e => this.handleChange(e)}
