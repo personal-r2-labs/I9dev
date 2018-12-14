@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import {
   Button,
   Container,
@@ -10,16 +10,16 @@ import {
   Sidebar,
   Visibility,
   Divider
-} from "semantic-ui-react";
-import "./MainImage.css";
-import HomeSectionOne from "../HomeSectionOne/HomeSectionOne";
-import HomeSectionTwo from "../HomeSectionTwo/HomeSectionTwo";
-import Login from "../../dashboard/shared/LoginForm/LoginForm";
-import HomeSectionThree from "../HomeSectionThree/HomeSectionThree";
-import HomeSectionFour from "../HomeSectionFour/HomeSectionFour";
-import HomepageHeading from "../HomePageHeading/HomePageHeading";
-import NavBar from "../NavBar/NavBar";
-import { Link } from "react-router-dom";
+} from 'semantic-ui-react';
+import './MainHomePage.css';
+import HomeSectionOne from '../HomeSectionOne/HomeSectionOne';
+import HomeSectionTwo from '../HomeSectionTwo/HomeSectionTwo';
+import Login from '../LoginForm/LoginForm';
+import HomeSectionThree from '../HomeSectionThree/HomeSectionThree';
+import HomeSectionFour from '../HomeSectionFour/HomeSectionFour';
+import HomepageHeading from '../HomePageHeading/HomePageHeading';
+import NavBar from '../NavBar/NavBar';
+import { Link } from 'react-router-dom';
 
 class DesktopContainer extends Component {
   state = {};
@@ -41,7 +41,7 @@ class DesktopContainer extends Component {
             id="bgImage"
             inverted
             textAlign="center"
-            style={{ minHeight: 700, padding: "0.01em 0em" }}
+            style={{ minHeight: 700, padding: '0.01em 0em' }}
             vertical
           >
             <NavBar fixed={this.state.fixed} />
@@ -86,17 +86,15 @@ class MobileContainer extends Component {
             How it works
           </Menu.Item>
           <Menu.Item as={Link} name="Projects" to="/projects" />
-          <Menu.Item as="a" href="#about">
-            About us
-          </Menu.Item>
+          <Link to="#about">
+            <Menu.Item>About us</Menu.Item>
+          </Link>
           <Menu.Item as="a">
-            <Login inverted />
+            <Login inverted getUser={this.props.getUser}/>
             <Divider horizontal inverted>
               Or
             </Divider>
-            <Button color="facebook"
-              as={ Link }
-              to="/auth/facebook">
+            <Button color="facebook" as={Link} to="/auth/facebook">
               {console.log('facebook')}
               <Icon name="facebook" />
             </Button>
@@ -115,7 +113,7 @@ class MobileContainer extends Component {
             id="bgImage"
             inverted
             textAlign="center"
-            style={{ minHeight: 350, padding: "0em 0em" }}
+            style={{ minHeight: 350, padding: '0em 0em' }}
             vertical
           >
             <Container id="bgNav">
@@ -153,9 +151,10 @@ ResponsiveContainer.propTypes = {
 
 const MainHomePage = props => (
   <ResponsiveContainer>
+    {console.log(props)}
     <HomeSectionOne />
     <HomeSectionTwo />
-    <HomeSectionThree />
+    <HomeSectionThree getUser={props.getUser} />
     <HomeSectionFour />
   </ResponsiveContainer>
 );

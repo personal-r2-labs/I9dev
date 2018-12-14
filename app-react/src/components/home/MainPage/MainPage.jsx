@@ -1,10 +1,11 @@
 import React from "react";
 import MainHomePage from "../MainHomePage/MainHomePage";
 
-const MainPage = () => {
+const MainPage = (props) => {
+  console.log(props)
   return (
   <section>
-    <MainHomePage />
+    <MainHomePage getUser={props.getUser}/>
   </section>
   );
 };

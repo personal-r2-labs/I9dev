@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from '../auth-service';
 import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react';
-import axios from "axios";
 import './SignUp.css';
 import NavBar from '../../dashboard/shared/NavBarLogged/NavBarLogged';
 import { Link } from 'react-router-dom';
@@ -16,7 +15,7 @@ class SignUp extends Component {
   handleFormSubmitDev = event => {
     event.preventDefault();
     const { name, username, password } = this.state;
-    this.service.signup(username, password)
+    this.service.signup(name, username, password)
   .then( response => {
       this.setState({
           name: "",
@@ -32,7 +31,7 @@ class SignUp extends Component {
   handleFormSubmitEnt = event => {
     event.preventDefault();
     const { name, username, password } = this.state;
-    this.service.signup(username, password)
+    this.service.signup(name, username, password)
   .then( response => {
       this.setState({
           name: "",

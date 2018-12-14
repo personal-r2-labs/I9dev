@@ -3,10 +3,10 @@ import axios from 'axios';
 import './UserDashboard.css';
 
 import ProfileCard from '../shared/ProfileCard/ProfileCard';
-import Info from '../shared/info/Info';
+import Info from '../shared/Info/Info';
 import { Grid, GridColumn } from 'semantic-ui-react';
-import LastProjects from '../shared/lastProjects/LastProjects';
-import StatusCard from '../shared/statusCard/StatusCard';
+import LastProjects from '../shared/LastProjects/LastProjects';
+import StatusCard from '../shared/StatusCard/StatusCard';
 import NavBar from '../shared/NavBarLogged/NavBarLogged';
 import Loader from '../shared/Loader/Loader';
 

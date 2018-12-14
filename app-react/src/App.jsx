@@ -7,6 +7,7 @@ import MainPage from './components/home/MainPage/MainPage';
 
 //SignUp and Login Component
 import SignUp from './components/auth/SignUp/SignUp';
+import Login from './components/home/LoginForm/LoginForm';
 
 // Projects Components
 import Projects from './components/dashboard/ProjectDashboard/ProjectDashboard';
@@ -65,8 +66,8 @@ class App extends Component {
       <div className="App">
         <Switch>
           <Route path="/projects" component={Projects} />
-          <Route path="/signup" component={SignUp} />
-          <Route path="/" component={MainPage} />
+          <Route path="/signup" render={() => <SignUp getUser={this.getTheUser}/>} />
+          <Route path="/" render={() => <MainPage getUser={this.getTheUser} />} />
         </Switch>
       </div>
     );
