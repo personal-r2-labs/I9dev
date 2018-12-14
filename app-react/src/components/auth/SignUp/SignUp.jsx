@@ -1,44 +1,46 @@
 import React, { Component } from 'react';
+import AuthService from '../auth-service';
 import { Tab, Form, Button, Icon, Grid, Divider  } from 'semantic-ui-react';
 import axios from "axios";
 import './SignUp.css';
 import NavBar from '../../dashboard/shared/NavBarLogged/NavBarLogged';
+import { Link } from 'react-router-dom';
 
 class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = { name: "", email: "", password: "" };
+    this.service = new AuthService();
   }
 
   handleFormSubmitDev = event => {
     event.preventDefault();
-    const { name, email, password } = this.state;
-    axios
-      .post("http://localhost:5000/api/signup", {
-        name,
-        username: email,
-        password,
-        role: "dev"
-      })
-      .then(() => {
-        console.log(this.state)
-        this.setState({ name: "", username: "", password: "", role: "" });
+    const { name, username, password } = this.state;
+    this.service.signup(username, password)
+  .then( response => {
+      this.setState({
+          name: "",
+          username: "", 
+          password: "",
+          role: "dev"
+      });
+      this.props.getUser(response)
       })
       .catch(error => console.log(error));
   };
 
   handleFormSubmitEnt = event => {
     event.preventDefault();
-    const { name, email, password } = this.state;
-    axios
-      .post("http://localhost:5000/api/signup", {
-        name,
-        username: email,
-        password,
-        role: "ent"
-      })
-      .then(() => {
-        this.setState({ name: "", username: "",  password: "", role: "" });
+    const { name, username, password } = this.state;
+    this.service.signup(username, password)
+  .then( response => {
+      this.setState({
+          name: "",
+          username: "", 
+          password: "",
+          role: "ent"
+      });
+      this.props.getUser(response)
       })
       .catch(error => console.log(error));
   };
@@ -167,6 +169,9 @@ class SignUp extends Component {
       <div style={{minWidth:'390px'}}>
       <NavBar />
       <Tab panes={panes} />
+      <p>Already have account? 
+          <Link to={"/"}> Login</Link>
+      </p>
       </div>
     )
   }

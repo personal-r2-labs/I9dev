@@ -15,6 +15,8 @@ const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
 
+require('./configs/passport');
+
 const cors = require('cors');
 
 require('./configs/mongodb');
@@ -33,6 +35,12 @@ app.use(cookieParser());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  secret: 'MySecretIsYou',
+  resave: true,
+  saveUninitialized: true
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());

@@ -1,6 +1,5 @@
 import React from "react";
 import { Segment, Grid, Header, Image, Button} from "semantic-ui-react";
-import ScrollableAnchor from 'react-scrollable-anchor'
 
 const HomeSectionOne = () => {
   return (

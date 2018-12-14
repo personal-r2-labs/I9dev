@@ -15,20 +15,57 @@ import AddProject from './components/dashboard/ProjectDashboard/ProjectAddForm/P
 // Users Component Dashboard
 import User from './components/dashboard/UserDashboard/UserDashboard';
 
+import AuthService from './components/auth/auth-service';
+
 class App extends Component {
-  
+  constructor(props){
+    super(props)
+    this.state = {loggedInUser: null}
+    this.service = new AuthService();
+  }
+
+  fetchUser(){
+    if(this.state.loggedInUser === null){
+      this.service.loggedin()
+      .then(response =>{
+        this.setState({
+          loggedInUser: response
+        })
+      })
+      .catch( err => {
+        this.setState({
+          loggedInUser: false
+        })
+      })
+    }
+  }
+
+  getTheUser = (userObj) => {
+    this.setState({
+      loggedInUser: userObj
+    })
+  }
+
   render() {
-    return (
-      <div className="App">
+    this.fetchUser()
+    if(this.state.loggedInUser){
+      return (
+        <div className="App">
         <Switch>
           <Route path="/projects/add" component={AddProject} />
           <Route path="/projects" component={Projects} />
+          <Route path="/user/:id" exact component={User} />
+          <Route path="/user/projects" exact component={User} />  
+          <Route path="/" component={MainPage} />
+        </Switch>
+      </div>
+      )
+    }
+    return (
+      <div className="App">
+        <Switch>
+          <Route path="/projects" component={Projects} />
           <Route path="/signup" component={SignUp} />
-          <Route
-              path="/user/:id"
-              exact
-              component={User}
-            />
           <Route path="/" component={MainPage} />
         </Switch>
       </div>

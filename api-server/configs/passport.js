@@ -45,32 +45,3 @@ passport.use(new LocalStrategy((username, password, next) => {
     next(null, foundUser);
   });
 }));
-
-passport.use(new FacebookStrategy({
-  clientID: process.env.FACEBOOKID,
-  clientSecret: process.env.FACEBOOKSECRET,
-  callbackURL: "localhost:3000/auth/facebook/callback",
-  passReqToCallback: true
-}, function (req, accessToken, refreshToken, profile, done) {
-  User.findOne({
-    facebookID: profile.id
-  }, function (err, user) {
-    if (err) {
-      return done(err);
-    }
-    if (!user) {
-      newUser = new User({
-        name: profile.displayName,
-        facebookID: profile.id
-      });
-      newUser.save(function (err) {
-        req.session.currentUser = user;
-        if (err) console.log(err);
-        return done(err, user);
-      });
-    } else {
-      req.session.currentUser = user;
-      return done(err, user)
-    }
-  });
-}));

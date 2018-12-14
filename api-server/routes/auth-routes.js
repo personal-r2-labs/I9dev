@@ -10,26 +10,41 @@ const bcrypt = require('bcrypt');
 const User = require('../models/user-model');
 
 authRoutes.post('/signup', (req, res, _next) => {
-  const { name, username, password, role } = req.body;
+  const {
+    name,
+    username,
+    password,
+    role
+  } = req.body;
 
   if (!username || !password) {
-    res.status(400).json({ message: 'Provide username and password' });
+    res.status(400).json({
+      message: 'Provide username and password'
+    });
     return;
   }
 
   if (password.length < 7) {
-    res.status(400).json({ message: 'Please make your password at least 8 characters long for security purposes.' });
+    res.status(400).json({
+      message: 'Please make your password at least 8 characters long for security purposes.'
+    });
     return;
   }
 
-  User.findOne({ username }, (err, foundUser) => {
+  User.findOne({
+    username
+  }, (err, foundUser) => {
     if (err) {
-      res.status(500).json({ message: 'Username check went bad.' });
+      res.status(500).json({
+        message: 'Username check went bad.'
+      });
       return;
     }
 
     if (foundUser) {
-      res.status(400).json({ message: 'Username taken. Choose another one.' });
+      res.status(400).json({
+        message: 'Username taken. Choose another one.'
+      });
       return;
     }
 
@@ -46,13 +61,17 @@ authRoutes.post('/signup', (req, res, _next) => {
 
     aNewUser.save((err) => {
       if (err) {
-        res.status(400).json({ message: 'Saving user to database went wrong.' });
+        res.status(400).json({
+          message: 'Saving user to database went wrong.'
+        });
         return;
       }
 
       req.login(aNewUser, (err) => {
         if (err) {
-          res.status(500).json({ message: 'Login after signup went bad.' });
+          res.status(500).json({
+            message: 'Login after signup went bad.'
+          });
           return;
         }
 
@@ -65,7 +84,9 @@ authRoutes.post('/signup', (req, res, _next) => {
 authRoutes.post('/login', (req, res, next) => {
   passport.authenticate('local', (err, theUser, failureDetails) => {
     if (err) {
-      res.status(500).json({ message: 'Something went wrong authenticating user' });
+      res.status(500).json({
+        message: 'Something went wrong authenticating user'
+      });
       return;
     }
 
@@ -77,7 +98,9 @@ authRoutes.post('/login', (req, res, next) => {
     // save user in session
     req.login(theUser, (err) => {
       if (err) {
-        res.status(500).json({ message: 'Session save went bad.' });
+        res.status(500).json({
+          message: 'Session save went bad.'
+        });
         return;
       }
 
@@ -86,5 +109,25 @@ authRoutes.post('/login', (req, res, next) => {
     });
   })(req, res, next);
 });
+
+authRoutes.post('/logout', (req, res, next) => {
+  // req.logout() is defined by passport
+  req.logout();
+  res.status(200).json({
+    message: 'Log out success!'
+  });
+});
+
+authRoutes.get('/loggedin', (req, res, next) => {
+  // req.isAuthenticated() is defined by passport
+  if (req.isAuthenticated()) {
+    res.status(200).json(req.user);
+    return;
+  }
+  res.status(403).json({
+    message: 'Unauthorized'
+  });
+});
+
 
 module.exports = authRoutes;
