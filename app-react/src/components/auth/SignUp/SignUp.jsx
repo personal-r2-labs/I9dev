@@ -181,7 +181,6 @@ class SignUp extends Component {
     ];
     return (
       <div style={{ minWidth: '390px' }}>
-        <NavBar />
         <Tab panes={panes} />
         <p>
           Already have account?

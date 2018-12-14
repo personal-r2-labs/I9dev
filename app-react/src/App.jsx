@@ -47,14 +47,11 @@ class App extends Component {
       loggedInUser: userObj
     })
   }
-
   logoutUser = () => {
     this.service.logout().then(() => {
       this.setState({ loggedInUser: null });
-      this.props.getUser(null);
     });
   };
-
   render() {
     this.fetchUser()
     if(this.state.loggedInUser){
@@ -76,6 +73,7 @@ class App extends Component {
         <Switch>
           <Route path="/projects" render={() => <Redirect to={`/signup`}/>} />
           <Route path="/signup" render={() => <SignUp getUser={this.getTheUser}/>} />
+          <Route path="/logout" render={() => <Redirect to={`/`}/>} />
           <Route path="/" render={() => <MainPage getUser={this.getTheUser} />} />
         </Switch>
       </div>

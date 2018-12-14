@@ -63,7 +63,7 @@ export default class NavBarLogged extends Component {
                 >
                   Profile
                 </Dropdown.Item>
-                <Dropdown.Item onClick={() => this.logoutUser()}>
+                <Dropdown.Item onClick={() => this.props.logoutUser()}>
                   Logout
                 </Dropdown.Item>
               </Dropdown.Menu>

@@ -37,7 +37,7 @@ class Login extends Component {
               fluid
               name="username"
               type="text"
-              placeholder="username"
+              placeholder="User Email"
               value={this.state.username}
               onChange={e => this.handleChange(e)}
             />
@@ -45,7 +45,7 @@ class Login extends Component {
               fluid
               name="password"
               type="password"
-              placeholder="User password"
+              placeholder="User Password"
               value={this.state.password}
               onChange={e => this.handleChange(e)}
             />
