@@ -20,7 +20,7 @@ const HomeSectionTwo = () => {
             </Header>
             <p style={{ fontSize: "1.33em" }}>
               <Image avatar src="/images/icons/man.svg" />
-              <b>Marcos</b> Barkery
+              <b>Marcos</b> Bakery
             </p>
           </Grid.Column>
         </Grid.Row>

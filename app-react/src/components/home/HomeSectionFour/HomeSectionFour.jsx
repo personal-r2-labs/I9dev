@@ -1,7 +1,6 @@
 import React from "react";
 import { Segment, Grid, Header, List, Container } from "semantic-ui-react";
-import HomeSectionFive from './GoogleMaps'
-import GoogleMaps from "./GoogleMaps";
+import GoogleMaps from '../GoogleMaps/GoogleMaps';
 
 const HomeSectionFour = () => {
   return (
