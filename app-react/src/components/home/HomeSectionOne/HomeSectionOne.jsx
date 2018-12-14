@@ -8,19 +8,16 @@ const HomeSectionOne = () => {
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              We Help Companies and Companions
+              We Help Small Business and ONGs
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              We can give your company superpowers to do things that they never
-              thought possible. Let us delight your customers and empower your
-              needs... through pure data analytics.
+              We can help you find a Web Developer for your business to thrive, no matter how small your business is. There's no payment required!
             </p>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              We Make Bananas That Can Dance
+              Increase your Dev Portfolio
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, you thought it was the stuff of dreams, but even
-              bananas can be bioengineered.
+              We welcome to all developers to improve their personal portfolio with projects that will benefit the ones that needs assistance.
             </p>
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
@@ -30,11 +27,6 @@ const HomeSectionOne = () => {
               size="large"
               src="/images/image-profile/perfil-resilencia.jpg"
             />
-          </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button size="huge">Check Them Out</Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>

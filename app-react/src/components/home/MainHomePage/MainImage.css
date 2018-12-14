@@ -7,3 +7,10 @@
     background-color: rgba(0 , 0, 0, 0.6);
 }
 
+.ui.form .field>label {
+    color: black;
+}
+
+.ui.inverted.header {
+    text-shadow: 2px 1px rgba(58, 59, 65, 0.883);
+}
