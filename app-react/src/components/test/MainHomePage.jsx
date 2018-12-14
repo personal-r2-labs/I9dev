@@ -18,6 +18,7 @@ import HomeSectionTwo from "./HomeSectionTwo";
 import Login from "./LoginForm";
 import HomeSectionThree from "./HomeSectionThree";
 import HomeSectionFour from "./HomeSectionFour";
+import HomeSectionFive from "./GoogleMaps";
 
 const HomepageHeading = ({ mobile }) => (
   <Container text>

@@ -1,5 +1,7 @@
 import React from "react";
 import { Segment, Grid, Header, List, Container } from "semantic-ui-react";
+import HomeSectionFive from './GoogleMaps'
+import GoogleMaps from "./GoogleMaps";
 
 const HomeSectionFour = () => {
   return (
@@ -25,12 +27,15 @@ const HomeSectionFour = () => {
                 <List.Item as="a">Privacy Policy</List.Item>
               </List>
             </Grid.Column>
-            <Grid.Column width={7}>
+            <Grid.Column width={3}>
               <Header as="h4" inverted>
                 Company Location
               </Header>
               <span>Based in São Paulo</span>
               <p>Brazil</p>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <GoogleMaps />
             </Grid.Column>
           </Grid.Row>
         </Grid>
