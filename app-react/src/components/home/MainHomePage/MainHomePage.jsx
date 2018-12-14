@@ -39,7 +39,7 @@ class DesktopContainer extends Component {
         >
           <Segment
             id="bgImage"
-            inverted
+            inverted={!false}
             textAlign="center"
             style={{ minHeight: 700, padding: '0.01em 0em' }}
             vertical
@@ -95,7 +95,6 @@ class MobileContainer extends Component {
               Or
             </Divider>
             <Button color="facebook" as={Link} to="/auth/facebook">
-              {console.log('facebook')}
               <Icon name="facebook" />
             </Button>
             <Button color="twitter">
@@ -151,7 +150,6 @@ ResponsiveContainer.propTypes = {
 
 const MainHomePage = props => (
   <ResponsiveContainer>
-    {console.log(props)}
     <HomeSectionOne />
     <HomeSectionTwo />
     <HomeSectionThree getUser={props.getUser} />

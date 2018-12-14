@@ -2,10 +2,7 @@ import _ from "lodash";
 import React, { Component } from "react";
 import {
   Search,
-  Grid,
-  GridColumn,
-  Header,
-  Segment
+  GridColumn
 } from "semantic-ui-react";
 import ProjectSearchOption from "../ProjectSearchOptions/ProjectSearchOptions";
 import axios from "axios";

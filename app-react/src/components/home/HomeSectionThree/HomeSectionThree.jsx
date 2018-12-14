@@ -10,7 +10,6 @@ import {
 const HomeSectionThree = (props) => {
   return (
     <Segment id="login" style={{ padding: "8em 0em" }} vertical>
-    {console.log(props)}
       <Container text inverted>
         <Header as="h3" style={{ fontSize: "2em" }} textAlign="left">
           You can login with email and password

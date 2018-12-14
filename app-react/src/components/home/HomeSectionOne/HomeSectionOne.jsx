@@ -1,5 +1,5 @@
 import React from "react";
-import { Segment, Grid, Header, Image, Button} from "semantic-ui-react";
+import { Segment, Grid, Header, Image} from "semantic-ui-react";
 
 const HomeSectionOne = () => {
   return (

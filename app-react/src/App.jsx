@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
+//NavBar Component
+import NavBar from './components/dashboard/shared/NavBarLogged/NavBarLogged'
 //Home Page Component
 import MainPage from './components/home/MainPage/MainPage';
 
 //SignUp and Login Component
 import SignUp from './components/auth/SignUp/SignUp';
-import Login from './components/home/LoginForm/LoginForm';
 
 // Projects Components
 import Projects from './components/dashboard/ProjectDashboard/ProjectDashboard';
@@ -47,17 +48,25 @@ class App extends Component {
     })
   }
 
+  logoutUser = () => {
+    this.service.logout().then(() => {
+      this.setState({ loggedInUser: null });
+      this.props.getUser(null);
+    });
+  };
+
   render() {
     this.fetchUser()
     if(this.state.loggedInUser){
       return (
         <div className="App">
+        <NavBar logoutUser={this.logoutUser} getTheUser={this.getTheUser} userInSession={this.state.loggedInUser}/>
         <Switch>
-          <Route path="/projects/add" component={AddProject} />
-          <Route path="/projects" component={Projects} />
-          <Route path="/user/:id" exact component={User} />
+          <Route path="/projects/add" render={() => <AddProject />} />
+          <Route path="/projects" render={() => <Projects loggedInUser={this.state.loggedInUser}/>} />
+          <Route path="/user/:id" exact render={() => <User loggedInUser={this.state.loggedInUser}/>} />
           <Route path="/user/projects" exact component={User} />  
-          <Route path="/" component={MainPage} />
+          <Route path="/" render={() => <Redirect to={`/user/${this.state.loggedInUser._id}`}/>} />
         </Switch>
       </div>
       )
@@ -65,7 +74,7 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route path="/projects" component={Projects} />
+          <Route path="/projects" render={() => <Redirect to={`/signup`}/>} />
           <Route path="/signup" render={() => <SignUp getUser={this.getTheUser}/>} />
           <Route path="/" render={() => <MainPage getUser={this.getTheUser} />} />
         </Switch>

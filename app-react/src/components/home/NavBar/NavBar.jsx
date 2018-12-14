@@ -7,7 +7,7 @@ const NavBar = props => {
     <Menu
       id="bgNav"
       fixed={props.fixed ? "top" : null}
-      inverted
+      inverted={!props.fixed}
       pointing={!props.fixed}
       secondary={!props.fixed}
       size="large"

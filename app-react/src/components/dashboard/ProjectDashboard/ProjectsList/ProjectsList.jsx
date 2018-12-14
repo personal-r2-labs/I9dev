@@ -16,7 +16,7 @@ const ProjectsList = props => {
                 <Card.Content
                   as="a"
                   key={project._id}
-                  onClick={() => props.clicked(project._id)}
+                  onClick={() => <Link to={`/projects/${project._id}`}/>}
                 >
                   <Card.Header content={project.title} />
                   <Card.Meta content={project.sector} />

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import AuthService from '../../auth/auth-service';
-import { Link } from 'react-router-dom';
 
 import { Form, Button, Grid } from 'semantic-ui-react';
 
@@ -9,12 +8,11 @@ class Login extends Component {
     super(props);
     this.state = { username: '', password: '' };
     this.service = new AuthService();
-    console.log(this.props.getUser)
+    this.getUser = this.props.getUser;
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    
     const { username, password } = this.state;
     this.service
       .login(username, password)
@@ -33,7 +31,6 @@ class Login extends Component {
   render() {
     return (      
       <Grid.Column width={10}>
-      {console.log(this.props)}
         <Form onSubmit={this.handleFormSubmit}>
           <Form.Field>
             <Form.Input
@@ -57,9 +54,6 @@ class Login extends Component {
             Get in!
           </Button>
         </Form>
-        <p>Don't have account? 
-            <Link to={"/signup"}> Signup</Link>
-        </p>
       </Grid.Column>
     );
   }

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Form, Button, Icon, Header, Segment } from "semantic-ui-react";
-import NavBar from "../../shared/NavBarLogged/NavBarLogged";
 
 class AddProject extends Component {
   constructor(props) {
@@ -34,7 +33,6 @@ class AddProject extends Component {
   render() {
     return (
       <section>
-      <NavBar />
           <Segment>
           <Form onSubmit={this.handleFormSubmit}>
             <Header as="h2">

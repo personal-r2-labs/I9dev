@@ -6,10 +6,10 @@ const express = require('express');
 const authRoutes = express.Router();
 
 const passport = require('passport');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const User = require('../models/user-model');
 
-authRoutes.post('/signup', (req, res, _next) => {
+authRoutes.post('/signup', (req, res, next) => {
   const {
     name,
     username,
@@ -56,7 +56,6 @@ authRoutes.post('/signup', (req, res, _next) => {
       username,
       password: hashPass,
       role
-
     });
 
     aNewUser.save((err) => {
@@ -111,7 +110,6 @@ authRoutes.post('/login', (req, res, next) => {
 });
 
 authRoutes.post('/logout', (req, res, next) => {
-  // req.logout() is defined by passport
   req.logout();
   res.status(200).json({
     message: 'Log out success!'
